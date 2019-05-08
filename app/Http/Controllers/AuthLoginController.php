@@ -22,7 +22,7 @@ class AuthLoginController extends Controller
          if (!$user){
              return $this->message('',1,trans('auth.failed'));
          }else{
-             if ($user->status==1){
+             if ($user->signmaster==1){
                  session('user_id',$user->id);
                  return $this->message('',0,trans('auth.success_login'));
              }

@@ -17,5 +17,7 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'failed_policy'=>"Sorry, you don't have permission to log in",
     'success_login'=>'Login Success',
+    'email_format'=>'Incorrect email format',
+    'email'=>'Please enter the email of the inviter'
 
 ];
