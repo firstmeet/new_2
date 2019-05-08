@@ -30,8 +30,8 @@
               </div>
           </div>
          <div class="picture">
-             <div class="logout">
-                 Log Out
+             <div class="logout" logoutRrl="{!! url('/logout') !!}" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
+                 <a>Log Out</a>
              </div>
          </div>
      </div>

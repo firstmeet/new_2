@@ -11,6 +11,9 @@
             </div>
             <div class="review-box">
                 <iframe id="signpage" class="signpage" src="http://www.baidu.com"></iframe>
+                <div class="step-note">
+                    <a href="http://www.layui.com/doc/element/button.html" class="layui-btn" target="_blank">下一步</a>
+                </div>
             </div>
 
         </div>

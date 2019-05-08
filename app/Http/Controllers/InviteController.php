@@ -20,13 +20,12 @@ class InviteController extends Controller
                 return $this->message('',1,trans('auth.no_signer_perm'));
              }
              $invitee_status=User::where([['username','=',$request->get('email')]])->first();
-
-             if (Sign::where('user_id',$invitee_status->id)->first()){
-                 return $this->message('',1,trans('auth.signed'));
-             }
              if (!$invitee_status){
                  return $this->message('',1,trans('auth.no_invitee'));
              }else{
+                if (Sign::where('user_id',$invitee_status->id)->first()){
+                 return $this->message('',1,trans('auth.signed'));
+             }
                  if ($invitee_status->current_status!=1){
                      return $this->message('',1,trans('auth.invitee_no_buy'));
                  }

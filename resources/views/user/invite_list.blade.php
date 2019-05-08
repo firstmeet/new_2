@@ -11,34 +11,13 @@
             </div>
             <div class="review-box">
                 <div class="layui-form">
-                  <table class="layui-table">
+                  <table class="layui-table content-box">
                     <tbody>
                         <tr>
-                          <th>标题</th>
-                          <th>创建时间</th>
+                          <th>被邀请人</th>
+                          <th>邀请时间</th>
                           <th>状态</th>
-                          <th width="100" class="text-center">操作</th>
-                        </tr> 
-                      <tr>
-                        <td>贤心</td>
-                        <td>1989-10-14</td>
-                        <td>待签名</td>
-                        <td>
-                            <div class="layui-table-cell laytable-cell-1-0-11"> 
-                                <a class="layui-btn layui-btn-xs" lay-event="edit">签名</a>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>张爱玲</td>
-                        <td>1920-09-30</td>
-                        <td>已签名</td>
-                        <td>
-                            <div class="layui-table-cell laytable-cell-1-0-11"> 
-                                <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-                            </div>
-                        </td>
-                      </tr>
+                        </tr>
                     </tbody>
                   </table>
                 </div>
@@ -48,8 +27,35 @@
     </div>
 </div>
 
-<script>
-// layer.load(1);
+<script type="text/javascript">
+$(function(){
+    get_invite_list();
+});
+
+function get_invite_list(){
+    //邀请列表
+    var url = '{!! url("/invite") !!}';
+    var index = layer.load(1);
+    $.get(url,{},function(data){
+        if (data.error) {
+            layer.msg(data.message,{icon: 5});
+            return;
+        }
+        var html = '';
+        var data = data.data;
+        if (data) {
+            for (var x in data) {
+                html+='<tr>'+
+                        '<td>'+ data[x].Invitees+'</td>'+
+                        '<td>'+ data[x].created_at+'</td>'+
+                        '<td>'+ data[x].signs+'</td>'+
+                      '</tr>';
+            }
+            $('table.content-box tbody').append(html);
+        }
+        layer.close(index);
+    },'json');
+}
 </script>
 
 @include('common.footer') 

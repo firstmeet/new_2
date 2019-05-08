@@ -126,6 +126,10 @@ margin: 0 0 0 20px;
     height: 100px;
     line-height: 95px;
 }
+.logout a{
+    color: white;
+    cursor: pointer;
+}
 
 /*footer*/
 .shipping-area {
@@ -202,3 +206,4 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .invite-form{margin: 20px 0 0 0 ;}
 .invite-form input[type=text].layui-input{width: 50%;}
 .title-notice{margin-top: 20px;}
+.step-note{text-align: right;padding-top: 20px;}

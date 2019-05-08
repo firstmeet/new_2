@@ -13,4 +13,5 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
 <script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
 <link rel="stylesheet" type="text/css" href="{{URL::asset('/css/paper.css') }}">

@@ -31,6 +31,7 @@ class UserController extends Controller
 
     public function toinvite()
     {
+        // ee(auth()->user());
         return view('user/toinvite');
     }
 }
