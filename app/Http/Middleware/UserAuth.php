@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Session;
 
 class UserAuth
 {
@@ -15,10 +16,11 @@ class UserAuth
      */
     public function handle($request, Closure $next)
     {
+//        dd(session('user_id'));
         if (session('user_id')){
             return $next($request);
         }else{
-            return response()->json(['data'=>0,'status'=>1,'message'=>trans('auth.')]);
+            return response()->json(['data'=>0,'status'=>1,'message'=>trans('auth.please_login')]);
         }
 
     }
