@@ -1,6 +1,6 @@
 <div class="nav">
     <div class="nav-top">
-        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="images/mini.png" ></div>
+        <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="/images/mini.png" ></div>
     </div>
     <ul>
         <li class="nav-item act">

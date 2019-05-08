@@ -22,7 +22,9 @@ Route::get('lang','LangController@lang');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/welcome', 'HomeController@index')->name('welcome');
+Route::get('/welcome', 'HomeController@welcome')->name('welcome');
+Route::get('/user/home', 'UserController@home')->name('home');
+Route::get('/user/list', 'UserController@list')->name('list');
 
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::resource('user','UserController');

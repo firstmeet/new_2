@@ -1,10 +1,10 @@
-<?php include 'top.php';?>   
+@include('common.top')
 </head>
 <body>
 <div class="page">
-    <?php include 'header.php';?>   
+    @include('common.header') 
     <div class="container1">
-        <?php include 'left.php';?>   
+        @include('common.left')  
         <div class="right">
             <div class="back">← back to documents</div>
             <div class="short-title">
@@ -16,6 +16,6 @@
         </div>
     </div>
 </div>
-<?php include 'footer.php';?>   
+@include('common.footer') 
 </body>
 </html>
