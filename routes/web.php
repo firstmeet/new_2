@@ -25,4 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::resource('user','UserController');
+    Route::resource('hello','HelloSignController');
+    Route::resource('invite','InviteController');
+    Route::resource('sign','SignController');
 });

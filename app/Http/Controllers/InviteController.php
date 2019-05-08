@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\ApiResource;
+use App\Http\Requests\InviteRequest;
+use App\Invite;
+use App\Sign;
+use App\User;
+use Illuminate\Http\Request;
+
+class InviteController extends Controller
+{
+    use ApiResource;
+    public function store(InviteRequest $request)
+    {
+         $sign=Sign::where('user_id',session('user_id'))->first();
+         if ($sign){
+             if (!$sign->status){
+                return $this->message('',1,trans('auth.no_signer_perm'));
+             }
+             $invitee_status=User::where([['username','=',$request->get('email')]])->first();
+             if (!$invitee_status){
+                 return $this->message('',1,trans('auth.no_invitee'));
+             }else{
+                 if ($invitee_status->current_status!=1){
+                     return $this->message('',1,trans('auth.invitee_no_buy'));
+                 }
+             }
+         }else{
+             return $this->message('',1,trans('auth.no_signer_perm'));
+         }
+         $data=[
+             'inviter_id'=>session('user_id'),
+             'invitees'=>$request->get('email')
+         ];
+         $create=Invite::create($data);
+         if ($create){
+             return $this->message('',0,trans('auth.invite_success'));
+         }
+
+    }
+}
