@@ -26,9 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
-
     public function welcome()
     {
+        echo 2222;exit;
         return view('welcome');
     }
 }
