@@ -18,7 +18,7 @@
 Route::get('/login','AuthLoginController@getLogin');
 
 Route::post('login','AuthLoginController@login')->name("login");
-
+Route::get('lang','LangController@lang');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
