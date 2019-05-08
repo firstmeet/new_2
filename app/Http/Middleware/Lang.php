@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
 
-class UserAuth
+class Lang
 {
     /**
      * Handle an incoming request.
@@ -17,16 +16,9 @@ class UserAuth
      */
     public function handle($request, Closure $next)
     {
-//        dd(session('user_id'));
         if ($request->session()->get('lang')){
             App::setLocale($request->session()->get('lang'));
         }
-
-        if (session('user_id')){
-            return $next($request);
-        }else{
-            return response()->json(['data'=>0,'status'=>1,'message'=>trans('auth.please_login')]);
-        }
-
+        return $next($request);
     }
 }
