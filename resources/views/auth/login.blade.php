@@ -70,4 +70,16 @@
         </div>
     </div>
 </div>
+<script>
+    var error="{!! session('msg') !!}"
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        if (error){
+            layer.msg(error);
+
+            console.log(1);
+        }
+    });
+
+</script>
 @endsection
