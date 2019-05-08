@@ -39,11 +39,13 @@ class SignController extends Controller
     public function create()
     {
         $email=auth()->user()->user_name;
-        $this->request->addSigner('lovelzr1314@gmail.com', 'sss');
+        $this->request->addSigner('lovelzr1314@gmail.com', 'sdfsdfs');
         $this->request->addFile(public_path('web.config'));
 
         $embed_request=new EmbeddedSignatureRequest($this->request,$this->client_id);
-        $embed_request->enableTestMode();;
+        $embed_request->enableTestMode();
+        $embed_request->setSubject('Embedded signature request');
+        $embed_request->setMessage('Fill this in.');
 
         $response = $this->client->createEmbeddedSignatureRequest($embed_request,$this->client_id);
         $signatures   = $response->getSignatures();
@@ -63,13 +65,10 @@ class SignController extends Controller
     {
         if (\session('signature_id')==$request->get('signature_id')&&$request->get('event')=="signature_request_signed"){
             $data=[
-                'title'=>'11123123',
-                'user_id'=>auth()->user()->id,
                 'status'=>1,
-                'signature_id'=>\session('signature_request_id'),
-                'username'=>auth()->user()->username
+                'signature_id'=>\session('signature_request_id')
             ];
-            $sign=Sign::create($data);
+            $sign=Sign::where('user_id',auth()->user()->id)->update($data);
             if ($sign){
                 return $this->message('',0,trans('auth.sign_success'));
             }
