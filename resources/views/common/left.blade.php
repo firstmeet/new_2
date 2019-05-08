@@ -4,16 +4,20 @@
     </div>
     <ul>
         <li class="nav-item act">
-            <a href="index.php"><i class="my-icon nav-icon icon_3"></i><span>HOME</span><i class="my-icon nav-more"></i></a>
+            <a href="/user/home"><i class="my-icon nav-icon icon_3"></i><span>HOME</span><i class="my-icon nav-more"></i></a>
         </li>
         <li class="nav-item">
-            <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>我的签约</span><i class="my-icon nav-more"></i></a>
-            <ul>
-                <li><a href="my_list.php"><span>签约列表</span></a></li>
-                <li><a href="javascript:;"><span>友情链接</span></a></li>
-                <li><a href="javascript:;"><span>分类管理</span></a></li>
-                <li><a href="javascript:;"><span>系统日志</span></a></li>
-            </ul>
+            <a href="/user/list"><i class="my-icon nav-icon icon_1"></i><span>签约列表</span><i class="my-icon nav-more"></i></a>
+        </li>
+        @if(auth()->user())
+        @if(auth()->user()->signmaster)
+             <li class="nav-item">
+            <a href="{!! url('/invite_page') !!}"><i class="my-icon nav-icon icon_1"></i><span>邀请列表</span><i class="my-icon nav-more"></i></a>
+        </li>
+        @endif
+        @endif
+        <li class="nav-item">
+            <a href="/user/toinvite"><i class="my-icon nav-icon icon_1"></i><span>邀请</span><i class="my-icon nav-more"></i></a>
         </li>
         <li class="nav-item hide">
             <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>文章管理</span><i class="my-icon nav-more"></i></a>

@@ -60,4 +60,8 @@ class InviteController extends Controller
         }])->where('inviter_id',auth()->user()->id)->get();
         return $this->message($data,0);
     }
+    public function getIndex()
+    {
+        return view('user.invite_list');
+    }
 }

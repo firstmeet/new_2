@@ -23,4 +23,14 @@ class UserController extends Controller
     {
         return view('user/list');
     }
+
+    public function sign()
+    {
+        return view('user/sign');
+    }
+
+    public function toinvite()
+    {
+        return view('user/toinvite');
+    }
 }
