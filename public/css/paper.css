@@ -1,0 +1,192 @@
+*{font-family: "Noto Sans","Lato",sans-serif!important;}
+body{
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 13px;
+}
+.page{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 2000px;
+}
+.header{
+    /*border: 1px solid ;*/
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 150px;
+    background: #304050;
+    color: white;
+}
+.container1{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 100%;
+}
+/*.nav{*/
+/*    background: #263238;*/
+/*    width: 20%;*/
+/*    height: 100%;*/
+/*}*/
+.right{
+    background: #f8f8f8;
+    width: 80%;
+    height: 100%;
+    padding: 30px 35px;
+    color: #666;
+}
+.right .back{}
+.right .short-title span{
+    border-bottom: 1px solid #333;
+    line-height: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.right .short-title em{font-style: normal;}
+
+.right .review-box{
+    min-width: 40%;
+    min-height: 800px;
+    border: 1px solid #eaeaea;
+    box-shadow: 1px 1px 5px #ddd;
+    margin-top: 20px;
+    width: 970px;
+    padding: 0 12px;
+}
+
+
+
+.dropdown-menu.pull-right {
+    right: 61px;
+    left: auto;
+    top: 55px;
+}
+.title1{
+    color: white;
+    width: 20%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    /*vertical-align: middle;*/
+    /*justify-content: center;*/
+    font-size:3.5rem;
+    font-weight: bold;
+}
+.title2{
+    color:white;
+    width: 20%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+.title2 span{font-size: 2.5rem;color: #d7d7d7;}
+.account{
+    display: flex;
+    flex-flow: row;
+    width: 60%;
+    height: 150px;
+
+}
+.account1{
+    width: 70%;
+    text-align: center;
+    padding-top: 32px;
+}
+.username{
+height: 75px;
+line-height: 75px;
+text-align: right;
+float: right;
+margin: 0 0 0 20px;
+}
+.username span{font-size: 2rem;}
+.operation{
+    height: 75px;
+    line-height: 75px;
+    text-align: right;
+    color: #333;
+}
+.picture{
+    width: 17%;
+}
+.avatar{
+    margin: 22px auto;
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.logout{
+    margin: 22px auto;
+    width: 100px;
+    height: 100px;
+    line-height: 95px;
+}
+
+/*footer*/
+.shipping-area {
+    background: #fff none repeat scroll 0 0;
+    padding-top: 40px;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-address {
+    text-align: center;
+}
+.footer-address address {
+    margin-bottom: 30px;
+}
+
+@charset "utf-8";
+/* 以下实际使用若已初始化可删除 .nav height父级需逐级设置为100%*/
+body,html{height: 100%;background: #E2E2E2}
+body,ul{margin:0;padding:0}
+body{font:14px "微软雅黑","宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;} 
+li{list-style:none} 
+a{text-decoration:none;}
+/* 以上实际使用若已初始化可删除 */
+
+/* nav */
+.nav{width: 20%;height: 100%;background: #e6e6e6;transition: all .3s;}
+.nav a{display: block;overflow: hidden;padding-left: 20px;line-height: 46px;max-height: 46px;color: #666;transition: all .3s;}
+.nav .act a{color: #50ae8d;text-decoration: underline;}
+.nav a span{margin-left: 30px;}
+.nav-item{position: relative;}
+.nav-item.nav-show{border-bottom: none;}
+.nav-item ul{display: none;}
+.nav-item.nav-show ul{display: block;}
+.nav-item>a:before{content: "";position: absolute;left: 0px;width: 2px;height: 46px;background: #34A0CE;opacity:0;transition: all .3s;}
+.nav .nav-icon{font-size: 20px;position: absolute;margin-left:-1px;}
+/* 此处修改导航图标 可自定义iconfont 替换*/
+.icon_1::after{content: "\e62b";}
+.icon_2::after{content: "\e669";}
+.icon_3::after{content: "\e61d";}
+/*---------------------*/
+.nav-more{float:right;margin-right: 20px;font-size: 12px;transition: transform .3s;}
+/* 此处为导航右侧箭头 如果自定义iconfont 也需要替换*/
+.nav-more::after{content: "\e621";}
+/*---------------------*/
+.nav-show .nav-more{transform:rotate(90deg);}
+.nav-show,.nav-item>a:hover{color: #000;text-decoration: none;}
+.nav-show>a:before,.nav-item>a:hover:before{opacity:1;}
+.nav-item li:hover a{color: #000;}
+
+/* nav-mini */
+.nav-mini.nav{width: 60px;}
+.nav-mini.nav .nav-icon{/* margin-left:-2px; */}
+.nav-mini.nav .nav-item>a span{display: none;}
+.nav-mini.nav .nav-more{margin-right: -20px;}
+.nav-mini.nav .nav-item ul{position: absolute;top:0px;left:60px;width: 180px;z-index: 99;background:#3C474C;overflow: hidden;}
+.nav-mini.nav .nav-item:hover{}
+.nav-mini.nav .nav-item:hover .nav-item a{color:#FFF;}
+.nav-mini.nav .nav-item:hover a:before{opacity:1;}
+.nav-mini.nav .nav-item:hover ul{display: block;}
+.hide{display:none!important;}

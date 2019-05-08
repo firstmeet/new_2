@@ -23,6 +23,9 @@ Route::get('sign_download','SignController@download');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/welcome', 'HomeController@welcome')->name('welcome');
+Route::get('/user/home', 'UserController@home')->name('home');
+Route::get('/user/list', 'UserController@list')->name('list');
 
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::post('logout','AuthLoginController@logout')->name('logout');

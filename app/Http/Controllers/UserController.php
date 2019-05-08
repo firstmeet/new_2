@@ -11,7 +11,16 @@ class UserController extends Controller
     use ApiResource;
     public function index()
     {
-//        echo 1;
         return $this->message(User::find(session('user_id')));
+    }
+
+    public function home()
+    {
+        return view('user/index');
+    }
+
+    public function list()
+    {
+        return view('user/list');
     }
 }
