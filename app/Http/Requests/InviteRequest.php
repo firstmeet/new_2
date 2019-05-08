@@ -24,7 +24,7 @@ class InviteRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'email|required'
+            'email'=>['required','email']
         ];
     }
     public function messages()

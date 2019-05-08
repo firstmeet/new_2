@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
 class UserAuth
@@ -17,6 +18,10 @@ class UserAuth
     public function handle($request, Closure $next)
     {
 //        dd(session('user_id'));
+        if ($request->session()->get('lang')){
+            App::setLocale($request->session()->get('lang'));
+        }
+
         if (session('user_id')){
             return $next($request);
         }else{

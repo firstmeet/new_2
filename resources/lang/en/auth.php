@@ -19,6 +19,11 @@ return [
     'success_login'=>'Login Success',
     'email_format'=>'Incorrect email format',
     'email'=>'Please enter the email of the inviter',
-    'please_login'=>'Please Login'
+    'please_login'=>'Please Login',
+    'no_signer_perm'=>'Signing before you can invite others',
+    'no_invitee'=>'Invitee is not registered',
+    'invitee_no_buy'=>'Invitee did not purchase goods',
+    'invite_success'=>'Invitation success',
+    'no_perm'=>'Forbidden'
 
 ];

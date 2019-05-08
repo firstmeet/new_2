@@ -11,14 +11,7 @@ class UserController extends Controller
     use ApiResource;
     public function index()
     {
-        echo 1;
-//        return $this->message(User::find(session('user_id')));
-    }
-
-    public function invite(Request $request)
-    {
-
-        $email=$request->get('email');
-
+//        echo 1;
+        return $this->message(User::find(session('user_id')));
     }
 }
