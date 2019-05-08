@@ -15,7 +15,7 @@ class InviteController extends Controller
     public function store(InviteRequest $request)
     {
          $sign=Sign::where('user_id',auth()->user()->id)->first();
-         if ($sign){
+         if ($sign&&auth()->user()->signmaster){
              if (!$sign->status){
                 return $this->message('',1,trans('auth.no_signer_perm'));
              }
