@@ -32,12 +32,20 @@ class InviteController extends Controller
          }
          $data=[
              'inviter_id'=>session('user_id'),
-             'invitees'=>$request->get('email')
+             'invitees'=>$request->get('email'),
+             'invitee_id'=>$invitee_status->id
          ];
          $create=Invite::create($data);
          if ($create){
              return $this->message('',0,trans('auth.invite_success'));
          }
 
+    }
+    public function index()
+    {
+        $data=Invite::with(['signs'=>function($query){
+            $query->select(['user_id','status']);
+        }])->where('inviter_id',session('user_id'))->get();
+        return $this->message($data,0);
     }
 }
