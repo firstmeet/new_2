@@ -64,6 +64,7 @@
         </style>
     </head>
     <body>
+    <a class="media" href="1.pdf">1.pdf</a>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -96,9 +97,10 @@
             </div>
         </div>
     </body>
-    <script></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.media.js"></script>
 
     <script>
-
+     $("a.media").media({width:800, height:600})
     </script>
 </html>
