@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\ApiResource;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AuthLoginController extends Controller
@@ -24,15 +25,19 @@ class AuthLoginController extends Controller
              return $this->message('',1,trans('auth.failed'));
          }else{
              if ($user->signmaster==1){
-                 Session::put('user_id',$user->id);
+                 auth()->login($user);
                  return $this->message('',0,trans('auth.success_login'));
              }
              if ($user->current_status==0){
                  return $this->message('',1,trans('auth.failed_policy'));
              }else{
-                 Session::put('user_id',$user->id);
+                 auth()->login($user);
                  return $this->message('',0,trans('auth.success_login'));
              }
          }
+    }
+    public function logout()
+    {
+        Auth::logout();
     }
 }

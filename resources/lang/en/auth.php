@@ -24,6 +24,7 @@ return [
     'no_invitee'=>'Invitee is not registered',
     'invitee_no_buy'=>'Invitee did not purchase goods',
     'invite_success'=>'Invitation success',
-    'no_perm'=>'Forbidden'
+    'no_perm'=>'Forbidden',
+    'sign_success'=>'Sign Success'
 
 ];

@@ -19,13 +19,16 @@ Route::get('/login','AuthLoginController@getLogin');
 
 Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
+Route::get('sign_download','SignController@download');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['web','user_auth']],function (){
+    Route::post('logout','AuthLoginController@logout')->name('logout');
     Route::resource('user','UserController');
     Route::resource('hello','HelloSignController');
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
+
 });
