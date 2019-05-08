@@ -18,6 +18,7 @@ return [
     'failed_policy'=>"Sorry, you don't have permission to log in",
     'success_login'=>'Login Success',
     'email_format'=>'Incorrect email format',
-    'email'=>'Please enter the email of the inviter'
+    'email'=>'Please enter the email of the inviter',
+    'please_login'=>'Please Login'
 
 ];

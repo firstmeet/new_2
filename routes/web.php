@@ -24,6 +24,6 @@ Route::post('login','AuthLoginController@login')->name("login");
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/welcome', 'HomeController@index')->name('welcome');
 
-Route::group(['middleware'=>'user_auth'],function (){
+Route::group(['middleware'=>['web','user_auth']],function (){
     Route::resource('user','UserController');
 });
