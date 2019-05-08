@@ -6,9 +6,8 @@
     <div class="container1">
         @include('common.left')  
         <div class="right">
-            <!-- <div class="back">← back to documents</div> -->
             <div class="short-title">
-                <span><em>当前位置：</em><b>签约列表</b></span>
+                <span><em>当前位置：</em><b>邀请列表</b></span>
             </div>
             <div class="review-box">
                 <div class="layui-form">

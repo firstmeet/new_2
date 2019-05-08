@@ -22,16 +22,19 @@ Route::get('lang','LangController@lang');
 Route::get('sign_download','SignController@download');
 //Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/welcome', 'HomeController@welcome')->name('welcome');
-Route::get('/user/home', 'UserController@home')->name('home');
-Route::get('/user/list', 'UserController@list')->name('list');
 
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::post('logout','AuthLoginController@logout')->name('logout');
-    Route::resource('user','UserController');
+    // Route::resource('user','UserController');
     Route::resource('hello','HelloSignController');
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
+    Route::get('invite_page','InviteController@getIndex');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/welcome', 'HomeController@welcome')->name('welcome');
+    Route::get('/user/home', 'UserController@home')->name('home');
+    Route::get('/user/list', 'UserController@list')->name('list');
+    Route::get('/user/sign', 'UserController@sign')->name('sign');
+    Route::get('/user/toinvite', 'UserController@toinvite')->name('toinvite');
 
 });

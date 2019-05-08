@@ -190,3 +190,15 @@ a{text-decoration:none;}
 .nav-mini.nav .nav-item:hover a:before{opacity:1;}
 .nav-mini.nav .nav-item:hover ul{display: block;}
 .hide{display:none!important;}
+
+.new-sign-box{padding: 20px;}
+.new-sign-box .review-note{
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.new-sign-box .layui-btn-container{text-align: center;}
+.text-center{text-align:center!important;}
+iframe.signpage{width: 100%;min-height: 800px;border: none;}
+.invite-form{margin: 20px 0 0 0 ;}
+.invite-form input[type=text].layui-input{width: 50%;}
+.title-notice{margin-top: 20px;}
