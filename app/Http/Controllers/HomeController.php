@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        dd(__trans('cart_1'));
+//        return view('home');
     }
 
     public function welcome()
