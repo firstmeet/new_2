@@ -33,7 +33,7 @@ class AuthLoginController extends Controller
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
                  auth()->login($user);
-                 return view('user.home');
+                 return view('user.index');
              }
          }
     }
