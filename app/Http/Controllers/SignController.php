@@ -61,7 +61,9 @@ class SignController extends Controller
         $sign_url = $response_2->getSignUrl();
         Session::put('signature_id',$signature_id);
         Session::put('signature_request_id',$response->signature_request_id);
-        return view('test',['url'=>$sign_url]);
+		
+		return $sign_url;
+        //return view('test',['url'=>$sign_url]);
 
     }
     public function store(Request $request)
