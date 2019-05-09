@@ -36,6 +36,7 @@ Route::group(['middleware'=>['web','user_auth']],function (){
     Route::get('/user/index', 'UserController@index')->name('index');
     Route::get('/user/list', 'UserController@list')->name('list');
     Route::get('/user/sign', 'UserController@sign')->name('sign');
+    Route::get('/user/signinfo', 'UserController@signinfo')->name('signinfo');
     Route::get('/invite_list','InviteController@list');
     Route::get('/toinvite', 'InviteController@toinvite')->name('toinvite');
 
