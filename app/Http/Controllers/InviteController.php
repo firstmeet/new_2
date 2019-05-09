@@ -17,21 +17,21 @@ class InviteController extends Controller
          $sign=Sign::where('user_id',auth()->user()->id)->first();
          if ($sign&&auth()->user()->signmaster){
              if (!$sign->status){
-                return $this->message('',1,trans('auth.no_signer_perm'));
+                return $this->message('',1,__t('15573953538039'));
              }
              $invitee_status=User::where([['username','=',$request->get('email')]])->first();
              if (!$invitee_status){
-                 return $this->message('',1,trans('auth.no_invitee'));
+                 return $this->message('',1,__t('15573954427957'));
              }else{
                 if (Sign::where('user_id',$invitee_status->id)->first()){
-                 return $this->message('',1,trans('auth.signed'));
+                 return $this->message('',1,__t('signed'));
              }
                  if ($invitee_status->current_status!=1){
-                     return $this->message('',1,trans('auth.invitee_no_buy'));
+                     return $this->message('',1,__t('a15573954033523'));
                  }
              }
          }else{
-             return $this->message('',1,trans('auth.no_signer_perm'));
+             return $this->message('',1,trans('15573953538039'));
          }
          $data=[
              'inviter_id'=>auth()->user()->id,
@@ -48,7 +48,7 @@ class InviteController extends Controller
                  'username'=>$invitee_status->username
              ];
              Sign::create($data_sign);
-             return $this->message('',0,trans('auth.invite_success'));
+             return $this->message('',0,__t('success'));
          }
 
     }
