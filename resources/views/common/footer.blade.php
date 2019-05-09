@@ -37,7 +37,6 @@
         },
         mounted:function(){
             this.setlang($('.dropdown-menu a[val='+LANG+']'));
-          console.log(this.T.cn['15318092344422'])
         },
     })
 </script>
