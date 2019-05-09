@@ -107,7 +107,6 @@ manage.homeshow = function(url){
         }
         var data = data.data;
         if (data && data.length) {
-            $('.no-invite-box').hide();
             layer.open({
               type: 1,
               title: L['15573844885030'],
@@ -120,6 +119,8 @@ manage.homeshow = function(url){
                   $('.review-note').text();
               }
             });
+        }else{
+            $('.no-invite-box').show();
         }
     },'json');
 }
