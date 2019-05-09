@@ -57,8 +57,15 @@ body{
     padding: 0 12px;
 }
 
+.dropdown-toggle:hover,.dropdown-toggle:focus{
+    color: #fff;
+    background: none;
+}
 
-
+.dropdown-toggle{
+    color: #fff;
+    background: none;
+}
 .dropdown-menu.pull-right {
     right: 61px;
     left: auto;

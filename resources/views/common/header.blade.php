@@ -13,18 +13,20 @@
               </div>
               <div class="operation">
                   <div class="dropdown">
-                      <button type="button" class="btn dropdown-toggle" id="dropdownMenu1"
-                              data-toggle="dropdown">
-                          选择语言
-                          <span class="caret"></span>
+                      <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+                          English<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
-                          <li role="presentation">
-                              <a role="menuitem" tabindex="-1" href="#">简体中文</a>
-                          </li>
-                          <li role="presentation">
-                              <a role="menuitem" tabindex="-1" href="#">English</a>
-                          </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">English</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">简体中文</a>
+                            </li>
+
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">繁體中文</a>
+                            </li>
                       </ul>
                   </div>
               </div>
