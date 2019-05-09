@@ -66,12 +66,14 @@ manage.get_sign_list =  function (url){
                 //签名状态判断
                 if (data[x].status == '1') {
                     signResObj.event = 'detail';
-                    signResObj.act = L['15573885179019'];//查看
+                    signResObj.act = L['15573922193994'];//下载
                     signResObj.buttonClass = 'layui-btn-primary';
+                    signResObj.href = '/sign_download?signature_request_id=' + data[x].signature_id;
                 }else{
                     signResObj.event = 'edit';
                     signResObj.act = L['15573884466817'];//签约
                     signResObj.buttonClass = '';
+                    signResObj.href = '/user/sign';
                 }
 
                 html+='<tr>'+
@@ -81,7 +83,7 @@ manage.get_sign_list =  function (url){
                         '<td>'+ data[x].status_text+'</td>'+
                         '<td>'+
                             '<div class="layui-table-cell laytable-cell-1-0-11">'+
-                                '<a class="layui-btn layui-btn-xs '+signResObj.buttonClass+'" lay-event="'+signResObj.event+'">'+signResObj.act+'</a>'+
+                                '<a href="'+ signResObj.href +'" class="layui-btn layui-btn-xs '+signResObj.buttonClass+'" lay-event="'+signResObj.event+'">'+signResObj.act+'</a>'+
                             '</div>'+
                         '</td>'+
                       '</tr>';
@@ -92,18 +94,32 @@ manage.get_sign_list =  function (url){
     },'json');
 }
 
-manage.homeshow = function(){
-    if ( ! $('.review-note').length) return;
-    layer.open({
-      type: 1,
-      title: L['15573844885030'],
-      skin: 'layui-layer-demo', //样式类名
-      closeBtn: 1, //不显示关闭按钮
-      anim: 2,
-      shadeClose: true, //开启遮罩关闭
-      content: $('.review-box').html(),
-      success: function(){
-          $('.review-note').text();
-      }
-    });
+//user首页弹框提示
+manage.homeshow = function(url){
+    $.get(url,{},function(data){
+        if (data.error) {
+            layer.msg(data.message,{icon: 5});
+            return;
+        }
+        var data = data.data;
+        if (data && data.length) {
+            layer.open({
+              type: 1,
+              title: L['15573844885030'],
+              skin: 'layui-layer-demo', //样式类名
+              closeBtn: 1, //不显示关闭按钮
+              anim: 2,
+              shadeClose: true, //开启遮罩关闭
+              content: $('.review-box').html(),
+              success: function(){
+                  $('.review-note').text();
+              }
+            });
+        }
+    },'json');
+}
+
+//去签名
+manage.gotoSign = function(){
+    location.href="/user/sign";
 }

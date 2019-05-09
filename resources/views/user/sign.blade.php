@@ -75,7 +75,7 @@ function step(s){
 }
 step(1);
 function getsign(){
-	alert('签约成功');window.location.href="/user/list";return;
+	//alert('签约成功');window.location.href="/user/list";return;
 	$.get('/sign/create',function(url){
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
 		HelloSign.open({

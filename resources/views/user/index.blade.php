@@ -4,7 +4,7 @@
     <div class="container1">
         @include('common.left')  
         <div class="right">
-            <div class="back">← back to documents</div>
+            <div class="back hide">← back to documents</div>
             <div class="short-title hide">
 
             </div>
@@ -24,6 +24,8 @@
 function gotoSign(){
     location.href="/user/sign";
 }
-
+$(function(){
+    manage.homeshow('{!! url("/sign") !!}');//home note
+});
 </script>
 @include('common.footer') 

@@ -4,7 +4,7 @@
     <div class="container1">
         @include('common.left')  
         <div class="right">
-            <!-- <div class="back">← back to documents</div> -->
+            <!-- <div class="back hide">← back to documents</div> -->
             <div class="short-title">
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
             </div>
@@ -29,6 +29,9 @@
 </div>
 
 <script>
+    if("{!! session('no_files') !!}"){
+        layer.msg("{!! session('no_files') !!}")
+    }
 $(function(){
     manage.get_sign_list('{!! url("/sign") !!}');
 });

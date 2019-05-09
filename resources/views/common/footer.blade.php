@@ -36,7 +36,6 @@
         },
         mounted:function(){
             this.setlang($('.dropdown-menu a[val='+LANG+']'));
-            manage.homeshow();//home note
         },
     })
 </script>
