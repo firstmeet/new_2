@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     use ApiResource;
+    // public function __construct()
+    // {
+    //     ee(auth());
+    // }
+
     public function index()
     {
         return $this->message(User::find(session('user_id')));

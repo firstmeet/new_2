@@ -25,7 +25,7 @@ class UserAuth
         if (auth()->user()){
             return $next($request);
         }else{
-            return response()->json(['data'=>0,'status'=>1,'message'=>trans('auth.please_login')]);
+            return redirect(url('login'));
         }
 
     }
