@@ -13,10 +13,10 @@
         </li>
         @else
         <li class="nav-item act">
-            <a href="/user/index"><i class="my-icon nav-icon icon_2"></i><span>HOME</span><i class="my-icon nav-more"></i></a>
+            <a href="/user/index"><i class="my-icon nav-icon icon_2"></i><span>@{{T['15318092344422']}}</span><i class="my-icon nav-more"></i></a>
         </li>
         <li class="nav-item">
-            <a href="/user/list"><i class="my-icon nav-icon icon_3"></i><span>签约列表</span><i class="my-icon nav-more"></i></a>
+            <a href="/user/list"><i class="my-icon nav-icon icon_3"></i><span>@{{T['15573810025760']}}</span><i class="my-icon nav-more"></i></a>
         </li>
         @endif
     @endif
