@@ -40,7 +40,7 @@ manage.get_invite_list =  function (url){
                 html+='<tr>'+
                         '<td>'+ data[x].Invitees+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
-                        '<td>'+ data[x].signs+'</td>'+
+                        '<td>'+ data[x].signs.status_text+'</td>'+
                       '</tr>';
             }
             $('table.content-box tbody').append(html);
