@@ -60,7 +60,7 @@ class SignController extends Controller
         $request->setCustomFieldValue('money', number_format(1400*$sign_info['number']));
         $request->setCustomFieldValue("number",$sign_info['number']);
         $request->setCustomFieldValue("day",date('d',time()));
-        $request->setCustomFieldValue("name","wuyuansong");
+        $request->setCustomFieldValue("name",$sign_info['name']);
         $request->setCustomFieldValue("month",date('m',time()));
         $embedded_request = new EmbeddedSignatureRequest($request, $this->client_id);
 
