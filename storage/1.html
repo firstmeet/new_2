@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="font-family: msyhd">
+cn4jd 在 2015-12-15/0:05:17 提交
+在这里JD译站要教你如何在你的drupal网站中为节点内容或手册生成中文pdf文件：
+
+1、下载并启用print模块2.0版以上
+
+2、下载mpdf库文件（必须选择5.x版，目前6.x版生成的pdf中文显示不全）, 并确定是/sites/all/libraries/mpdf/mpdf.php的路径
+
+3、启用print模块里的mpdf子模块，并用zh-CN替换sites/all/modules/print/print_pdf/lib_handlers/print_pdf_mpdf/print_pdf_mpdf.pages.inc文件中的uft-8字符，修改成下图中一致。
+
+blob.png
+
+4、找自己喜欢的中文字体（这里就用mpdf6.x版文件中自带的Sun-ExtA、Sun-ExtB字体为例来演示），上传至/sites/all/libraries/mpdf/ttfons目录
+
+5、修改/sites/all/libraries/mpdf/config.php文件，把启用adobeCJK字体设置为ture。
+
+blob.png
+
+6、修改/sites/all/libraries/mpdf/config_cp.php文件,把zh-CN语言的文字设置成sun-exta，sun-extb
+
+blob.png
+
+7、修改/sites/all/libraries/mpdf/config_font.php文件，把sun-exta，sun-extb分别指向我们上传至ttfonts目录里的字体
+
+blob.png
+
+8、修改/sites/all/libraries/mpdf/mpdf.css文件，设置成你想要的pdf文本样式，但一定要指定我们刚在config_font文件中的文字字体
+
+blob.png
+
+9、清除你drupal中的缓存，并提高你服务器的执行时间，等待你的中文pdf文件吧！
+
+上篇：如何使用Tabs 简单插入文章分页 下篇：如何修复并解决升级到drupal7.50后模块丢失的警告信息
+作者:
+cn4jd
+网址:
+在Drupal网站中为内容或手册生成中文PDF文件
+标签:
+drupal教程
+pdf
+mpdf
+浏览 2614 次
+添加新评论
+您的名字 *
+</body>
+</html>

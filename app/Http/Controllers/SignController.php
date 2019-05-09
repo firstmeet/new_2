@@ -29,9 +29,13 @@ class SignController extends Controller
     }
 
     use ApiResource;
-    public function index()
+    public function index(Request $request)
     {
-        $data=Sign::where('user_id',auth()->user()->id)->get();
+        if ($request->get('status')){
+            $data=Sign::where([['user_id','=',auth()->user()->id],['status','=',$request->get('status')]])->get();
+        }else{
+            $data=Sign::where('user_id',auth()->user()->id)->get();
+        }
         return $this->message($data);
     }
 
@@ -88,5 +92,11 @@ class SignController extends Controller
         }
 
 
+    }
+    public function update(Request $request)
+    {
+       if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
+           return $this->message([],0,__t("15423548318740"));
+       }
     }
 }

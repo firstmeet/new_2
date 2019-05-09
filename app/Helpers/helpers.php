@@ -6,6 +6,12 @@ if (!function_exists('__t')){
         if (session('lang')){
             $lang=session('lang');
         }
+        if (file_exists(public_path('trans.json'))){
+            $file=file_get_contents(public_path('trans.json'));
+            $data=json_decode($file,true);
+
+            return $data[$lang][$code];
+        }
         return app(\App\Translate::class)->where([['code','=',$code],['lang','=',$lang]])->first(['cont']);
     }
 }

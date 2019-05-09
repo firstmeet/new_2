@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script src="js/global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
         <!-- Styles -->
         <style>
@@ -65,42 +67,59 @@
     </head>
     <body>
     <a class="media" href="1.pdf">1.pdf</a>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <div class="flex-center position-ref full-height" id="app">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <iframe :src="urls" width="500px" height="700px"></iframe>
+            <button v-on:click="next_page(2)">下一页</button>
+{{--            @if (Route::has('login'))--}}
+{{--                <div class="top-right links">--}}
+{{--                    @auth--}}
+{{--                        <a href="{{ url('/home') }}">Home</a>--}}
+{{--                    @else--}}
+{{--                        <a href="{{ route('login') }}">Login</a>--}}
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+{{--                        @if (Route::has('register'))--}}
+{{--                            <a href="{{ route('register') }}">Register</a>--}}
+{{--                        @endif--}}
+{{--                    @endauth--}}
+{{--                </div>--}}
+{{--            @endif--}}
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+{{--            <div class="content">--}}
+{{--                <div class="title m-b-md">--}}
+{{--                    Laravel--}}
+{{--                </div>--}}
+
+{{--                <div class="links">--}}
+{{--                    <a href="https://laravel.com/docs">Docs</a>--}}
+{{--                    <a href="https://laracasts.com">Laracasts</a>--}}
+{{--                    <a href="https://laravel-news.com">News</a>--}}
+{{--                    <a href="https://blog.laravel.com">Blog</a>--}}
+{{--                    <a href="https://nova.laravel.com">Nova</a>--}}
+{{--                    <a href="https://forge.laravel.com">Forge</a>--}}
+{{--                    <a href="https://github.com/laravel/laravel">GitHub</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </body>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery.media.js"></script>
 
     <script>
-     $("a.media").media({width:800, height:600})
+     // $("a.media").media({width:800, height:600})
+     var vue=new Vue({
+         el:"#app",
+         data:{
+             urls:"{!! url('hello') !!}"
+         },
+         methods:{
+             next_page:function(page_num) {
+                 this.urls="{!! url("hello") !!}"+"?page="+page_num
+             }
+         }
+     })
+        {{--function next_page(page_num) {--}}
+        {{--    document.getElementsByTagName("iframe").src="{!! url('hello',['page'=>2]) !!}"--}}
+        {{--}--}}
     </script>
 </html>

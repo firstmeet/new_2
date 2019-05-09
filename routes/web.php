@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('hello','HelloSignController');
+
 Route::get('/login','AuthLoginController@getLogin');
 
 Route::post('login','AuthLoginController@login')->name("login");
@@ -26,7 +28,7 @@ Route::get('sign_download','SignController@download');
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');
-    Route::resource('hello','HelloSignController');
+
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
     Route::get('/home', 'HomeController@index')->name('home');
