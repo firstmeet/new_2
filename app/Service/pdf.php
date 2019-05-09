@@ -83,8 +83,10 @@ class pdf extends \setasign\Fpdi\Fpdi
 //            $pdf->Write(20, date('Y-m-d'));
         }
         if ($newfile){
+            unlink($image);
             $pdf->Output('F',$newfile);
         }else{
+            unlink($image);
              $pdf->Output();
         }
 
