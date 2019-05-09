@@ -123,3 +123,4 @@ manage.homeshow = function(url){
 manage.gotoSign = function(){
     location.href="/user/sign";
 }
+

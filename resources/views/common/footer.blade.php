@@ -36,6 +36,17 @@
         },
         mounted:function(){
             this.setlang($('.dropdown-menu a[val='+LANG+']'));
+            layui.use('form', function(){
+
+              //form
+              var form = layui.form;
+              form.render();
+              //监听提交
+              form.on('submit(formDemo)', function(data){
+                layer.msg(JSON.stringify(data.field));
+                return false;
+              });
+            });
         },
     })
 </script>

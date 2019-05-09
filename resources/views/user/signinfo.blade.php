@@ -24,6 +24,21 @@
                       </div>
                   </div>
 
+                  <div class="layui-form-item">
+                    <label class="layui-form-label">@{{T['15573864972429']}}</label>
+                    <div class="layui-input-block">
+                      <select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+
                   <div class="layui-input-block">
                     <button class="layui-btn" type="button" lay-filter="demo1">@{{T['15434866101162']}}</button>
                   </div>
@@ -58,4 +73,15 @@ $(function(){
         });
     });
 });
+
+layui.use('form', function(){
+  var form = layui.form;
+  form.render();
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+
 </script>

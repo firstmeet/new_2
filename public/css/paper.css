@@ -214,8 +214,9 @@ a{text-decoration:none;}
 .text-center{text-align:center!important;}
 iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .invite-form{margin: 20px 0 0 0 ;}
-.invite-form input[type=text].layui-input{width: 50%;}
+.invite-form input[type=text].layui-input{}
 .title-notice{margin-top: 20px;}
 .step-note{text-align: right;padding-top: 20px;}
 .pre-sign-box .layui-form-label{width:110px;}
-.step-div .layui-form-label{width:20%;}
+.step-div .layui-form-label{}
+.layui-form-item .layui-input-block{width:30%;}
