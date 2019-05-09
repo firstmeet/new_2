@@ -4,7 +4,7 @@
          <span>Elevate United</span>
 
      </div>
-     <div class="title2">
+     <div class="title2 unsee">
          <span>Partner Portal</span>
      </div>
      <div class="account">

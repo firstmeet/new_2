@@ -1,3 +1,16 @@
+@media (max-width: 1200px) {
+	.mobile-menu-area { display: none;}
+	.header-top  .col-md-8.menu-col {
+		width: 60.666667%;
+	}
+
+	.header-top  .col-md-2.logoBox  {
+		width: 14.666667%;
+	}	
+	.header-top .right-menu-col.col-md-2{width: 24.666667%;}
+}
+
+
 *{font-family: "Noto Sans","Lato",sans-serif!important;}
 body{
     margin: 0px auto;
@@ -48,15 +61,17 @@ body{
 .right .short-title em{font-style: normal;}
 
 .right .review-box{
-    min-width: 40%;
+    min-width: 480px;
     min-height: 800px;
     border: 1px solid #eaeaea;
     box-shadow: 1px 1px 5px #ddd;
     margin-top: 20px;
-    width: 970px;
     padding: 0 12px;
 }
 
+.operation .dropdown{
+	/*padding-top:20px;*/
+}
 .dropdown-toggle:hover,.dropdown-toggle:focus{
     color: #fff;
     background: none;
@@ -67,9 +82,8 @@ body{
     background: none;
 }
 .dropdown-menu.pull-right {
-    right: 61px;
-    left: auto;
-    top: 55px;
+	left: 0px;
+	top: 52px;
 }
 .dropdown-menu a{
     cursor: pointer;
@@ -114,10 +128,12 @@ margin: 0 0 0 20px;
 }
 .username span{font-size: 1.7rem;}
 .operation{
-    height: 75px;
-    line-height: 75px;
-    text-align: right;
-    color: #333;
+	height: 75px;
+	line-height: 75px;
+	text-align: right;
+	color: #333;
+	float: right;
+	position: relative;
 }
 .picture{
     width: 17%;
@@ -132,9 +148,9 @@ margin: 0 0 0 20px;
 
 .logout{
     margin: 22px auto;
-    width: 100px;
     height: 100px;
     line-height: 95px;
+	padding-left: 2rem;
 }
 .logout a{
     color: white;
@@ -215,8 +231,29 @@ a{text-decoration:none;}
 iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .invite-form{margin: 20px 0 0 0 ;}
 .invite-form input[type=text].layui-input{}
+.invite-form .layui-input-block{margin-left: 190px;}
+.invite-form .layui-form-label{
+	width:180px;
+}
+
+
 .title-notice{margin-top: 20px;}
 .step-note{text-align: right;padding-top: 20px;}
-.pre-sign-box .layui-form-label{width:110px;}
+.pre-sign-box .layui-form-label{width:180px;}
 .step-div .layui-form-label{}
 .layui-form-item .layui-input-block{width:30%;}
+.unsee{visibility:hidden!important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

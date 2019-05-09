@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'/>
 <title>Elevate United</title>
 <link rel="stylesheet" type="text/css" href="/css/htmleaf-demo.css">
 <link rel="stylesheet" type="text/css" href="/fonts/iconfont.css">

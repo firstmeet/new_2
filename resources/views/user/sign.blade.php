@@ -1,7 +1,4 @@
-    <style>
-        .layui-input-block{ width: 300px; }
-    </style>
-    @include('common.top')
+@include('common.top')
 <div class="page">
 
     @include('common.header') 
