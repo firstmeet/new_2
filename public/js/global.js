@@ -1,9 +1,26 @@
 var manage = {};
+
+//退出
 manage.logout = function(dom){
     var logoutRrl = $(dom).attr('logoutRrl');
     var loginUrl = $(dom).attr('loginUrl');
     $.post(logoutRrl,null,function(){
         location.href=loginUrl;
+    });
+}
+
+//切换语言
+manage.changeLang = function(dom){
+    var lang = $(dom).attr('val');
+    var url = $(dom).closest('.dropdown-menu').attr('url');
+    $.ajax({
+        url: url,
+        // type: 'GET',
+        dataType: 'json',
+        data: {lang:lang},
+        success: function(result) {
+            // location.reload();
+        }
     });
 }
 
@@ -49,7 +66,7 @@ manage.get_sign_list =  function (url){
                 //签名状态判断
                 if (data[x].status == '1') {
                     signResObj.event = 'detail';
-                    signResObj.act = '查看';
+                    signResObj.act = Translatedata[LANG].g_cancel;
                     signResObj.buttonClass = 'layui-btn-primary';
                 }else{
                     signResObj.event = 'edit';

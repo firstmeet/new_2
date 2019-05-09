@@ -29,12 +29,12 @@ Route::group(['middleware'=>['web','user_auth']],function (){
     Route::resource('hello','HelloSignController');
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
-    Route::get('invite_page','InviteController@getIndex');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/welcome', 'HomeController@welcome')->name('welcome');
-    Route::get('/user/home', 'UserController@home')->name('home');
+    Route::get('/user/index', 'UserController@index')->name('index');
     Route::get('/user/list', 'UserController@list')->name('list');
     Route::get('/user/sign', 'UserController@sign')->name('sign');
-    Route::get('/user/toinvite', 'UserController@toinvite')->name('toinvite');
+    Route::get('/invite_list','InviteController@list');
+    Route::get('/toinvite', 'InviteController@toinvite')->name('toinvite');
 
 });

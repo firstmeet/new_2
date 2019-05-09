@@ -1,6 +1,4 @@
 @include('common.top')
-</head>
-<body>
 <div class="page">
     @include('common.header') 
     <div class="container1">
@@ -20,9 +18,3 @@
     </div>
 </div>
 @include('common.footer') 
-
-<script type="text/javascript">
-
-</script>
-</body>
-</html>

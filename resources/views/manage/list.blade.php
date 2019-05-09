@@ -1,6 +1,4 @@
 @include('common.top')
-</head>
-<body>
 <div class="page">
     @include('common.header') 
     <div class="container1">
@@ -35,5 +33,3 @@ $(function(){
 </script>
 
 @include('common.footer') 
-</body>
-</html>
