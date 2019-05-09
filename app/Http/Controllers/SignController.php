@@ -7,6 +7,7 @@ use App\Sign;
 use HelloSign\Client;
 use HelloSign\EmbeddedSignatureRequest;
 use HelloSign\SignatureRequest;
+use HelloSign\TemplateSignatureRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -42,15 +43,22 @@ class SignController extends Controller
     public function create()
     {
         $email=auth()->user()->user_name;
-        $this->request->addSigner('lovelzr1314@gmail.com', 'sdfsdfs');
-        $this->request->addFile(public_path('web.config'));
+        $client = new Client('rj@shanghaisupport.com','elev0607');
+        $template_id="cb9a043974c528e676d92d37d228a9a90ede2d38";
+        $request = new TemplateSignatureRequest();
+        $request->enableTestMode();
+        $request->setTemplateId($template_id);
+        $request->setSubject('Purchase Order');
+        $request->setMessage('Glad we could come to an agreement.');
+        $request->setSigner('member', 'lovelzr1314@gmail.com', 'George');
+//$request->setCC('Accounting', '871609160@qq.com');
+        $request->setCustomFieldValue('money', '20,000');
+        $request->setCustomFieldValue("day",8);
+        $request->setCustomFieldValue("name","wuyuansong");
+        $request->setCustomFieldValue("month",5);
+        $embedded_request = new EmbeddedSignatureRequest($request, $this->client_id);
 
-        $embed_request=new EmbeddedSignatureRequest($this->request,$this->client_id);
-        $embed_request->enableTestMode();
-        $embed_request->setSubject('Embedded signature request');
-        $embed_request->setMessage('Fill this in.');
-
-        $response = $this->client->createEmbeddedSignatureRequest($embed_request,$this->client_id);
+        $response = $this->client->createEmbeddedSignatureRequest($embedded_request,$this->client_id);
         $signatures   = $response->getSignatures();
         $signature_id = $signatures[0]->getId();
 
@@ -61,9 +69,7 @@ class SignController extends Controller
         $sign_url = $response_2->getSignUrl();
         Session::put('signature_id',$signature_id);
         Session::put('signature_request_id',$response->signature_request_id);
-		
-		return $sign_url;
-        //return view('test',['url'=>$sign_url]);
+        return $sign_url;
 
     }
     public function store(Request $request)
@@ -97,8 +103,10 @@ class SignController extends Controller
     }
     public function update(Request $request)
     {
-       if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
-           return $this->message([],0,__t("15423548318740"));
-       }
+        if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
+            return $this->message([],0,__t("15423548318740"));
+        }else{
+            return $this->message([],1,__t("failed"));
+        }
     }
 }

@@ -34,7 +34,7 @@
           </div>
          <div class="picture">
              <div class="logout" logoutRrl="{!! url('/logout') !!}" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
-                 <a>Log Out</a>
+                 <a>@{{T['15435651632647']}}</a>
              </div>
          </div>
      </div>

@@ -12,7 +12,7 @@ if (!function_exists('__t')){
 //
 //            return $data[$lang][$code];
 //        }
-        return app(\App\Translate::class)->where([['code','=',$code],['lang','=',$lang]])->first(['cont']);
+        return app(\App\Translate::class)->where([['code','=',$code],['lang','=',$lang]])->first(['cont'])['cont'];
     }
 }
 

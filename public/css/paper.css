@@ -217,3 +217,4 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .invite-form input[type=text].layui-input{width: 50%;}
 .title-notice{margin-top: 20px;}
 .step-note{text-align: right;padding-top: 20px;}
+.pre-sign-box .layui-form-label{width:110px;}
