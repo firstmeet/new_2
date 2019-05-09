@@ -24,7 +24,7 @@ class AuthLoginController extends Controller
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
          }else{
-             if ($user->signmaster==1){
+             if ($user->is_signmaster==1){
                  auth()->login($user,$request->get('remember'));
                  return view('user.list');
              }
