@@ -103,8 +103,8 @@ class SignController extends Controller
     }
     public function update(Request $request)
     {
-       if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
-           return $this->message([],0,__t("15423548318740"));
-       }
+        if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
+            return $this->message([],0,__t("15423548318740"));
+        }
     }
 }

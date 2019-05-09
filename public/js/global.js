@@ -91,3 +91,19 @@ manage.get_sign_list =  function (url){
         layer.close(index);
     },'json');
 }
+
+manage.homeshow = function(){
+    if ( ! $('.review-note').length) return;
+    layer.open({
+      type: 1,
+      title: L['15573844885030'],
+      skin: 'layui-layer-demo', //样式类名
+      closeBtn: 1, //不显示关闭按钮
+      anim: 2,
+      shadeClose: true, //开启遮罩关闭
+      content: $('.review-box').html(),
+      success: function(){
+          $('.review-note').text();
+      }
+    });
+}
