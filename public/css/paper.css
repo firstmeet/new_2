@@ -1,13 +1,33 @@
-@media (max-width: 1200px) {
-	.mobile-menu-area { display: none;}
-	.header-top  .col-md-8.menu-col {
-		width: 60.666667%;
-	}
+@media (max-width: 660px) {
+.operation {
+	height: 0;
+	line-height: 20px;
+	text-align: right;
+	color: #333;
+	float: right;
+	position: relative;
+	top: -26px;
+	right: -66px;
+}
+.dropdown-menu.pull-right {
+	top: 29px;
+}	
+.title2.unsee{
+	display:none;
+}
 
-	.header-top  .col-md-2.logoBox  {
-		width: 14.666667%;
-	}	
-	.header-top .right-menu-col.col-md-2{width: 24.666667%;}
+.header .account {
+    width: 80%;
+}	
+
+.header .account .account1{
+	/*display:inline-block;
+	width:auto;*/
+}
+.header .account .picture{
+	/*display:inline-block;
+	width:auto;*/
+}
 }
 
 
