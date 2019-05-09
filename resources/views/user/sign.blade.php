@@ -52,7 +52,7 @@ function step(s){
 }
 step(1);
 function getsign(){
-	alert('s-3');return;
+	//alert('s-3');return;
 	$.get('/sign/create',function(url){
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
 		HelloSign.open({
