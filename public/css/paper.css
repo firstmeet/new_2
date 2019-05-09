@@ -71,6 +71,9 @@ body{
     left: auto;
     top: 55px;
 }
+.dropdown-menu a{
+    cursor: pointer;
+}
 .title1{
     color: white;
     width: 20%;

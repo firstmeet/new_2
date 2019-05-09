@@ -26,7 +26,7 @@ class AuthLoginController extends Controller
          }else{
              if ($user->signmaster==1){
                  auth()->login($user);
-                 return view('user.invite_list');
+                 return view('user.list');
              }
              if ($user->current_status==0){
                  return back()->with('msg',trans('auth.failed_policy'));

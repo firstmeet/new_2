@@ -1,7 +1,5 @@
 @include('common.top')
-</head>
-<body>
-<div class="page">
+<div class="page" id="vue_det">
     @include('common.header') 
     <div class="container1">
         @include('common.left')  
@@ -22,7 +20,6 @@
         </div>
     </div>
 </div>
-@include('common.footer') 
 <script type="text/javascript">
 layer.open({
   type: 1,
@@ -39,5 +36,4 @@ function gotoSign(){
 }
 
 </script>
-</body>
-</html>
+@include('common.footer') 

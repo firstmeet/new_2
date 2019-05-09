@@ -9,18 +9,14 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     use ApiResource;
-    // public function __construct()
-    // {
-    //     ee(auth());
-    // }
+    public function __construct()
+    {
+       // ee(Session::get());
+    }
 
     public function index()
     {
-        return $this->message(User::find(session('user_id')));
-    }
-
-    public function home()
-    {
+        // return $this->message(User::find(session('user_id')));
         return view('user/index');
     }
 
@@ -34,9 +30,4 @@ class UserController extends Controller
         return view('user/sign');
     }
 
-    public function toinvite()
-    {
-        // ee(auth()->user());
-        return view('user/toinvite');
-    }
 }
