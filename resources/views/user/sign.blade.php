@@ -82,10 +82,11 @@ function step(s){
 }
 step(1);
 function getsign(){
-    // var index1 = layer.load(1);
+    var index1 = layer.load(1);
 	//alert('签约成功');window.location.href="/user/list";return;
 	$.get('/sign/create',function(url){
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
+        layer.close(index1);
 		HelloSign.open({
 			url: url,
 			allowCancel: true,
