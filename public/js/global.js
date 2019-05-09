@@ -96,7 +96,7 @@ manage.get_sign_list =  function (url){
 
 //user首页弹框提示
 manage.homeshow = function(url){
-    $.get(url,{},function(data){
+    $.get(url,{status:0},function(data){
         if (data.error) {
             layer.msg(data.message,{icon: 5});
             return;
