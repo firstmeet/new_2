@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
+use App\Service\pdf;
 use App\Sign;
 use HelloSign\Client;
 use HelloSign\EmbeddedSignatureRequest;
@@ -95,12 +96,18 @@ class SignController extends Controller
     {
         $signature_request_id=$request->get('signature_request_id');
         $uploads_dir=storage_path('uploads/'.$signature_request_id.'.pdf');
-        if (file_exists($uploads_dir)){
-            return response()->download($uploads_dir,$signature_request_id.'.pdf');
+        $uploads_dir_water=storage_path('uploads/'.$signature_request_id.'wa.pdf');
+        if (file_exists($uploads_dir)&&file_exists($uploads_dir_water)){
+//            $this->watermark($uploads_dir,$uploads_dir_water);
+            return response()->download($uploads_dir_water,$signature_request_id.'.pdf');
+        }elseif(file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
+            $this->watermark($uploads_dir,$uploads_dir_water);
+            return response()->download($uploads_dir_water,$signature_request_id.'.pdf');
         }else{
             $down=$this->client->getFiles($signature_request_id,$uploads_dir,'pdf');
             if ($down){
-                return response()->download($uploads_dir,$signature_request_id.'.pdf');
+                $this->watermark($uploads_dir,$uploads_dir_water);
+                return response()->download($uploads_dir_water,$signature_request_id.'.pdf');
             }
         }
 
@@ -113,5 +120,32 @@ class SignController extends Controller
         }else{
             return $this->message([],1,__t("failed"));
         }
+    }
+    private function watermark($file,$newfile)
+    {
+        $pdf=new pdf();
+        $count=$pdf->setSourceFile($file);
+        for($i=1;$i<=$count;$i++){
+            $templateId = $pdf->importPage($i);
+
+            // get the size of the imported page
+            $size = $pdf->getTemplateSize($templateId);
+
+            // create a page (landscape or portrait depending on the imported page size)
+            if ($size['width'] > $size['height']) $pdf->AddPage('L', array($size['width'], $size['height']));
+            else $pdf->AddPage('P', array($size['width'], $size['height']));
+
+            // use the imported page
+            $pdf->useTemplate($templateId);
+
+
+            $pdf->SetFont('Arial','B','50');
+            // sign with current date
+            $pdf->SetXY(0, 0); // you should keep testing untill you find out correct x,y values
+            $pdf->RotatedText(100,150,(auth()->user()->id)+1000000,50);
+            $pdf->SetFillColor(30);
+//            $pdf->Write(20, date('Y-m-d'));
+        }
+        $pdf->Output('F',$newfile);
     }
 }

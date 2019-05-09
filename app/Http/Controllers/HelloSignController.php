@@ -15,7 +15,9 @@ class HelloSignController extends Controller
         $mpdf->SetTitle("ceshi");
 
 //        $mpdf->SetWatermarkImage(public_path('1.jpg')); // Will cope with UTF-8 encoded text
-        $mpdf->SetWatermarkText("test");
+        $id=auth()->user()->id;
+        $member_id=$id+1000000;
+        $mpdf->SetWatermarkText($member_id);
         $mpdf->watermark_font = 'msyhd';
         $mpdf->showWatermarkText = true;
         $mpdf->watermarkTextAlpha =0.5;
