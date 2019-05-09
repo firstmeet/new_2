@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    dd(__t("15434866105958"));
 });
 
 Route::get('/login','AuthLoginController@getLogin');
