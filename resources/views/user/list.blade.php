@@ -6,18 +6,18 @@
         <div class="right">
             <!-- <div class="back">← back to documents</div> -->
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>签约列表</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
             </div>
             <div class="review-box">
                 <div class="layui-form">
                   <table class="layui-table content-box">
                     <tbody>
                         <tr>
-                          <th>标题</th>
-                          <th>用户名称</th>
-                          <th>创建时间</th>
-                          <th>状态</th>
-                          <th width="100" class="text-center">操作</th>
+                          <th>@{{T['15573881491550']}}</th>
+                          <th>@{{T['15573882257364']}}</th>
+                          <th>@{{T['15573882906992']}}</th>
+                          <th>@{{T['15434866105325']}}</th>
+                          <th width="100" class="text-center">@{{T['15434866101019']}}</th>
                         </tr>
                     </tbody>
                   </table>

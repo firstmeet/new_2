@@ -66,11 +66,11 @@ manage.get_sign_list =  function (url){
                 //签名状态判断
                 if (data[x].status == '1') {
                     signResObj.event = 'detail';
-                    signResObj.act = Translatedata[LANG].g_cancel;
+                    signResObj.act = L['15573885179019'];//查看
                     signResObj.buttonClass = 'layui-btn-primary';
                 }else{
                     signResObj.event = 'edit';
-                    signResObj.act = '签名';
+                    signResObj.act = L['15573884466817'];//签约
                     signResObj.buttonClass = '';
                 }
 

@@ -5,16 +5,16 @@
         @include('common.left')  
         <div class="right">
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>邀请列表</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
             </div>
             <div class="review-box">
                 <div class="layui-form">
                   <table class="layui-table content-box">
                     <tbody>
                         <tr>
-                          <th>被邀请人</th>
-                          <th>邀请时间</th>
-                          <th>状态</th>
+                          <th>@{{T['15573897293791']}}</th>
+                          <th>@{{T['15573898069420']}}</th>
+                          <th>@{{T['15434866105325']}}</th>
                         </tr>
                     </tbody>
                   </table>

@@ -12,7 +12,7 @@
                 <div class="new-sign-box">
                     <div class="review-note">@{{T['15573832517934']}}</div>
                     <div class="layui-btn-container"> 
-                        <button onclick="gotoSign()" class="layui-btn layui-btn-lg layui-btn-normal gotoSign" lay-event="getCheckData">去签名</button> 
+                        <button onclick="gotoSign()" class="layui-btn layui-btn-lg layui-btn-normal gotoSign" lay-event="getCheckData">@{{T['15573886642645']}}</button> 
                     </div>
                 </div>
             </div>

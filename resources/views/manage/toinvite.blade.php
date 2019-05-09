@@ -6,18 +6,18 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>邀请会员</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15423543047283']}}</b></span>
             </div>
             <div class="review-box">
                 <form class="layui-form invite-form" onsubmit="return false">
                   <div class="layui-form-item">
-                    <label class="layui-form-label">email</label>
+                    <label class="layui-form-label">@{{T['15318198537797']}}</label>
                     <div class="layui-input-block">
-                      <input type="text" name="email" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                      <input type="text" name="email" lay-verify="title" autocomplete="off" class="layui-input">
                     </div>
                   </div>
                   <div class="layui-input-block">
-                    <button class="layui-btn" lay-filter="demo1">立即提交</button>
+                    <button class="layui-btn" lay-filter="demo1">@{{T['15434866101162']}}</button>
                   </div>
                 </form>
             </div>

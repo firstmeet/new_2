@@ -5,21 +5,21 @@
         @include('common.left')  
         <div class="right">
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>签名</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
             </div>
             <div class="review-box">
                 <iframe id="signpage" class="signpage step-div step-div-1" src=""></iframe>
                 <iframe id="signpage" class="signpage step-div step-div-2" src=""></iframe>
                 <form class="layui-form invite-form  step-div step-div-3" onsubmit="return false">
                   <div class="layui-form-item">
-                    <label class="layui-form-label">姓名</label>
+                    <label class="layui-form-label">@{{T['15324194276032']}}</label>
                     <div class="layui-input-block">
                       <input type="text" name="signname" lay-verify="title" autocomplete="off" class="layui-input">
                     </div>
                   </div>
 
                   <div class="layui-form-item">
-                      <label class="layui-form-label">购买股数</label>
+                      <label class="layui-form-label">@{{T['15573864972429']}}</label>
                       <div class="layui-input-block">
                         <input type="text" name="shares" lay-verify="title" autocomplete="off" class="layui-input">
                       </div>
@@ -30,8 +30,8 @@
             	<div id="myHSContainer" class="step-div step-div-4">
                 </div>
                 <div class="step-note">
-                    <a href="#" class="layui-btn prev" onClick="step(-1)">上一步</a>
-                    <a href="#" class="layui-btn next" onClick="step(1)">下一步</a>
+                    <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>
+                    <a href="#" class="layui-btn next" onClick="step(1)">@{{T['15573889694471']}}</a>
                 </div>
                
             </div>
