@@ -43,6 +43,10 @@ class SignController extends Controller
     public function create()
     {
         $email=auth()->user()->user_name;
+        $sign_info=Sign::where('user_id',auth()->user()->id)->first();
+        if (!$sign_info['number']){
+            return $this->message([],1,__t("failed"));
+        }
         $client = new Client('rj@shanghaisupport.com','elev0607');
         $template_id="cb9a043974c528e676d92d37d228a9a90ede2d38";
         $request = new TemplateSignatureRequest();
@@ -50,12 +54,13 @@ class SignController extends Controller
         $request->setTemplateId($template_id);
         $request->setSubject('Purchase Order');
         $request->setMessage('Glad we could come to an agreement.');
-        $request->setSigner('member', 'lovelzr1314@gmail.com', 'George');
+        $request->setSigner('member', $email, $sign_info['name']);
 //$request->setCC('Accounting', '871609160@qq.com');
-        $request->setCustomFieldValue('money', '20,000');
-        $request->setCustomFieldValue("day",8);
+        $request->setCustomFieldValue('money', number_format(1400*$sign_info['number']));
+        $request->setCustomFieldValue("number",$sign_info['number']);
+        $request->setCustomFieldValue("day",date('d',time()));
         $request->setCustomFieldValue("name","wuyuansong");
-        $request->setCustomFieldValue("month",5);
+        $request->setCustomFieldValue("month",date('m',time()));
         $embedded_request = new EmbeddedSignatureRequest($request, $this->client_id);
 
         $response = $this->client->createEmbeddedSignatureRequest($embedded_request,$this->client_id);
@@ -69,7 +74,7 @@ class SignController extends Controller
         $sign_url = $response_2->getSignUrl();
         Session::put('signature_id',$signature_id);
         Session::put('signature_request_id',$response->signature_request_id);
-        return $sign_url;
+        return view('test',['url'=>$sign_url]);
 
     }
     public function store(Request $request)
