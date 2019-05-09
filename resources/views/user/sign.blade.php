@@ -26,7 +26,6 @@
                     <label class="layui-form-label">@{{T['15573864972429']}}</label>
                     <div class="layui-input-block">
                       <select name="shares" lay-verify="required">
-                        <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -114,7 +113,7 @@ function postinfo(){
 	
 	var params = {};
 	params.name = $('form input[name=signname]').val();
-	params.number = $('form input[name=shares]').val();
+	params.number = $('form select[name=shares]').val();
 	var url = '{!! url("/sign/update") !!}';
 	$.ajax({
 		url: url,
