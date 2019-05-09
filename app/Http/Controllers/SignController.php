@@ -111,6 +111,8 @@ class SignController extends Controller
             if ($down){
                 $this->watermark($uploads_dir,$uploads_dir_water);
                 return response()->download($uploads_dir_water,$signature_request_id.'.pdf');
+            }else{
+                return back()->with('no_files',"files not found");
             }
         }
 
