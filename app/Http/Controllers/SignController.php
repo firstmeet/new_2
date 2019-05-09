@@ -31,8 +31,7 @@ class SignController extends Controller
     use ApiResource;
     public function index()
     {
-        $data=Sign::where('user_id',session('user_id'))->get();
-
+        $data=Sign::where('user_id',auth()->user()->id)->get();
         return $this->message($data);
     }
 

@@ -14,9 +14,9 @@ class Sign extends Model
     public function getStatusTextAttribute($value)
     {
         if ($this->status==1){
-            return __t("signed");
+            return __t("signed")['cont'];
         }else{
-            return __t('unsigned');
+            return __t('unsigned')['cont'];
         }
     }
 }
