@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-//    dd(__t("15434866105958"));
+    return view('welcome');
 });
+
+Route::resource('hello','HelloSignController');
 
 Route::get('/login','AuthLoginController@getLogin');
 
@@ -26,7 +28,7 @@ Route::get('sign_download','SignController@download');
 Route::group(['middleware'=>['web','user_auth']],function (){
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');
-    Route::resource('hello','HelloSignController');
+
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
     Route::get('invite_page','InviteController@getIndex');
