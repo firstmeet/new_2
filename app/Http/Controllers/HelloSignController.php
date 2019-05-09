@@ -14,6 +14,7 @@ class HelloSignController extends Controller
     public function index(Request $request)
     {
        $pdf=new pdf();
-       $pdf->watermark('1.pdf');
+       $page=$request->get('page',1);
+       $pdf->watermark(storage_path($page.'.pdf'));
     }
 }

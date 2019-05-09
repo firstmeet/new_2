@@ -34,7 +34,7 @@ class SignController extends Controller
     use ApiResource;
     public function index(Request $request)
     {
-        if ($request->get('status')){
+        if (!is_null($request->get('status'))){
             $data=Sign::where([['user_id','=',auth()->user()->id],['status','=',$request->get('status')]])->get();
         }else{
             $data=Sign::where('user_id',auth()->user()->id)->get();
