@@ -30,4 +30,9 @@ class UserController extends Controller
         return view('user/sign');
     }
 
+    public function signinfo()
+    {
+        return view('user/signinfo');
+    }
+
 }
