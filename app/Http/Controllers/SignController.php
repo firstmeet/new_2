@@ -56,7 +56,7 @@ class SignController extends Controller
         $request->setTemplateId($template_id);
         $request->setSubject('Purchase Order');
         $request->setMessage('Glad we could come to an agreement.');
-        $request->setSigner('member', 'lovelzr1314@gmail.com', $sign_info['name']);
+        $request->setSigner('member', $email, $sign_info['name']);
 //$request->setCC('Accounting', '871609160@qq.com');
         $request->setCustomFieldValue('money', number_format(1400*$sign_info['number']));
         $request->setCustomFieldValue("number",$sign_info['number']);
