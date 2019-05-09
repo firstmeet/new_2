@@ -46,7 +46,6 @@ manage.get_sign_list =  function (url){
         if (data) {
             for (var x in data) {
                 var signResObj = {};
-
                 //签名状态判断
                 if (data[x].status == '1') {
                     signResObj.event = 'detail';
