@@ -17,12 +17,20 @@
                     </div>
                   </div>
 
+
                   <div class="layui-form-item">
-                      <label class="layui-form-label">@{{T['15573864972429']}}</label>
-                      <div class="layui-input-block">
-                        <input type="text" name="shares" lay-verify="title" autocomplete="off" class="layui-input">
-                      </div>
+                    <label class="layui-form-label">@{{T['15573864972429']}}</label>
+                    <div class="layui-input-block">
+                      <select name="city" lay-verify="required">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
                   </div>
+                  
 
                   <div class="layui-input-block">
                     <button class="layui-btn" type="button" lay-filter="demo1">@{{T['15434866101162']}}</button>
@@ -58,4 +66,15 @@ $(function(){
         });
     });
 });
+
+layui.use('form', function(){
+  var form = layui.form;
+  form.render();
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+
 </script>

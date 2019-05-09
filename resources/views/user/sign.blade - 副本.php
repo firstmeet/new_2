@@ -1,9 +1,5 @@
-    <style>
-        .layui-input-block{ width: 300px; }
-    </style>
-    @include('common.top')
+@include('common.top')
 <div class="page">
-
     @include('common.header') 
     <div class="container1">
         @include('common.left')  
@@ -23,14 +19,22 @@
                   </div>
 
                   <div class="layui-form-item">
+                      <label class="layui-form-label">@{{T['15573864972429']}}</label>
+                      <div class="layui-input-block">
+                        <input type="text" name="shares" lay-verify="title" autocomplete="off" class="layui-input">
+                      </div>
+                  </div>
+
+                  <div class="layui-form-item">
                     <label class="layui-form-label">@{{T['15573864972429']}}</label>
                     <div class="layui-input-block">
-                      <select name="shares" lay-verify="required">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                      <select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">北京</option>
+                        <option value="1">上海</option>
+                        <option value="2">广州</option>
+                        <option value="3">深圳</option>
+                        <option value="4">杭州</option>
                       </select>
                     </div>
                   </div>
@@ -113,7 +117,7 @@ function postinfo(){
 	
 	var params = {};
 	params.name = $('form input[name=signname]').val();
-	params.number = $('form select[name=shares]').val();
+	params.number = $('form input[name=shares]').val();
 	var url = '{!! url("/sign/update") !!}';
 	$.ajax({
 		url: url,
@@ -131,5 +135,14 @@ function postinfo(){
 	});
 };
 
+layui.use('form', function(){
+  var form = layui.form;
+  form.render();
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
 </script>
 @include('common.footer') 
