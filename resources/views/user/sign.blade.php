@@ -5,7 +5,7 @@
         @include('common.left')  
         <div class="right">
             <div class="short-title">
-                <span><em>当前位置：</em><b>签名</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>签名</b></span>
             </div>
             <div class="review-box">
             

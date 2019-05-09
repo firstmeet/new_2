@@ -6,7 +6,7 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title">
-                <span><em>当前位置：</em><b>邀请会员</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>邀请会员</b></span>
             </div>
             <div class="review-box">
                 <form class="layui-form invite-form" onsubmit="return false">

@@ -6,7 +6,7 @@
         <div class="right">
             <!-- <div class="back">← back to documents</div> -->
             <div class="short-title">
-                <span><em>当前位置：</em><b>签约列表</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>签约列表</b></span>
             </div>
             <div class="review-box">
                 <div class="layui-form">
