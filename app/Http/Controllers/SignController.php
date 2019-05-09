@@ -97,9 +97,9 @@ class SignController extends Controller
         $signature_request_id=$request->get('signature_request_id');
         $uploads_dir=storage_path('uploads/'.$signature_request_id.'.pdf');
         $uploads_dir_water=storage_path('uploads/'.$signature_request_id.'wa.pdf');
-        if (!file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
-            return back()->with('no_files',"files not found");
-        }
+//        if (!file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
+//            return back()->with('no_files',"files not found");
+//        }
         if (file_exists($uploads_dir)&&file_exists($uploads_dir_water)){
 //            $this->watermark($uploads_dir,$uploads_dir_water);
             return response()->download($uploads_dir_water,$signature_request_id.'.pdf');
