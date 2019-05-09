@@ -55,4 +55,57 @@ class pdf extends \setasign\Fpdi\Fpdi
         $this->Image($file,$x,$y,$w,$h);
         $this->Rotate(0);
     }
+     function watermark($file,$newfile=null)
+    {
+        $pdf=new pdf();
+        $image=$this->text_image((auth()->user()->id)+1000000);
+        $count=$pdf->setSourceFile($file);
+        for($i=1;$i<=$count;$i++){
+            $templateId = $pdf->importPage($i);
+
+            // get the size of the imported page
+            $size = $pdf->getTemplateSize($templateId);
+
+            // create a page (landscape or portrait depending on the imported page size)
+            if ($size['width'] > $size['height']) $pdf->AddPage('L', array($size['width'], $size['height']));
+            else $pdf->AddPage('P', array($size['width'], $size['height']));
+
+            // use the imported page
+            $pdf->useTemplate($templateId);
+            $pdf->Image($image,30,40);
+
+//
+//            $pdf->SetFont('Arial','B','50');
+//            // sign with current date
+//            $pdf->SetXY(0, 0); // you should keep testing untill you find out correct x,y values
+//            $pdf->RotatedText(100,150,(auth()->user()->id)+1000000,50);
+//            $pdf->SetFillColor(30);
+//            $pdf->Write(20, date('Y-m-d'));
+        }
+        if ($newfile){
+            $pdf->Output('F',$newfile);
+        }else{
+             $pdf->Output();
+        }
+
+    }
+
+     function text_image($text)
+    {
+        $img=\Intervention\Image\Facades\Image::canvas(500,400);
+        $img->text($text,0,150,function ($font){
+
+            $font->file(storage_path('MSYHBD.TTF'));
+            $font->size(100);
+            $font->color(array(144, 144, 144, 0.5));
+//            $font->color('#000000');
+//            $font->align('center');
+//            $font->valign('top');
+//            $font->angle(-45);
+        });
+        $img->rotate(45);
+        $path=public_path('images/water/'.uniqid().'.png');
+        $img->save($path);
+        return $path;
+    }
 }

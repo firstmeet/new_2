@@ -22,6 +22,8 @@ Route::get('/login','AuthLoginController@getLogin');
 Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
 
+Route::get('/test2','SignController@test');
+
 //Auth::routes();
 
 
