@@ -6,8 +6,9 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title hide">
-
             </div>
+            <div class="no-invite-box"><span>@{{T['15574060442459']}}</span></div>
+
             <div class="review-box hide">
                 <div class="new-sign-box">
                     <div class="review-note">@{{T['15573832517934']}}</div>

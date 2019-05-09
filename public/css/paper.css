@@ -264,6 +264,12 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .layui-form-item .layui-input-block{width:30%;}
 .unsee{visibility:hidden!important;}
 
+.no-invite-box{text-align:center;padding: 30px 0;}
+.no-invite-box span{
+	font-size: 3rem;
+    color: #999;
+}
+
 
 
 
