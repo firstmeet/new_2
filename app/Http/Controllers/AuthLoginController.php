@@ -22,17 +22,17 @@ class AuthLoginController extends Controller
          $password=$request->get('password');
          $user=User::where([['username','=',$email],['pwd','=',md5($password)]])->first();
          if (!$user){
-             return back()->with('msg',trans('auth.failed'));
+             return back()->with('msg',__t('incorrect_password'));
          }else{
              if ($user->signmaster==1){
-                 auth()->login($user);
+                 auth()->login($user,$request->get('remember'));
                  return view('user.list');
              }
              if ($user->current_status==0){
-                 return back()->with('msg',trans('auth.failed_policy'));
+                 return back()->with('msg',__t('no_login_pri'));
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
-                 auth()->login($user);
+                 auth()->login($user,$request->get('remember'));
                  return view('user.index');
              }
          }
