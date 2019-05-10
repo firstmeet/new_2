@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InviteRequest extends FormRequest
+class SignUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class InviteRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,14 +24,15 @@ class InviteRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>['required','email']
+            'name'=>['required'],
+            'number'=>['required']
         ];
     }
     public function messages()
     {
         return [
-            'email.email'=>__t("15423383514573"),
-            'email.required'=>__t("15574792989207")
+            'name.required'=>__t("15574791686683"),
+            'number.required'=>__t("15574792197118")
         ];
     }
 }
