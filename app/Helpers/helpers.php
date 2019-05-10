@@ -13,6 +13,7 @@ if (!function_exists('__t')){
 //            return $data[$lang][$code];
 //        }
         $result=app(\App\Translate::class)->where([['code','=',$code],['lang','=',$lang]])->first(['cont']);
+        dd($result);
         if ($result){
             return $result['cont'];
         }else{
