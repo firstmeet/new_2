@@ -17,12 +17,9 @@ class HelloSignController extends Controller
 {
     public function index(Request $request)
     {
-//       $pdf=new pdf();
-//       $page=$request->get('page',1);
-//       $pdf->show(storage_path($page.'.wa.pdf'));
-        $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
-        Mail::to('871609160@qq.com')->queue(new \App\Mail\SendEmail('ceshi',"wuyuansong a a"));
-//
+       $pdf=new pdf();
+       $page=$request->get('page',1);
+       $pdf->show(storage_path($page.'.wa.pdf'));
 //      $this->dispatch(new SendEmail('871609160@qq.com',$email_cont));
 //        Mail::send('email.index',['cont'=>'123123'],function($message){
 //            $message->to('871609160@qq.com');
