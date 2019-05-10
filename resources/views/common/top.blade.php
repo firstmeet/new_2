@@ -19,7 +19,7 @@
 
 <script type="text/javascript" src="/js/nav.js"></script>
 <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
-<link rel="stylesheet" type="text/css" href="{{URL::asset('/css/paper.css') }}?v={{time() }}">
+<link rel="stylesheet" type="text/css" href="/css/paper.css?v={{time() }}">
 <style type="text/css">
     [v-cloak]{ display: none; }
 </style>
