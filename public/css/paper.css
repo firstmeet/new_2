@@ -309,8 +309,12 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
     box-shadow: none;
     padding: 0;
 }
-
-
+.nav {
+    width: 60px;
+}
+.nav .nav-item>a span {
+    display: none;
+}
 }
 
 

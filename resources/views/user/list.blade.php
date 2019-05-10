@@ -8,6 +8,15 @@
             <div class="short-title">
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
             </div>
+            <div class="new-sign-parent hide">
+                <div class="new-sign-box">
+                    <div class="review-note">@{{T['15573832517934']}}</div>
+                    <div class="layui-btn-container"> 
+                        <button onclick="gotoSign()" class="layui-btn layui-btn-lg layui-btn-normal gotoSign" lay-event="getCheckData">@{{T['15573886642645']}}</button> 
+                    </div>
+                </div>
+            </div>
+
             <div class="review-box">
                 <div class="layui-form">
                   <table class="layui-table content-box">
@@ -29,11 +38,16 @@
 </div>
 
 <script>
+    function gotoSign(){
+        location.href="/user/sign";
+    }
+
     if("{!! session('no_files') !!}"){
         layer.msg("{!! session('no_files') !!}")
     }
 $(function(){
     manage.get_sign_list("/sign");
+    manage.homeshow('/sign');//home note
 });
 </script>
 
