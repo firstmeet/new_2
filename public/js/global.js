@@ -81,7 +81,7 @@ manage.get_sign_list =  function (url){
                 }
 
                 html+='<tr>'+
-                        '<td>'+ 'Offering.zip'+'</td>'+
+                        '<td>'+ 'Offering'+'</td>'+
                         '<td>'+ data[x].username+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
                         '<td>'+ data[x].status_text+'</td>'+
