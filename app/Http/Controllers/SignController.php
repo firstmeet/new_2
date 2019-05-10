@@ -86,7 +86,8 @@ class SignController extends Controller
         if (\session('signature_id')==$request->get('signature_id')&&$request->get('event')=="signature_request_signed"){
             $data=[
                 'status'=>1,
-                'signature_id'=>\session('signature_request_id')
+                'signature_id'=>\session('signature_request_id'),
+                'signature_request_id'=>\session('signature_id')
             ];
             $sign=Sign::where('user_id',auth()->user()->id)->update($data);
             if ($sign){
@@ -139,7 +140,12 @@ class SignController extends Controller
     }
     public function callback(Request $request)
     {
-        Log::info("sign_callback",$request->all());
+       $string=$request->all();
+       $string=json_decode($string,true)['json'];
+       $string=json_decode($string,true);
+       if ($string['event_type']=='signature_request_signed') {
+          Sign::where('signature_request_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
+       }
     }
 
 }
