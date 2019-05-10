@@ -74,8 +74,8 @@ function step(s){
 			$('iframe.step-div-1').attr('src',"{!! url('hello?page=1') !!}");
 		}
 	}else if(Now_step==2){
-        load2 = layer.load(1);
 		if($('iframe.step-div-2').attr('src')==''){
+            load2 = layer.load(1);
 			$('iframe.step-div-2').attr('src',"{!! url('hello?page=2') !!}");
 		}
 	}else if(Now_step==3){
