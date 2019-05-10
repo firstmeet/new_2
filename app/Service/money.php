@@ -98,7 +98,7 @@ class money
                 if($dotArray[1] != 0) {
                     $resultArray[$k++]=$this->format3num($dotArray[0]+0);
                     $resultArray[$k++]=$moneyType[strtolower($type)];
-                    $resultArray[$k++]="AND ";
+                    $resultArray[$k++]="U.S. ";
                     $resultArray[$k++]=$this->format3num($dotArray[1]+0);
                     $resultArray[$k++]=$moneyType[strtolower($type)."_1"];
                 } else {
@@ -115,7 +115,7 @@ class money
 //echo "<br>";
 //echo $numArray[$j];
                         if($numArray[$j] !=0) {
-                            $resultArray[$k++]="U.S. ";
+                            $resultArray[$k++]="AND ";
                             break;
                         }
                     }
