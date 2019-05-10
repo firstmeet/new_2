@@ -104,24 +104,32 @@ class SignController extends Controller
         $signature_request_id=$request->get('signature_request_id');
         $uploads_dir=storage_path('uploads/'.$signature_request_id.'.pdf');
         $uploads_dir_water=storage_path('uploads/'.$signature_request_id.'.wa.pdf');
-        $file_arr=[storage_path('1.wa.pdf'),storage_path('2.wa.pdf'),$uploads_dir_water];
+        $file_arr=[storage_path(auth()->user()->id.'.1.pdf'),storage_path(auth()->user()->id.'.2.pdf'),storage_path(auth()->user()->id.'.3.pdf'),$uploads_dir_water];
         $pdf=new pdf();
         $zip=new zip();
         $zip_dest=storage_path($signature_request_id.'.zip');
         if (file_exists($uploads_dir)&&file_exists($uploads_dir_water)){
-
+              $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
+            $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
+            $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
               $zip->zipFiles($zip_dest,$file_arr);
 
 
 //            $this->watermark($uploads_dir,$uploads_dir_water);
             return response()->download($zip_dest,$signature_request_id.'.zip');
         }elseif(file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
+            $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
+            $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
+            $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
             $pdf->watermark($uploads_dir,$uploads_dir_water,1);
             $zip->zipFiles($zip_dest,$file_arr);
             return response()->download($zip_dest,$signature_request_id.'.zip');
         }else{
             $down=$this->client->getFiles($signature_request_id,$uploads_dir,'pdf');
             if ($down){
+                $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
+                $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
+                $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
                 $pdf->watermark($uploads_dir,$uploads_dir_water,1);
                 $zip->zipFiles($zip_dest,$file_arr);
 

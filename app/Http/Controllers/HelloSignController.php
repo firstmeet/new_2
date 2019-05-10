@@ -2,17 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Emailtitles;
-use App\Jobs\SendEmail;
-use App\Service\money;
 use App\Service\pdf;
-use App\Service\zip;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use Intervention\Image\Image;
-use Intervention\Image\ImageManager;
-use Mpdf\Mpdf;
 
 class HelloSignController extends Controller
 {
