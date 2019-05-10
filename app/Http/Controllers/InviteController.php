@@ -6,10 +6,8 @@ use App\Emailtitles;
 use App\Http\ApiResource;
 use App\Http\Requests\InviteRequest;
 use App\Invite;
-use App\Jobs\SendEmail;
 use App\Sign;
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class InviteController extends Controller
@@ -51,7 +49,7 @@ class InviteController extends Controller
                  'username'=>$invitee_status->username
              ];
              Sign::create($data_sign);
-             $email_cont=Emailtitles::getone('invite_sign',session('lang'));
+             $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
              $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
              $file=str_replace('{url}',url('/user/index'),$file);
              Mail::to($request->get('email'))->queue(new \App\Mail\SendEmail($file,$email_cont->title));
