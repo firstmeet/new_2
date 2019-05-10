@@ -7,21 +7,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Elevate United</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js',true) }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('js/layui/css/layui.css',true) }}">
-    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-    <script src="{{ asset('js/layui/layui.js',true) }}"></script>
+    <link rel="stylesheet" href="{{ asset('js/layui/css/layui.css') }}">
+    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ asset('js/layui/layui.js') }}"></script>
     <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{time() }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
     <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css',true) }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/css/paper.css',true) }}?v={{time() }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/css/paper.css') }}?v={{time() }}">
     <style type="text/css">
         [v-cloak]{ display: none; }
         .dropdown ul li {
@@ -32,19 +32,26 @@
             text-decoration: none;
         }
 
+        .operation {
+            height: auto;
+            position: relative;
+            top: 0;
+            text-align: right;
+            right: -8px;
+            margin-left: 70%;
+        }
+        .dropdown-menu.pull-right {
+            top: 52px;
+        }
         @media (max-width: 860px) {
         .account1 .username {
             float:none;
         }
         .operation {
-            height: auto;
-            line-height: 20px;
-            text-align: right;
-            color: #333;
-            float: right;
-            position: relative;
-            top: 0;
-            right: -8px;
+            margin-left:0;
+        }
+        .dropdown-menu.pull-right {
+            top: 42px;
         }
     </style>
 </head>
@@ -53,7 +60,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+<<<<<<< HEAD
+                <a class="navbar-brand" href="{{ url('/') }}">
+=======
                 <a class="navbar-brand" href="/">
+>>>>>>> 1b5c7983a62ee5f9f15d15cba4498a9b59a4d942
                     @{{ T['15432003825681'] }}
                 </a>
                 <div class="operation">
@@ -61,7 +72,11 @@
                         <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                             @{{langname}}<span class="caret"></span>
                         </button>
+<<<<<<< HEAD
+                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="{!! url('/lang') !!}">
+=======
                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="/lang">
+>>>>>>> 1b5c7983a62ee5f9f15d15cba4498a9b59a4d942
                               <li role="presentation">
                                   <a role="menuitem" tabindex="-1" v-on:click="setlang" val="en" onclick="manage.changeLang(this)">English</a>
                               </li>
