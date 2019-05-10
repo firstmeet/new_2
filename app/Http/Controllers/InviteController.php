@@ -24,7 +24,7 @@ class InviteController extends Controller
                  return $this->message('',1,__t('15573954427957'));
              }else{
                 if (Sign::where('user_id',$invitee_status->id)->first()){
-                 return $this->message('',1,__t('signed'));
+                 return $this->message('',1,__t('15574592917626'));
              }
                  if ($invitee_status->current_status!=1){
                      return $this->message('',1,__t('15573954033523'));
@@ -48,7 +48,7 @@ class InviteController extends Controller
                  'username'=>$invitee_status->username
              ];
              Sign::create($data_sign);
-             return $this->message('',0,__t('success'));
+             return $this->message('',0,__t('15423548318740'));
          }
 
     }

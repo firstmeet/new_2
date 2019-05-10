@@ -12,6 +12,6 @@ class LangController extends Controller
     {
         App::setLocale(\request('lang'));
         Session::put('lang',request('lang'));
-        return response()->json(['code'=>1,'msg'=>'修改成功']);
+        return response()->json(['code'=>1,'msg'=>__t('15423548318740')]);
     }
 }
