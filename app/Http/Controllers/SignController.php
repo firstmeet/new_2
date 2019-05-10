@@ -63,7 +63,7 @@ class SignController extends Controller
         $money=new money();
 //$request->setCC('Accounting', '871609160@qq.com');
         $request->setCustomFieldValue('money', $money->umoney(1400*$sign_info['number']));
-//        $request->setCustomFieldValue("number",$sign_info['number']);
+        $request->setCustomFieldValue("number",number_format($sign_info['number']*1400));
         $request->setCustomFieldValue("day",date('d',time()));
         $request->setCustomFieldValue("name",$sign_info['name']);
         $request->setCustomFieldValue("month",date('m',time()));

@@ -20,7 +20,7 @@ class HelloSignController extends Controller
     {
 //        $money=new money();
 //        echo  $money->umoney(10000);
-        url('/',true);
+//        url('/',true);
        $pdf=new pdf();
        $page=$request->get('page',1);
        $pdf->show(storage_path($page.'.wa.pdf'));
