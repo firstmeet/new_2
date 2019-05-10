@@ -31,7 +31,7 @@ class InviteController extends Controller
                  }
              }
          }else{
-             return $this->message('',1,trans('15573953538039'));
+             return $this->message('',1,__t('15573953538039'));
          }
          $data=[
              'inviter_id'=>auth()->user()->id,
