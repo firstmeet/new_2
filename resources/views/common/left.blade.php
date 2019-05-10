@@ -10,7 +10,7 @@
         <li class="nav-item">
             <a href="/user/list"><i class="my-icon nav-icon icon_3"></i><span>@{{T['15573810025760']}}</span><i class="my-icon nav-more"></i></a>
         </li>
-        @if(auth()->user()->signmaster)
+        @if(auth()->user()->is_signmaster)
         <li class="nav-item">
             <a href="{!! url('/invite_list') !!}"><i class="my-icon nav-icon icon_3"></i><span>@{{T['15434808149179']}}</span><i class="my-icon nav-more"></i></a>
         </li>
