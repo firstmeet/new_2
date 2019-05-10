@@ -19,7 +19,7 @@ manage.changeLang = function(dom){
         dataType: 'json',
         data: {lang:lang},
         success: function(result) {
-            // location.reload();
+            location.reload();
         }
     });
 }
