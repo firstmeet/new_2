@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Service\pdf;
+use App\Service\zip;
 use App\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
@@ -16,5 +17,7 @@ class HelloSignController extends Controller
        $pdf=new pdf();
        $page=$request->get('page',1);
        $pdf->show(storage_path($page.'.wa.pdf'));
+
+
     }
 }
