@@ -3,26 +3,27 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailer;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SendEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-     protected $email,$cont;
+     protected $email,$info;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($email,$cont)
+    public function __construct($email,$email_cont)
     {
         //
         $this->email=$email;
-        $this->cont=$cont;
+        $this->info=$email_cont;
     }
 
     /**
@@ -32,7 +33,9 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mailer::send('email.index',['cont'=>$this->cont],function($message){
+        Mail::send('email.index',['cont'=>$this->info->body],function($message){
+            Log::info("mail_info",$this->info->toArray());
+            $message->subject($this->info->title);
             $message->to($this->email);
         });
     }

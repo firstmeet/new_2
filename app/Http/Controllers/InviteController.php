@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Emailtitles;
 use App\Http\ApiResource;
 use App\Http\Requests\InviteRequest;
 use App\Invite;
@@ -9,6 +10,7 @@ use App\Jobs\SendEmail;
 use App\Sign;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class InviteController extends Controller
 {
@@ -49,8 +51,8 @@ class InviteController extends Controller
                  'username'=>$invitee_status->username
              ];
              Sign::create($data_sign);
-             $email_cont=
-             $this->dispatch(new SendEmail($request->get('email'),));
+             $email_cont=Emailtitles::getone('invite_sign',session('lang'));
+             Mail::to($request->get('email'))->queue(new \App\Mail\SendEmail($email_cont->body));
              return $this->message('',0,__t('15423548318740'));
          }
 
