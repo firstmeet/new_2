@@ -77,12 +77,12 @@ function step(s){
 	}else if(Now_step==1){
         if($('iframe.step-div-1').attr('src')==''){
             load1 = layer.load(1);
-            $('iframe.step-div-1').attr('src',"/hello?page=1");
+            $('iframe.step-div-1').attr('src',"/hello?page=2");
         }
     }else if(Now_step==2){
 		if($('iframe.step-div-2').attr('src')==''){
             load2 = layer.load(1);
-			$('iframe.step-div-2').attr('src',"/hello?page=2");
+			$('iframe.step-div-2').attr('src',"/hello?page=3");
 		}
 	}else if(Now_step==3){
 	}else if(Now_step==4){
