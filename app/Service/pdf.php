@@ -110,7 +110,7 @@ class pdf extends \setasign\Fpdi\Fpdi
         $img->save($path);
         return $path;
     }
-    function show($file)
+    function show($file,$title)
     {
         $pdf=new pdf();
         $count=$pdf->setSourceFile($file);
@@ -128,6 +128,7 @@ class pdf extends \setasign\Fpdi\Fpdi
             // use the imported page
             $pdf->useTemplate($templateId);
         }
+        $pdf->SetTitle($title);
         $pdf->Output();
 
     }
