@@ -53,7 +53,7 @@ class SignController extends Controller
             return $this->message([],1,__t("failed"));
         }
         $client = new Client('rj@shanghaisupport.com','elev0607');
-        $template_id="cb9a043974c528e676d92d37d228a9a90ede2d38";
+        $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
         $request = new TemplateSignatureRequest();
         $request->enableTestMode();
         $request->setTemplateId($template_id);
