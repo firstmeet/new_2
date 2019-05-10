@@ -1,36 +1,3 @@
-@media (max-width: 660px) {
-.operation {
-	height: 0;
-	line-height: 20px;
-	text-align: right;
-	color: #333;
-	float: right;
-	position: relative;
-	top: -26px;
-	right: -66px;
-}
-.dropdown-menu.pull-right {
-	top: 29px;
-}	
-.title2.unsee{
-	display:none;
-}
-
-.header .account {
-    width: 80%;
-}	
-
-.header .account .account1{
-	/*display:inline-block;
-	width:auto;*/
-}
-.header .account .picture{
-	/*display:inline-block;
-	width:auto;*/
-}
-}
-
-
 *{font-family: "Noto Sans","Lato",sans-serif!important;}
 body{
     margin: 0px auto;
@@ -130,7 +97,7 @@ body{
 .account{
     display: flex;
     flex-flow: row;
-    width: 60%;
+    width: 80%;
     height: 150px;
 
 }
@@ -274,6 +241,58 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .no-invite-box span{
 	font-size: 3rem;
     color: #999;
+}
+
+@media (max-width: 860px) {
+.account1 .username {
+	float:none;
+}
+.operation {
+	height: 0;
+	line-height: 20px;
+	text-align: right;
+	color: #333;
+	float: right;
+	position: relative;
+	top: -12px;
+	right: -66px;
+}
+.dropdown-menu.pull-right {
+	top: 29px;
+}	
+.title2.unsee{
+	display:none;
+}
+
+.header .account {
+    width: 80%;
+}	
+
+.header .account .account1{
+	/*display:inline-block;
+	width:auto;*/
+}
+.header .account .picture{
+	/*display:inline-block;
+	width:auto;*/
+}
+
+.title1 {
+    font-size: 2.5rem;
+	font-weight:normal;
+	/*line-height:2em;*/
+	width: 30%;
+}
+
+.title1 span {
+    line-height:20px;
+    font-size: 1.8rem;	
+}
+
+
+
+
+
 }
 
 
