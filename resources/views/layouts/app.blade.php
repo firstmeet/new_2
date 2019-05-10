@@ -7,14 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Elevate United</title>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('js/layui/css/layui.css') }}">
-    <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-    <script src="{{ asset('js/layui/layui.js') }}"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+    <script src="js/layui/layui.js"></script>
     <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{time() }}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
     <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
@@ -68,7 +68,7 @@
                         <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                             @{{langname}}<span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="{!! url('/lang') !!}">
+                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="/lang">
                               <li role="presentation">
                                   <a role="menuitem" tabindex="-1" v-on:click="setlang" val="en" onclick="manage.changeLang(this)">English</a>
                               </li>
