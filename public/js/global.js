@@ -114,7 +114,7 @@ manage.homeshow = function(url){
               closeBtn: 1, //不显示关闭按钮
               anim: 2,
               shadeClose: true, //开启遮罩关闭
-              content: $('.review-box').html(),
+              content: $('.new-sign-parent').html(),
               success: function(){
                   $('.review-note').text();
               }
