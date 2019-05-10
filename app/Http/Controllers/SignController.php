@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
+use App\Http\Requests\SignUpdateRequest;
 use App\Service\money;
 use App\Service\pdf;
 use App\Service\zip;
@@ -132,7 +133,7 @@ class SignController extends Controller
 
 
     }
-    public function update(SignatureRequest $request)
+    public function update(SignUpdateRequest $request)
     {
         if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
             return $this->message([],0,__t("15423548318740"));
