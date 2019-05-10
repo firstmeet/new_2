@@ -1,8 +1,7 @@
 
  <div class="header">
      <div class="title1">
-         <span>Elevate United</span>
-
+         <span>@{{T['15432003825681']}}</span>
      </div>
      <div class="title2 hide">
          <span>Partner Portal</span>
@@ -10,7 +9,11 @@
      <div class="account">
           <div class="account1">
               <div class="username">
-                  <span>{!!auth()->user()->username!!}</span>
+                  <span>
+                    @if(auth()->user())
+                    {!!auth()->user()->username!!}
+                    @endif
+                    </span>
               </div>
               <div class="operation">
                   <div class="dropdown">

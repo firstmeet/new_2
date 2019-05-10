@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="vue_det" v-cloak>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">@{{ T['15438200244017'] }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">@{{ T['15573882257364'] }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">@{{ T['15318199317935'] }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -54,7 +54,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    @{{ T['t_login'] }}
                                 </button>
 
                                 @if (Route::has('password.request'))
@@ -70,7 +70,49 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    var LANG="{!! session('lang','en') !!}";
+    var L = Translatedata[LANG];
+    var vm = new Vue({
+        el: '#vue_det',
+        data: {
+            T:Translatedata[LANG],
+            lang:'cn',
+            langname:''
+        },
+        methods:{
+            setlang:function(event){
+                if(typeof event.target !='undefined'){
+                    var obj=$(event.target);
+                }else{
+                    var obj=event;
+                }
+                var l=obj.attr('val')
+                this.lang=l;
+                LANG=l;
+                this.langname=obj.html();
+                this.T = Translatedata[LANG];
+            }
+        },
+        mounted:function(){
+            this.setlang($('.dropdown-menu a[val='+LANG+']'));
+            layui.use('form', function(){
+
+              //form
+              var form = layui.form;
+              form.render();
+              //监听提交
+              form.on('submit(formDemo)', function(data){
+                layer.msg(JSON.stringify(data.field));
+                return false;
+              });
+            });
+        },
+    })
+</script>
 <script>
+
+
     var error="{!! session('msg') !!}"
     layui.use('layer', function(){
         var layer = layui.layer;

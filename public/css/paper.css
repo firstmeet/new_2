@@ -243,6 +243,10 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
     color: #999;
 }
 
+#app .dropdown-toggle {
+    color: #333;
+}
+
 @media (max-width: 860px) {
 .account1 .username {
 	float:none;
