@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-});
+
 
 Route::resource('hello','HelloSignController');
 
@@ -28,6 +26,9 @@ Route::get('/test2','SignController@test');
 
 
 Route::group(['middleware'=>['web','user_auth']],function (){
+    Route::get('/', function () {
+        return view('user.index');
+    });
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');
     Route::get('sign_download','SignController@download');
