@@ -26,7 +26,7 @@ function gotoSign(){
     location.href="/user/sign";
 }
 $(function(){
-    manage.homeshow('{!! url("/sign") !!}');//home note
+    manage.homeshow('/sign');//home note
 });
 </script>
 @include('common.footer') 
