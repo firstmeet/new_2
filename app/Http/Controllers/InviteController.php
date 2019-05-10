@@ -20,6 +20,7 @@ class InviteController extends Controller
                 return $this->message('',1,__t('15573953538039'));
              }
              $invitee_status=User::where([['username','=',$request->get('email')]])->first();
+             dd($invitee_status);
              if (!$invitee_status){
                  return $this->message('',1,__t('15573954427957'));
              }else{
