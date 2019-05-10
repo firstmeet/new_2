@@ -24,5 +24,8 @@ class HelloSignController extends Controller
 //        Mail::send('email.index',['cont'=>'123123'],function($message){
 //            $message->to('871609160@qq.com');
 //        });
+//        $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
+//        $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
+//        $file=str_replace('{url}',url('/user/index'),$file);
     }
 }

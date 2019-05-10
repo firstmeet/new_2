@@ -52,7 +52,9 @@ class InviteController extends Controller
              ];
              Sign::create($data_sign);
              $email_cont=Emailtitles::getone('invite_sign',session('lang'));
-             Mail::to($request->get('email'))->queue(new \App\Mail\SendEmail($email_cont->body));
+             $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
+             $file=str_replace('{url}',url('/user/index'),$file);
+             Mail::to($request->get('email'))->queue(new \App\Mail\SendEmail($file,$email_cont->title));
              return $this->message('',0,__t('15423548318740'));
          }
 
