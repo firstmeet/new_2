@@ -2,7 +2,7 @@
 <div class="page">
     @include('common.header') 
     <div class="container1">
-        @include('common.left')  
+        @include('common.left',['sign'=>$sign])
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title hide">
