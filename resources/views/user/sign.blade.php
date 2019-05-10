@@ -71,17 +71,17 @@ function step(s){
 	console.log(Now_step);
 	if(Now_step==0){
 		if($('iframe.step-div-0').attr('src')==''){
-            load0 = layer.load(1);
+            load0 = layer.load(1, {shade: false,shadeClose: true});
 			$('iframe.step-div-0').attr('src',"/hello?page=1");
 		}
 	}else if(Now_step==1){
         if($('iframe.step-div-1').attr('src')==''){
-            load1 = layer.load(1);
+            load1 = layer.load(1, {shade: false,shadeClose: true});
             $('iframe.step-div-1').attr('src',"/hello?page=2");
         }
     }else if(Now_step==2){
 		if($('iframe.step-div-2').attr('src')==''){
-            load2 = layer.load(1);
+            load2 = layer.load(1, {shade: false,shadeClose: true});
 			$('iframe.step-div-2').attr('src',"/hello?page=3");
 		}
 	}else if(Now_step==3){
@@ -92,7 +92,7 @@ function step(s){
 }
 step(1);
 function getsign(){
-    var index1 = layer.load(1);
+    var index1 = layer.load(1, {shade: false,shadeClose: true});
 	//alert('签约成功');window.location.href="/user/list";return;
 	$.get('/sign/create',function(url){
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
