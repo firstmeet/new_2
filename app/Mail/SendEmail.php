@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\MailLog;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -31,6 +32,7 @@ class SendEmail extends Mailable
      */
     public function build()
     {
+
         return $this->subject($this->subject)->view('email.index')->with(['cont'=>$this->cont]);
     }
 }
