@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('js/layui/css/layui.css') }}">
+    <link rel="stylesheet" href="js/layui/css/layui.css">
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
     <script src="js/layui/layui.js"></script>
     <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{time() }}"></script>
@@ -20,8 +20,8 @@
     <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/css/paper.css') }}?v={{time() }}">
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/paper.css?v={{time() }}">
     <style type="text/css">
         [v-cloak]{ display: none; }
         .dropdown ul li {
