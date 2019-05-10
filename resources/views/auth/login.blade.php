@@ -71,6 +71,13 @@
     </div>
 </div>
 <script type="text/javascript">
+    var error="{!! session('msg') !!}"
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        if (error){
+            layer.msg(error);
+        }
+    });
     var LANG="{!! session('lang','en') !!}";
     var L = Translatedata[LANG];
     var vm = new Vue({
@@ -111,15 +118,4 @@
     })
 </script>
 <script>
-
-
-    var error="{!! session('msg') !!}"
-    layui.use('layer', function(){
-        var layer = layui.layer;
-        if (error){
-            layer.msg(error);
-        }
-    });
-
-</script>
 @endsection
