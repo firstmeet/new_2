@@ -110,4 +110,25 @@ class pdf extends \setasign\Fpdi\Fpdi
         $img->save($path);
         return $path;
     }
+    function show($file)
+    {
+        $pdf=new pdf();
+        $count=$pdf->setSourceFile($file);
+        for($i=1;$i<=$count;$i++){
+
+            $templateId = $pdf->importPage($i);
+
+            // get the size of the imported page
+            $size = $pdf->getTemplateSize($templateId);
+
+            // create a page (landscape or portrait depending on the imported page size)
+            if ($size['width'] > $size['height']) $pdf->AddPage('L', array($size['width'], $size['height']));
+            else $pdf->AddPage('P', array($size['width'], $size['height']));
+
+            // use the imported page
+            $pdf->useTemplate($templateId);
+        }
+        $pdf->Output();
+
+    }
 }

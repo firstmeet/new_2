@@ -44,7 +44,7 @@ class SignController extends Controller
 
     public function create()
     {
-        $email=auth()->user()->user_name;
+        $email=auth()->user()->username;
         $sign_info=Sign::where('user_id',auth()->user()->id)->first();
         if (!$sign_info['number']){
             return $this->message([],1,__t("failed"));
@@ -88,7 +88,7 @@ class SignController extends Controller
             ];
             $sign=Sign::where('user_id',auth()->user()->id)->update($data);
             if ($sign){
-                return $this->message('',0,trans('auth.sign_success'));
+                return $this->message('',0,__('success'));
             }
         }
 

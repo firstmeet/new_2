@@ -29,6 +29,7 @@ class AuthLoginController extends Controller
                  return view('user.list');
              }
              if ($user->current_status==0){
+//
                  return back()->with('msg',__t('no_login_pri'));
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
