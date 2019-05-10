@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
+use App\Service\money;
 use App\Service\pdf;
 use App\Service\zip;
 use App\Sign;
@@ -59,8 +60,9 @@ class SignController extends Controller
         $request->setSubject('Purchase Order');
         $request->setMessage('Glad we could come to an agreement.');
         $request->setSigner('member', $email, $sign_info['name']);
+        $money=new money();
 //$request->setCC('Accounting', '871609160@qq.com');
-        $request->setCustomFieldValue('money', $this->umoney(1400*$sign_info['number']));
+        $request->setCustomFieldValue('money', $money->umoney(1400*$sign_info['number']));
 //        $request->setCustomFieldValue("number",$sign_info['number']);
         $request->setCustomFieldValue("day",date('d',time()));
         $request->setCustomFieldValue("name",$sign_info['name']);
@@ -147,194 +149,6 @@ class SignController extends Controller
           Sign::where('signature_request_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
        }
     }
-    public function numberToChinese($number)
-    {
-        $number = intval($number);
-        $bit = array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
-        //各位数
-        if ($number <= 10) {
-            return $bit[$number];
-        }
 
-
-        //十位数
-        if($number < 100){
-            $array = str_split($number);
-            if($array[0] < 2){
-                return $bit[10].$bit[$array[1]];
-            }else{
-                if($array[1] == 0){
-                    return $bit[$array[0]].$bit[10];
-                }else{
-                    return $bit[$array[0]].$bit[10].$bit[$array[1]];
-                }
-            }
-        }
-
-        //百位数
-        if($number < 1000){
-            $array = str_split($number);
-            if($array[1] == 0 && $array[2] == 0){
-                return $bit[$array[0]]."百";
-            }elseif($array[1] == 0 && $array[2] != 0){
-                return $bit[$array[0]]."百".$bit[$array[1]].$bit[$array[2]];
-            }elseif($array[1] != 0 && $array[2] == 0 ){
-                return $bit[$array[0]]."百".$bit[$array[1]].$bit[10];
-            }else{
-                return $bit[$array[0]]."百".$bit[$array[1]].$bit[10].$bit[$array[2]];
-            }
-
-        }
-        //千位数
-        if($number < 10000){
-            $array = str_split($number);
-            if($array[1] == 0 && $array[2] == 0 && $array[3] == 0){
-                return $bit[$array[0]]."千";
-            }elseif($array[1] == 0 && $array[2] != 0 && $array[3] != 0){
-                return $bit[$array[0]]."千".$bit[$array[1]].$bit[$array[2]].$bit[10].$bit[$array[3]];
-            }elseif($array[1] == 0 && $array[2] == 0 && $array[3] != 0){
-                return $bit[$array[0]]."千".$bit[$array[1]].$bit[$array[3]];
-            }elseif($array[1] == 0 && $array[2] != 0 && $array[3] == 0){
-                return $bit[$array[0]]."千".$bit[$array[1]].$bit[$array[2]].$bit[10];
-            }elseif($array[1] != 0 && $array[2] == 0 && $array[3] == 0){
-                return $bit[$array[0]]."千".$bit[$array[1]]."百";
-            }elseif($array[1] != 0 && $array[2] != 0 && $array[3] == 0){
-                return $bit[$array[0]]."千".$bit[$array[1]]."百".$bit[$array[2]].$bit[10];
-            }elseif($array[1] != 0 && $array[2] == 0 && $array[3] != 0){
-                return $bit[$array[0]]."千".$bit[$array[1]]."百".$bit[$array[2]].$bit[$array[3]];
-            }else{
-                return $bit[$array[0]]."千".$bit[$array[1]]."百".$bit[$array[2]].$bit[10].$bit[$array[3]];
-            }
-        }
-
-        return $number;
-    }
-    public function umoney($num,$type="usd") {
-        global $numTable,$commaTable,$moneyType;
-
-//global $numTable;
-        $numTable[0]="ZERO ";
-        $numTable[1]="ONE ";
-        $numTable[2]="TWO ";
-        $numTable[3]="THREE ";
-        $numTable[4]="FOUR ";
-        $numTable[5]="FIVE ";
-        $numTable[6]="SIX ";
-        $numTable[7]="SEVEN ";
-        $numTable[8]="EIGHT ";
-        $numTable[9]="NINE ";
-        $numTable[10]="TEN ";
-        $numTable[11]="ELEVEN ";
-        $numTable[12]="TWELVE ";
-        $numTable[13]="THIRTEEN ";
-        $numTable[14]="FOURTEEN ";
-        $numTable[15]="FIFTEEN ";
-        $numTable[16]="SIXTEEN ";
-        $numTable[17]="SEVENTEEN ";
-        $numTable[18]="EIGHTEEN ";
-        $numTable[19]="NINETEEN ";
-        $numTable[20]="TWENTY ";
-        $numTable[30]="THIRTY ";
-        $numTable[40]="FORTY ";
-        $numTable[50]="FIFTY ";
-        $numTable[60]="SIXTY ";
-        $numTable[70]="SEVENTY ";
-        $numTable[80]="EIGHTY ";
-        $numTable[90]="NINETY ";
-
-        $commaTable[0]="HUNDRED ";
-        $commaTable[1]="THOUSAND ";
-        $commaTable[2]="MILLION ";
-        $commaTable[3]="MILLIARD ";
-        $commaTable[4]="BILLION ";
-        $commaTable[5]="????? ";
-
-//单位
-        $moneyType["usd"]="DOLLARS ";
-        $moneyType["usd_1"]="CENTS ONLY";
-        $moneyType["rmb"]="YUAN ";
-        $moneyType["rmb_1"]="FEN ONLY";
-
-
-        if($type=="") $type="usd";
-        $fnum = fmoney($num);
-        $numArray = explode(",",$fnum);
-        $resultArray = array();
-        $k=0;
-        $cc=count($numArray);
-        for($i = 0; $i < count($numArray); $i++) {
-            $num_str = $numArray[$i];
-//echo "<br>";
-//小数位的处理400.21
-            if(eregi("\.",$num_str)) {
-                $dotArray = explode(".",$num_str);
-                if($dotArray[1] != 0) {
-                    $resultArray[$k++]=format3num($dotArray[0]+0);
-                    $resultArray[$k++]=$moneyType[strtolower($type)];
-                    $resultArray[$k++]="AND ";
-                    $resultArray[$k++]=format3num($dotArray[1]+0);
-                    $resultArray[$k++]=$moneyType[strtolower($type)."_1"];
-                } else {
-                    $resultArray[$k++]=format3num($dotArray[0]+0);
-                    $resultArray[$k++]=$moneyType[strtolower($type)];
-                }
-            } else {
-//非小数位的处理
-                if(($num_str+0)!=0) {
-                    $resultArray[$k++]=format3num($num_str+0);
-                    $resultArray[$k++]=$commaTable[--$cc];
-//判断：除小数外其余若不为零则加and
-                    for($j=$i; $j <= $cc; $j++) {
-//echo "<br>";
-//echo $numArray[$j];
-                        if($numArray[$j] !=0) {
-                            $resultArray[$k++]="AND ";
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-        return join("",$resultArray);
-    }
-
-
-
-    function format3num($num) {
-        global $numTable,$commaTable;
-        $numlen = strlen($num);
-        for($i = 0,$j = 0;$i < $numlen; $i++) {
-            $bitenum[$j++] = substr($num,$i,1);
-        }
-        if($num==0) return "";
-        if($numlen == 1) return $numTable[$num];
-        if($numlen == 2) {
-            if($num <= 20) return $numTable[$num];
-//第一位不可能零
-            if($bitenum[1]==0) {
-                return $numTable[$num];
-            } else {
-                return trim($numTable[$bitenum[0]*10])."-".$numTable[$bitenum[1]];
-            }
-
-        }
-//第一个不可能为零
-        if($numlen == 3) {
-            if($bitenum[1]==0 && $bitenum[2]==0) {
-//100
-                return $numTable[$bitenum[0]].$commaTable[0];
-            } elseif($bitenum[1]==0) {
-//102
-                return $numTable[$bitenum[0]].$commaTable[0].$numTable[$bitenum[2]];
-            } elseif ($bitenum[2]==0) {
-//120
-                return $numTable[$bitenum[0]].$commaTable[0].$numTable[$bitenum[1]*10];
-            } else {
-//123
-                return $numTable[$bitenum[0]].$commaTable[0].trim($numTable[$bitenum[1]*10])."-".$numTable[$bitenum[2]];
-            }
-        }
-        return $num;
-    }
 
 }
