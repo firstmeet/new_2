@@ -143,7 +143,7 @@ class SignController extends Controller
     public function callback(Request $request)
     {
        $string=$request->all();
-       if ($string['event_type']=='signature_request_signed') {
+       if ($string['json']['event_type']=='signature_request_signed') {
           Sign::where('signature_request_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
        }
     }
