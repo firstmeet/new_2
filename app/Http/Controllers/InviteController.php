@@ -27,7 +27,7 @@ class InviteController extends Controller
                  return $this->message('',1,__t('signed'));
              }
                  if ($invitee_status->current_status!=1){
-                     return $this->message('',1,__t('a15573954033523'));
+                     return $this->message('',1,__t('15573954033523'));
                  }
              }
          }else{
