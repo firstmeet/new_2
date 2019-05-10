@@ -92,7 +92,8 @@ class money
             $num_str = $numArray[$i];
 //echo "<br>";
 //小数位的处理400.21
-            if(eregi("\.",$num_str)) {
+            preg_match("~\.~",$num_str,$match);
+            if(count($match)) {
                 $dotArray = explode(".",$num_str);
                 if($dotArray[1] != 0) {
                     $resultArray[$k++]=$this->format3num($dotArray[0]+0);

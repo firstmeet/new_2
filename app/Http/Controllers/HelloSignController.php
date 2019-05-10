@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Emailtitles;
 use App\Jobs\SendEmail;
+use App\Service\money;
 use App\Service\pdf;
 use App\Service\zip;
 use App\User;
@@ -17,9 +18,11 @@ class HelloSignController extends Controller
 {
     public function index(Request $request)
     {
-       $pdf=new pdf();
-       $page=$request->get('page',1);
-       $pdf->show(storage_path($page.'.wa.pdf'));
+        $money=new money();
+       echo  $money->umoney(10000);
+//       $pdf=new pdf();
+//       $page=$request->get('page',1);
+//       $pdf->show(storage_path($page.'.wa.pdf'));
 //      $this->dispatch(new SendEmail('871609160@qq.com',$email_cont));
 //        Mail::send('email.index',['cont'=>'123123'],function($message){
 //            $message->to('871609160@qq.com');
