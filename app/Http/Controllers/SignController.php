@@ -93,6 +93,7 @@ class SignController extends Controller
                 'signature_request_id'=>\session('signature_id')
             ];
             $sign=Sign::where('user_id',auth()->user()->id)->update($data);
+            Session::put('sign_status',1);
             if ($sign){
                 return $this->message('',0,__('15423548318740'));
             }

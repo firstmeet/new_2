@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
+use App\Sign;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,8 @@ class AuthLoginController extends Controller
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
                  auth()->login($user,$request->get('remember'));
+                 $sign_status=Sign::where('user_id',$user->id)->first();
+                 Session::put('sign_status',$sign_status['is_signed']);
                  return redirect('/user/index');
              }
          }
