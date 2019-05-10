@@ -9,8 +9,8 @@
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
             </div>
             <div class="review-box">
-                <iframe id="signpage" class="signpage step-div step-div-1" src=""></iframe>
-                <iframe id="signpage" class="signpage step-div step-div-2" src=""></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(load1);"></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-2" src="" onload="layer.close(load2);"></iframe>
                 <form class="layui-form invite-form  step-div step-div-3" onsubmit="return false">
                   <div class="layui-form-item">
                     <label class="layui-form-label">@{{T['15324194276032']}}</label>
@@ -68,10 +68,12 @@ function step(s){
 	console.log(Now_step);
 	if(Now_step==1){
 		if($('iframe.step-div-1').attr('src')==''){
+            load1 = layer.load(1);
 			$('iframe.step-div-1').attr('src',"{!! url('hello?page=1') !!}");
 		}
 	}else if(Now_step==2){
 		if($('iframe.step-div-2').attr('src')==''){
+            load2 = layer.load(1);
 			$('iframe.step-div-2').attr('src',"{!! url('hello?page=2') !!}");
 		}
 	}else if(Now_step==3){
