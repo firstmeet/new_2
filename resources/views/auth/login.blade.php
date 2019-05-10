@@ -8,7 +8,7 @@
                 <div class="card-header">@{{ T['15438200244017'] }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="/login">
                         @csrf
 
                         <div class="form-group row">
