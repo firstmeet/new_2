@@ -34,8 +34,7 @@
 
                 </form>
                 
-            	<div id="myHSContainer" class="step-div step-div-4">
-                </div>
+            	<div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
                     <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>
                     <a href="#" class="layui-btn next" onClick="step(1)">@{{T['15573889694471']}}</a>
@@ -47,12 +46,15 @@
     </div>
 </div>
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
-<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
 var Now_step=0;
 function step(s){
 	Now_step+=s;
 	if(Now_step==4){
+        if(!postinfo()){
+            Now_step--;
+            return;
+        }
 		$('.step-note .next').hide();
 	}else{
 		$('.step-note .next').show();
@@ -78,7 +80,7 @@ function step(s){
 		}
 	}else if(Now_step==3){
 	}else if(Now_step==4){
-		postinfo();
+		
 	}
 	
 }
