@@ -50,7 +50,7 @@ $(function(){
         var params = {};
         params.name = $('form input[name=signname]').val();
         params.number = $('form input[name=shares]').val();
-        var url = '{!! url("/sign/update") !!}';
+        var url = "/sign/update";
         $.ajax({
             url: url,
             type: 'PUT',

@@ -33,7 +33,7 @@
         layer.msg("{!! session('no_files') !!}")
     }
 $(function(){
-    manage.get_sign_list('{!! url("/sign") !!}');
+    manage.get_sign_list("/sign");
 });
 </script>
 

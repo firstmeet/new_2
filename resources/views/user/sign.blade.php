@@ -99,7 +99,7 @@ function getsign(){
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 				var data=eventData
-				$.post('{!! url('/sign') !!}',data,function(res){
+				$.post('/sign',data,function(res){
 					console.log(res);
 					window.location.href="/user/list";
 				})
@@ -115,7 +115,7 @@ function postinfo(){
 	var params = {};
 	params.name = $('form input[name=signname]').val();
 	params.number = $('form select[name=shares]').val();
-	var url = '{!! url("/sign/update") !!}';
+	var url = "/sign/update";
     if (!params.name || !params.number) {
         layer.msg(L['15574688507932']);
         return false;
