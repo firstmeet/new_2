@@ -76,7 +76,7 @@ class money
         $commaTable[5]="????? ";
 
 //单位
-        $moneyType["usd"]="DOLLARS ";
+        $moneyType["usd"]="U.S. DOLLARS ";
         $moneyType["usd_1"]="CENTS ONLY";
         $moneyType["rmb"]="YUAN ";
         $moneyType["rmb_1"]="FEN ONLY";
@@ -98,7 +98,7 @@ class money
                 if($dotArray[1] != 0) {
                     $resultArray[$k++]=$this->format3num($dotArray[0]+0);
                     $resultArray[$k++]=$moneyType[strtolower($type)];
-                    $resultArray[$k++]="U.S. ";
+                    $resultArray[$k++]="AND ";
                     $resultArray[$k++]=$this->format3num($dotArray[1]+0);
                     $resultArray[$k++]=$moneyType[strtolower($type)."_1"];
                 } else {
