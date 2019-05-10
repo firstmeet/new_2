@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
 $(function(){
-    manage.get_invite_list('{!! url("/invite") !!}');
+    manage.get_invite_list('/invite');
 });
 
 </script>

@@ -60,7 +60,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+<<<<<<< HEAD
                 <a class="navbar-brand" href="{{ url('/') }}">
+=======
+                <a class="navbar-brand" href="/">
+>>>>>>> 1b5c7983a62ee5f9f15d15cba4498a9b59a4d942
                     @{{ T['15432003825681'] }}
                 </a>
                 <div class="operation">
@@ -68,7 +72,11 @@
                         <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                             @{{langname}}<span class="caret"></span>
                         </button>
+<<<<<<< HEAD
                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="{!! url('/lang') !!}">
+=======
+                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="/lang">
+>>>>>>> 1b5c7983a62ee5f9f15d15cba4498a9b59a4d942
                               <li role="presentation">
                                   <a role="menuitem" tabindex="-1" v-on:click="setlang" val="en" onclick="manage.changeLang(this)">English</a>
                               </li>

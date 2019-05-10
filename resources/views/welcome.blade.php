@@ -110,11 +110,11 @@
      var vue=new Vue({
          el:"#app",
          data:{
-             urls:"{!! url('hello') !!}"
+             urls:"/hello"
          },
          methods:{
              next_page:function(page_num) {
-                 this.urls="{!! url("hello") !!}"+"?page="+page_num
+                 this.urls="/hello"+"?page="+page_num
              }
          }
      })

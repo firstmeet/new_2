@@ -19,7 +19,7 @@
 
         messageListener: function(eventData) {
             var data=eventData
-            $.post('{!! url('/sign') !!}',data,function(res){
+            $.post('/sign',data,function(res){
                 console.log(res)
             })
         }

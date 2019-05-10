@@ -71,12 +71,12 @@ function step(s){
 	if(Now_step==1){
 		if($('iframe.step-div-1').attr('src')==''){
             load1 = layer.load(1);
-			$('iframe.step-div-1').attr('src',"{!! url('hello?page=1') !!}");
+			$('iframe.step-div-1').attr('src',"/hello?page=1");
 		}
 	}else if(Now_step==2){
 		if($('iframe.step-div-2').attr('src')==''){
             load2 = layer.load(1);
-			$('iframe.step-div-2').attr('src',"{!! url('hello?page=2') !!}");
+			$('iframe.step-div-2').attr('src',"/hello?page=2");
 		}
 	}else if(Now_step==3){
 	}else if(Now_step==4){
@@ -94,7 +94,7 @@ function getsign(){
 		HelloSign.open({
 			url: url,
 			allowCancel: true,
-			skipDomainVerification:true,
+			// skipDomainVerification:true,
 			userCulture: HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {

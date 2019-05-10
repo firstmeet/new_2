@@ -20,7 +20,7 @@
                       <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                           @{{langname}}<span class="caret"></span>
                       </button>
-                      <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="{!! url('/lang') !!}">
+                      <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1"  url="/lang">
                             <li role="presentation">
                                 <a role="menuitem" tabindex="-1" v-on:click="setlang" val="en" onclick="manage.changeLang(this)">English</a>
                             </li>
@@ -36,7 +36,7 @@
               </div>
           </div>
          <div class="picture">
-             <div class="logout" logoutRrl="{!! url('/logout') !!}" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
+             <div class="logout" logoutRrl="/logout" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
                  <a>@{{T['15435651632647']}}</a>
              </div>
          </div>
