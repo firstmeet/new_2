@@ -259,6 +259,12 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 
 .title-notice{margin-top: 20px;}
 .step-note{text-align: right;padding-top: 20px;}
+.step-note a{
+	color:white;
+}
+.step-note a:hover{
+	text-decoration:none;
+}
 .pre-sign-box .layui-form-label{width:180px;}
 .step-div .layui-form-label{}
 .layui-form-item .layui-input-block{width:30%;}
