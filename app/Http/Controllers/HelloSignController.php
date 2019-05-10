@@ -22,9 +22,11 @@ class HelloSignController extends Controller
 //        echo  $money->umoney(10000);
 //        url('/',true);
        $pdf=new pdf();
+
        $page=$request->get('page',1);
-       $arr=['Elevate Affiliate Note','Subscription Booklet-Elevate United'];
-       $pdf->show(storage_path($page.'.wa.pdf'),$arr[$page-1]);
+        $pdf->watermark(storage_path($page.'.pdf'));
+//       $arr=['Elevate Affiliate Note','Subscription Booklet-Elevate United'];
+//       $pdf->show(storage_path($page.'.wa.pdf'),$arr[$page-1]);
 //      $this->dispatch(new SendEmail('871609160@qq.com',$email_cont));
 //        Mail::send('email.index',['cont'=>'123123'],function($message){
 //            $message->to('871609160@qq.com');

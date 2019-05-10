@@ -58,7 +58,7 @@ class pdf extends \setasign\Fpdi\Fpdi
      function watermark($file,$newfile=null)
     {
         $pdf=new pdf();
-        $image=$this->text_image((auth()->user()->id)+1000000);
+        $image=$this->text_image("Member #".((auth()->user()->id)+1000000));
         $count=$pdf->setSourceFile($file);
         for($i=1;$i<=$count;$i++){
             $templateId = $pdf->importPage($i);
@@ -94,12 +94,22 @@ class pdf extends \setasign\Fpdi\Fpdi
 
      function text_image($text)
     {
-        $img=\Intervention\Image\Facades\Image::canvas(500,400);
-        $img->text($text,0,150,function ($font){
+        $img=\Intervention\Image\Facades\Image::canvas(800,400);
+        $img->text($text,0,140,function ($font){
 
             $font->file(storage_path('MSYHBD.TTF'));
-            $font->size(100);
+            $font->size(70);
             $font->color(array(144, 144, 144, 0.5));
+//            $font->color('#000000');
+//            $font->align('center');
+//            $font->valign('top');
+//            $font->angle(-45);
+        });
+        $img->text("Confidential Document",0,50,function ($font){
+
+            $font->file(storage_path('MSYHBD.TTF'));
+            $font->size(60);
+            $font->color(array(255, 0, 0, 0.5));
 //            $font->color('#000000');
 //            $font->align('center');
 //            $font->valign('top');
