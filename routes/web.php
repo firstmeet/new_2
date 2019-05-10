@@ -22,6 +22,8 @@ Route::get('lang','LangController@lang');
 
 Route::get('/test2','SignController@test');
 
+Route:;any('sign/callback','SignController@callback');
+
 //Auth::routes();
 
 

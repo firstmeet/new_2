@@ -12,6 +12,7 @@ use HelloSign\EmbeddedSignatureRequest;
 use HelloSign\SignatureRequest;
 use HelloSign\TemplateSignatureRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class SignController extends Controller
@@ -135,6 +136,10 @@ class SignController extends Controller
         }else{
             return $this->message([],1,__t("failed"));
         }
+    }
+    public function callback(Request $request)
+    {
+        Log::info("sign_callback",json_encode($request->all()));
     }
 
 }
