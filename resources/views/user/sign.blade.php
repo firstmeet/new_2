@@ -68,7 +68,7 @@ function step(s){
 	$('.step-div').hide();
 	$('.step-div-'+Now_step).show();
 	
-	console.log(Now_step);
+	// console.log(Now_step);
 	if(Now_step==0){
 		if($('iframe.step-div-0').attr('src')==''){
             load0 = layer.load(1);
