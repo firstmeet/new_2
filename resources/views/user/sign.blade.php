@@ -9,8 +9,8 @@
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
             </div>
             <div class="review-box">
-                <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(load1);"></iframe>
-                <iframe id="signpage" class="signpage step-div step-div-2" src="" onload="layer.close(load2);"></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(typeof load1 == 'undefined' ? null : load1);"></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-2" src="" onload="layer.close(typeof load2 == 'undefined' ? null : load2);"></iframe>
                 <form class="layui-form invite-form  step-div step-div-3" onsubmit="return false">
                   <div class="layui-form-item">
                     <label class="layui-form-label">@{{T['15324194276032']}}</label>
@@ -72,8 +72,8 @@ function step(s){
 			$('iframe.step-div-1').attr('src',"{!! url('hello?page=1') !!}");
 		}
 	}else if(Now_step==2){
+        load2 = layer.load(1);
 		if($('iframe.step-div-2').attr('src')==''){
-            load2 = layer.load(1);
 			$('iframe.step-div-2').attr('src',"{!! url('hello?page=2') !!}");
 		}
 	}else if(Now_step==3){
@@ -93,7 +93,7 @@ function getsign(){
 			url: url,
 			allowCancel: true,
 			skipDomainVerification:true,
-			userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
+			userCulture: HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 				var data=eventData
@@ -109,13 +109,15 @@ function getsign(){
 
 
     //提交邀请
-function postinfo(){
-
-	
+function postinfo(){	
 	var params = {};
 	params.name = $('form input[name=signname]').val();
 	params.number = $('form select[name=shares]').val();
 	var url = '{!! url("/sign/update") !!}';
+    if (!params.name || !params.number) {
+        layer.msg(L['15574688507932']);
+        return false;
+    }
 	$.ajax({
 		url: url,
 		type: 'PUT',
@@ -130,6 +132,7 @@ function postinfo(){
 			getsign();
 		}
 	});
+    return true;
 };
 
 </script>

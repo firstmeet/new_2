@@ -48,7 +48,7 @@ body{
 .right .short-title em{font-style: normal;}
 
 .right .review-box{
-    min-width: 600px;
+    /*min-width: 600px;*/
     min-height: 800px;
     border: 1px solid #eaeaea;
     box-shadow: 1px 1px 5px #ddd;
@@ -289,8 +289,14 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
     font-size: 1.8rem;	
 }
 
+.right {
+    /*overflow-x: scroll;*/
+}
 
 
+.review-box>div {
+    overflow-x: scroll;
+}
 
 
 }
