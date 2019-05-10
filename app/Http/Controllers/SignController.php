@@ -117,14 +117,14 @@ class SignController extends Controller
 
 
 //            $this->watermark($uploads_dir,$uploads_dir_water);
-            return response()->download($zip_dest,$signature_request_id.'.zip');
+            return response()->download($zip_dest,'Offering.zip');
         }elseif(file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
             $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
             $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
             $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
             $pdf->watermark($uploads_dir,$uploads_dir_water,1);
             $zip->zipFiles($zip_dest,$file_arr);
-            return response()->download($zip_dest,$signature_request_id.'.zip');
+            return response()->download($zip_dest,'Offering.zip');
         }else{
             $down=$this->client->getFiles($signature_request_id,$uploads_dir,'pdf');
             if ($down){
@@ -134,7 +134,7 @@ class SignController extends Controller
                 $pdf->watermark($uploads_dir,$uploads_dir_water,1);
                 $zip->zipFiles($zip_dest,$file_arr);
 
-                return response()->download($zip_dest,$signature_request_id.'.zip');
+                return response()->download($zip_dest,'Offering.zip');
             }else{
                 return back()->with('no_files',"files not found");
             }
