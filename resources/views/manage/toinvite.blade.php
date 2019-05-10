@@ -33,7 +33,7 @@ $(function(){
     $('.invite-form button').click(function(){
         var params = {};
         params.email = $('input[name=email]').val();
-        var url = '{!! url("/invite") !!}';
+        var url = '/invite';
         $.post(url,params,function(res){
             if (res.error != 0) {
                 layer.msg(res.message,{icon: 5});
