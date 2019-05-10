@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="/css/paper.css?v={{time() }}">
 <style type="text/css">
     [v-cloak]{ display: none; }
+
 </style>
 </head>
 <body>

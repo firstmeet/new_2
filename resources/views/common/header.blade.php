@@ -15,7 +15,7 @@
                     @endif
                     </span>
               </div>
-              <div class="operation">
+              <div class="operation sm-hide">
                   <div class="dropdown">
                       <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                           @{{langname}}<span class="caret"></span>
@@ -35,7 +35,7 @@
                   </div>
               </div>
           </div>
-         <div class="picture">
+         <div class="picture sm-hide">
              <div class="logout" logoutRrl="/logout" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
                  <a>@{{T['15435651632647']}}</a>
              </div>

@@ -63,7 +63,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     @{{ T['15432003825681'] }}
                 </a>
-                <div class="operation">
+                <div class="operation ">
                     <div class="dropdown">
                         <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
                             @{{langname}}<span class="caret"></span>
