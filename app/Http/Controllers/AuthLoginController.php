@@ -26,7 +26,7 @@ class AuthLoginController extends Controller
          }else{
              if ($user->is_signmaster==1){
                  auth()->login($user,$request->get('remember'));
-                 return view('user.list');
+                 return redirect('user/list');
              }
              if ($user->current_status==0){
 //
@@ -34,7 +34,7 @@ class AuthLoginController extends Controller
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
                  auth()->login($user,$request->get('remember'));
-                 return view('user.index');
+                 return redirect('/user/index');
              }
          }
     }
