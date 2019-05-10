@@ -139,7 +139,7 @@ class SignController extends Controller
     }
     public function callback(Request $request)
     {
-        Log::info("sign_callback",json_encode($request->all()));
+        Log::info("sign_callback",$request->all()->toArray());
     }
 
 }
