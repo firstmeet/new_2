@@ -9,8 +9,8 @@
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
             </div>
             <div class="review-box">
-                <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(load1);"></iframe>
-                <iframe id="signpage" class="signpage step-div step-div-2" src="" onload="layer.close(load2);"></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(typeof load1 == 'undefined' ? null : load1);"></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-2" src="" onload="layer.close(typeof load2 == 'undefined' ? null : load2);"></iframe>
                 <form class="layui-form invite-form  step-div step-div-3" onsubmit="return false">
                   <div class="layui-form-item">
                     <label class="layui-form-label">@{{T['15324194276032']}}</label>
@@ -34,8 +34,7 @@
 
                 </form>
                 
-            	<div id="myHSContainer" class="step-div step-div-4">
-                </div>
+            	<div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
                     <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>
                     <a href="#" class="layui-btn next" onClick="step(1)">@{{T['15573889694471']}}</a>
@@ -47,12 +46,15 @@
     </div>
 </div>
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
-<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
 <script>
 var Now_step=0;
 function step(s){
 	Now_step+=s;
 	if(Now_step==4){
+        if(!postinfo()){
+            Now_step--;
+            return;
+        }
 		$('.step-note .next').hide();
 	}else{
 		$('.step-note .next').show();
@@ -78,7 +80,7 @@ function step(s){
 		}
 	}else if(Now_step==3){
 	}else if(Now_step==4){
-		postinfo();
+		
 	}
 	
 }
@@ -93,7 +95,7 @@ function getsign(){
 			url: url,
 			allowCancel: true,
 			skipDomainVerification:true,
-			userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
+			userCulture: HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 				var data=eventData
@@ -109,13 +111,15 @@ function getsign(){
 
 
     //提交邀请
-function postinfo(){
-
-	
+function postinfo(){	
 	var params = {};
 	params.name = $('form input[name=signname]').val();
 	params.number = $('form select[name=shares]').val();
 	var url = '{!! url("/sign/update") !!}';
+    if (!params.name || !params.number) {
+        layer.msg(L['15574688507932']);
+        return false;
+    }
 	$.ajax({
 		url: url,
 		type: 'PUT',
@@ -130,6 +134,7 @@ function postinfo(){
 			getsign();
 		}
 	});
+    return true;
 };
 
 </script>

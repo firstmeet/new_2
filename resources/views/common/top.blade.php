@@ -13,9 +13,8 @@
 <script type="text/javascript" src="/js/layui/layui.all.js"></script>
 
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
 
-<script type="text/javascript" src="https://www.elevateunited.cn/translate.js"></script>
+<script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{time() }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
 
 <script type="text/javascript" src="/js/nav.js"></script>
