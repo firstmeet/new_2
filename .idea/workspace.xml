@@ -6,8 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c10fa6c-26ff-46d4-87d9-5f4621becfe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,18 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2370">
-              <caret line="158" column="56" selection-start-line="158" selection-start-column="56" selection-end-line="158" selection-end-column="56" />
-              <folding>
-                <element signature="e#40#65#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,15 +68,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/setasign/fpdf/fpdf.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="979" column="9" selection-start-line="979" selection-start-column="9" selection-end-line="979" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -98,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/payment_information.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            <state relative-caret-position="540">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="e#473#496#0#HTML" expanded="true" />
                 <element signature="e#741#764#0#HTML" expanded="true" />
@@ -114,6 +92,24 @@
                 <element signature="e#1194#1217#0#HTML" expanded="true" />
                 <element signature="e#1266#1289#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1935">
+              <caret line="129" column="39" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="63" lean-forward="true" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -215,7 +211,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/company_information.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/investor_information.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/sign.blade.php" />
         <option value="$PROJECT_DIR$/public/js/global.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
@@ -224,6 +219,7 @@
         <option value="$PROJECT_DIR$/resources/views/user/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" />
       </list>
     </option>
   </component>
@@ -463,12 +459,12 @@
       <workItem from="1557503278005" duration="66000" />
       <workItem from="1557504252729" duration="2139000" />
       <workItem from="1557546094832" duration="10992000" />
-      <workItem from="1557560371528" duration="10901000" />
+      <workItem from="1557560371528" duration="11126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116915000" />
+    <option name="totallyTimeSpent" value="117140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2160" height="1337" extended-state="0" />
@@ -726,20 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="129" column="39" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="33" column="86" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/SignUpdateRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -832,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/payment_information.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="540">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#473#496#0#HTML" expanded="true" />
             <element signature="e#741#764#0#HTML" expanded="true" />
@@ -845,6 +827,20 @@
             <element signature="e#1194#1217#0#HTML" expanded="true" />
             <element signature="e#1266#1289#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="63" lean-forward="true" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="39" selection-start-line="129" selection-start-column="39" selection-end-line="129" selection-end-column="39" />
         </state>
       </provider>
     </entry>
