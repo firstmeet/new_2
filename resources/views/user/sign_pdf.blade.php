@@ -38,7 +38,7 @@ function getsign(){
 				var data=eventData
 				$.post('/sign',data,function(res){
 					console.log(res);
-					window.location.href="/company_information";
+					// window.location.href="/company_information";
 				})
 			}
 		});
