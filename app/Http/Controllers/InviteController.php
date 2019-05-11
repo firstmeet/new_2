@@ -47,8 +47,10 @@ class InviteController extends Controller
                  'user_id'=>$invitee_status->id,
                  'status'=>0,
                  'signature_id'=>'',
-                 'username'=>$invitee_status->username
+                 'username'=>$invitee_status->username,
+                 'invite_id'=>$create->id
              ];
+             Sign::create($data_sign);
              Sign::create($data_sign);
              $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
              $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
@@ -64,6 +66,21 @@ class InviteController extends Controller
         $data=Invite::with(['signs'=>function($query){
             $query->select(['user_id','status']);
         }])->where('inviter_id',auth()->user()->id)->get();
+
+        foreach ($data as $key=>&$value){
+            $i=0;
+            foreach ($value['signs'] as $key1=>$value1){
+               if ($value1['status']==1){
+                   $i++;
+               }
+            }
+            if ($i==count($value1)){
+                $value['sign_status']=1;
+            }else{
+                $value['sign_status']=0;
+            }
+
+        }
         return $this->message($data,0);
     }
     public function list()

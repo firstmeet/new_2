@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
 use App\Http\Requests\SignUpdateRequest;
+use App\Invite;
 use App\Service\money;
 use App\Service\pdf;
 use App\Service\zip;
@@ -38,18 +39,35 @@ class SignController extends Controller
     use ApiResource;
     public function index(Request $request)
     {
-        if (!is_null($request->get('status'))){
-            $data=Sign::where([['user_id','=',auth()->user()->id],['status','=',$request->get('status')]])->get();
-        }else{
-            $data=Sign::where('user_id',auth()->user()->id)->get();
+        $status=$request->get('status');
+        $invite=Invite::with('signs')->where('invitee_id',auth()->user()->id)->get();
+        $arr=[];
+        foreach ($invite as $key=>&$value){
+            $i=0;
+            foreach ($value['signs'] as $key1=>$value1){
+                if ($value1['status']==1){
+                    $i++;
+                }
+            }
+            $value['sign']=$value['signs'][count($value['signs'])-1];
+
+            if ($value['sign']['status']!=1){
+                array_push($arr,$value);
+            }
+
+            unset($invite[$key]['signs']);
         }
-        return $this->message($data);
+        if (!is_null($status)){
+            $invite=$arr;
+        }
+
+        return $this->message($invite);
     }
 
     public function create()
     {
         $email=auth()->user()->username;
-        $sign_info=Sign::where('user_id',auth()->user()->id)->first();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->latest()->first();
         if (!$sign_info['number']){
             return $this->message([],1,__t("failed"));
         }
@@ -79,21 +97,25 @@ class SignController extends Controller
 
 // Store it to use with the embedded.js HelloSign.open() call
         $sign_url = $response_2->getSignUrl();
-        Session::put('signature_id',$signature_id);
-        Session::put('signature_request_id',$response->signature_request_id);
-        return $sign_url;
+        $sign_info->signature_id=$signature_id;
+        $sign_info->signature_request_id=$response->signature_request_id;
+        $sign_info->save();
+//            'signature_request_id'=>\session('signature_id')]);
+        return view('user.sign',['url'=>$sign_url]);
 
     }
     public function store(Request $request)
     {
-        if (\session('signature_id')==$request->get('signature_id')&&$request->get('event')=="signature_request_signed"){
+        if ($request->get('event')=="signature_request_signed"){
             $data=[
-                'status'=>1,
-                'signature_id'=>\session('signature_request_id'),
-                'signature_request_id'=>\session('signature_id')
+                'status'=>1
             ];
-            $sign=Sign::where('user_id',auth()->user()->id)->update($data);
-            Session::put('sign_status',1);
+            $sign=Sign::where('signature_id',$request->get('signature_id'))->update($data);
+            if (\session('sign_status')){
+                Session::pull('sign_status',1);
+            }else{
+                Session::pull('sign_status',0);
+            }
             if ($sign){
                 return $this->message('',0,__('15423548318740'));
             }
@@ -102,52 +124,77 @@ class SignController extends Controller
     }
     public function download(Request $request)
     {
-        $signature_request_id=$request->get('signature_request_id');
-        $uploads_dir=storage_path('uploads/'.$signature_request_id.'.pdf');
-        $uploads_dir_water=storage_path('uploads/'.$signature_request_id.'.wa.pdf');
-        $file_arr=[storage_path(auth()->user()->id.'.1.pdf'),storage_path(auth()->user()->id.'.2.pdf'),storage_path(auth()->user()->id.'.3.pdf'),$uploads_dir_water];
-        $pdf=new pdf();
-        $zip=new zip();
-        $zip_dest=storage_path($signature_request_id.'.zip');
-        if (file_exists($uploads_dir)&&file_exists($uploads_dir_water)){
-              $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
-            $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
-            $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
-              $zip->zipFiles($zip_dest,$file_arr);
+//        dd($request->get('invite_id'));
+          $signs=Sign::where('invite_id',$request->get('invite_id'))->get();
+          $un_water_files=[storage_path('2.pdf'),storage_path('3.pdf')];
 
+          foreach ($signs as $key=>$value){
+              if ($value['signature_request_id']){
+              $uploads_dir=storage_path('uploads/'.$value['signature_request_id'].'.pdf');
+              if ($uploads_dir){
+                  array_push($un_water_files,$uploads_dir);
+              }else{
+                  $down=$this->client->getFiles($value['signature_request_id'],$uploads_dir,'pdf');
 
-//            $this->watermark($uploads_dir,$uploads_dir_water);
-            return response()->download($zip_dest,'Offering.zip');
-        }elseif(file_exists($uploads_dir)&&!file_exists($uploads_dir_water)){
-            $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
-            $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
-            $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
-            $pdf->watermark($uploads_dir,$uploads_dir_water,1);
-            $zip->zipFiles($zip_dest,$file_arr);
-            return response()->download($zip_dest,'Offering.zip');
-        }else{
-            $down=$this->client->getFiles($signature_request_id,$uploads_dir,'pdf');
-            if ($down){
-                $pdf->watermark(storage_path('1.pdf'),storage_path(auth()->user()->id.'.1.pdf'));
-                $pdf->watermark(storage_path('2.pdf'),storage_path(auth()->user()->id.'.2.pdf'));
-                $pdf->watermark(storage_path('3.pdf'),storage_path(auth()->user()->id.'.3.pdf'));
-                $pdf->watermark($uploads_dir,$uploads_dir_water,1);
-                $zip->zipFiles($zip_dest,$file_arr);
+                  if ($down){
+                      array_push($un_water_files,$uploads_dir);
+                  }
+              }
 
-                return response()->download($zip_dest,'Offering.zip');
-            }else{
-                return back()->with('no_files',"files not found");
-            }
-        }
+              }
+          }
+          $pdf=new pdf();
+          $water_files=[];
+//          dd($un_water_files);
+          if (!empty($un_water_files)){
+          foreach ($un_water_files as $value){
+              $path=storage_path('uploads/'.uniqid().'.pdf');
+              if (!file_exists($path)){
+                  $pdf->watermark($value,$path);
+              }
+              array_push($water_files,$path);
+          }
+          }
+          $zip=new zip();
+          $zip_dest=storage_path(($request->get('invite_id').'.zip'));
+          $zip->zipFiles($zip_dest,$un_water_files);
 
-
+          return response()->download($zip_dest,'Offering.zip');
     }
-    public function update(SignUpdateRequest $request)
+    public function update(Request $request)
     {
-        if (Sign::where('user_id',auth()->user()->id)->update($request->all())){
-            return $this->message([],0,__t("15423548318740"));
+        if (!$request->get('name')){
+            return back()->with('error',__t(15574791686683));
+        }
+        if (!$request->get('number')){
+            return back()->with('error',__t(15574792197118));
+
+        }
+        if (!$request->file('picture')){
+            return back()->with('error',__t(15575813616026));
+        }
+        $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
+        $sign=Sign::where('invite_id',$invite->id)->latest()->first();
+//        dd($invite);
+         $arr=['jpg','jpeg','png'];
+        if ($file=$request->file('picture')){
+            $ext=$file->getClientOriginalExtension();
+            if (!in_array($ext,$arr)){
+                return back()->with('error','not a image');
+            }
+            $file_name=uniqid().'.'.$ext;
+        }
+//        dd($file_name);
+        $file=$file->move(storage_path('uploads/images'),$file_name);
+
+        $sign->name=$request->get('name');
+        $sign->number=$request->get('number');
+        $sign->picture=$file_name;
+
+        if ($sign->save()){
+            return redirect('/sign/create');
         }else{
-            return $this->message([],1,__t("failed"));
+            return back()->with('error',__t("failed"));
         }
     }
     public function callback(Request $request)
@@ -159,5 +206,38 @@ class SignController extends Controller
        }
     }
 
+    public function sign_pdf()
+    {
+        $sign_info=Sign::where('user_id',auth()->user()->id)->count();
+        $this->request->addSigner(auth()->user()->username,auth()->user()->username);
+        $this->request->addFile(storage_path('1.pdf'));
+        $embed_request=new EmbeddedSignatureRequest($this->request,$this->client_id);
+        $response = $this->client->createEmbeddedSignatureRequest($embed_request,$this->client_id);
+        $signatures   = $response->getSignatures();
+        $signature_id = $signatures[0]->getId();
+        $response_2 = $this->client->getEmbeddedSignUrl($signature_id);
+
+// Store it to use with the embedded.js HelloSign.open() call
+        $sign_url = $response_2->getSignUrl();
+
+        if ($sign_info<2){
+            $data= ['user_id'=>auth()->user()->id,'username'=>auth()->user()->username,'signature_id'=>$signature_id,'signature_request_id'=>$response->signature_request_id];
+
+            Sign::create($data);
+        }else{
+            $last=Sign::where('user_id',auth()->user()->id)->first();
+
+            $last->signature_id=$signature_id;
+            $last->signature_request_id=$response->signature_request_id;
+            $last->save();
+        }
+
+        return view('user.sign_pdf',['url'=>$sign_url]);
+
+    }
+    private function sign_template($template_id)
+    {
+
+    }
 
 }

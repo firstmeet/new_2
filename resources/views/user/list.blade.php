@@ -45,9 +45,12 @@
     if("{!! session('no_files') !!}"){
         layer.msg("{!! session('no_files') !!}")
     }
+    if ("{{session('error')}}"){
+        layer.msg("{{session('error')}}")
+    }
 $(function(){
     manage.get_sign_list("/sign");
-    manage.homeshow('/sign');//home note
+    // manage.homeshow('/sign');//home note
 });
 </script>
 

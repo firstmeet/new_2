@@ -1,0 +1,79 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 80016
+ Source Host           : localhost:3306
+ Source Schema         : chshop
+
+ Target Server Type    : MySQL
+ Target Server Version : 80016
+ File Encoding         : 65001
+
+ Date: 30/04/2019 23:23:09
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for sen_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `sen_goods`;
+CREATE TABLE `sen_goods` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pId` int(3) NOT NULL DEFAULT '0' COMMENT '所属分类id',
+  `tid` int(11) NOT NULL DEFAULT '0' COMMENT '不同语言统一id',
+  `blands` int(11) DEFAULT '0' COMMENT '品牌',
+  `isJs` tinyint(1) NOT NULL COMMENT '是否是寄送团',
+  `sph` varchar(30) NOT NULL COMMENT '商品号',
+  `trans_info` varchar(200) NOT NULL COMMENT '运费说明',
+  `format` varchar(100) NOT NULL COMMENT '商品规格',
+  `kcxx` varchar(100) NOT NULL COMMENT '库存信息',
+  `psxx` varchar(100) NOT NULL COMMENT '配送信息',
+  `payinfo` varchar(100) NOT NULL COMMENT '支付方式',
+  `title` varchar(100) NOT NULL COMMENT '标题',
+  `keywords` varchar(255) DEFAULT NULL,
+  `more` varchar(255) DEFAULT NULL,
+  `sort_params` varchar(120) NOT NULL,
+  `info` varchar(255) DEFAULT NULL,
+  `cont` text,
+  `price` float(16,2) DEFAULT NULL COMMENT '会员价',
+  `oldprice` float(16,2) DEFAULT '0.00' COMMENT '原价/零售价',
+  `costprice` float(16,2) NOT NULL DEFAULT '0.00' COMMENT '成本价',
+  `spec` varchar(255) DEFAULT NULL COMMENT '型号',
+  `store` int(11) DEFAULT NULL COMMENT '库存',
+  `hits` int(11) NOT NULL DEFAULT '0' COMMENT '点击数',
+  `dtTime` int(11) DEFAULT NULL COMMENT '插入时间',
+  `logo` varchar(255) DEFAULT NULL,
+  `pics` varchar(1020) DEFAULT NULL,
+  `isTrue` int(2) NOT NULL DEFAULT '1' COMMENT '是否删除',
+  `ordering` int(3) NOT NULL DEFAULT '0' COMMENT '排序',
+  `selled` int(11) NOT NULL COMMENT '已售出数量',
+  `markId` int(3) NOT NULL,
+  `specs` text COMMENT '规则',
+  `autoon` int(1) DEFAULT '0' COMMENT '是否自动上下架',
+  `starttime` int(11) DEFAULT NULL COMMENT '上架时间',
+  `endtime` int(11) DEFAULT NULL COMMENT '下架时间',
+  `type` int(1) DEFAULT '0' COMMENT '1:品牌，0：商城',
+  `hkou` int(11) DEFAULT NULL COMMENT '会员折扣',
+  `qkou` int(11) DEFAULT NULL COMMENT '签约折扣',
+  `num` int(11) DEFAULT NULL COMMENT '产品包内含多少产品',
+  `limitnum` int(5) NOT NULL DEFAULT '0' COMMENT '限购数',
+  `content` text COMMENT '产品详情',
+  `danwei` varchar(22) DEFAULT NULL,
+  `cid` int(11) NOT NULL DEFAULT '0' COMMENT '供应商id',
+  `xuzhi` text,
+  `fangfa` text,
+  `tag` int(2) NOT NULL DEFAULT '0',
+  `guige` text COMMENT '规格配置',
+  `prices` text COMMENT '规格对应价格',
+  `pro_type` int(11) NOT NULL DEFAULT '0' COMMENT '续费产品续费类型',
+  `kcnum` int(11) NOT NULL DEFAULT '0',
+  `isrenew` int(1) NOT NULL DEFAULT '0' COMMENT '是否作为续费产品',
+  `lang` char(6) DEFAULT 'en' COMMENT '语言',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2629 DEFAULT CHARSET=utf8;
+
+SET FOREIGN_KEY_CHECKS = 1;

@@ -29,6 +29,8 @@ Route::any('sign/callback','SignController@callback');
 
 
 Route::group(['middleware'=>['web','user_auth']],function (){
+     Route::get('/user/home','UserController@home');
+     Route::get('/sign_pdf','SignController@sign_pdf');
     Route::get('/','UserController@index')->name('index');
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');
@@ -41,6 +43,9 @@ Route::group(['middleware'=>['web','user_auth']],function (){
     Route::get('/user/list', 'UserController@list')->name('list');
     Route::get('/user/sign', 'UserController@sign')->name('sign');
     Route::get('/user/signinfo', 'UserController@signinfo')->name('signinfo');
+    Route::get('/company_information', 'UserController@company_information')->name('company_information');
+    Route::get('/investor_information', 'UserController@investor_information')->name('investor_information');
+    Route::get('/payment_information', 'UserController@payment_information')->name('payment_information');
     Route::get('/invite_list','InviteController@list');
     Route::get('/toinvite', 'InviteController@toinvite')->name('toinvite');
 
