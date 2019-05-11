@@ -11,9 +11,9 @@
                     <span><em>Company information:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
-                    <pre>
-Thanks for successfully completing the STEP 1 Investor Information Page. Please proceed to STEP 2 by reviewing and signing the Subscription Agreement below.
-                    </pre>
+                    <p>Thanks for successfully completing the STEP 1 Investor Information Page.  Please proceed to STEP 2 <br>
+                        by reviewing and signing the Subscription Agreement below.
+                    </p>
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
