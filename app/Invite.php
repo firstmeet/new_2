@@ -10,7 +10,7 @@ class Invite extends Model
 
     public function signs()
     {
-        return $this->hasOne(Sign::class,'user_id','invitee_id');
+        return $this->hasMany(Sign::class,'user_id','invitee_id');
     }
 
 }

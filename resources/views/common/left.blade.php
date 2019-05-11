@@ -4,7 +4,7 @@
     </div>
     <ul>
         @if(auth()->user())
-        <li class="nav-item act hide">
+        <li class="nav-item act">
             <a href="/user/index"><i class="my-icon nav-icon icon_2"></i><span>@{{T['15318092344422']}}</span><i class="my-icon nav-more"></i></a>
         </li>
         <li class="nav-item">
