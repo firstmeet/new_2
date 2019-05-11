@@ -25,6 +25,10 @@ class AuthLoginController extends Controller
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
          }else{
+			 
+		 	 $has_invite=\App\Invite::where("invitee_id",$user->id)->first();
+			 
+			 if(!$has_invite) return back()->with('msg',__t('incorrect_password'));
              if ($user->is_signmaster==1){
                  auth()->login($user,$request->get('remember'));
                  return redirect('user/list');
