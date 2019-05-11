@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
     var LANG="{{session('lang','en')}}";
-    $(function() {
+
         getsign()
 
         function getsign() {
@@ -52,7 +52,7 @@
             });
 
         }
-    })
+
 
 </script>
 @include('common.footer') 

@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c10fa6c-26ff-46d4-87d9-5f4621becfe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="1c10fa6c-26ff-46d4-87d9-5f4621becfe7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,12 +456,12 @@
       <workItem from="1557504252729" duration="2139000" />
       <workItem from="1557546094832" duration="10992000" />
       <workItem from="1557560371528" duration="11697000" />
-      <workItem from="1557586490244" duration="7567000" />
+      <workItem from="1557586490244" duration="7761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125278000" />
+    <option name="totallyTimeSpent" value="125472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2160" height="1337" extended-state="0" />
