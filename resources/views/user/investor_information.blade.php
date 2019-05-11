@@ -25,7 +25,7 @@ Input your personal information below, including the number of Notes you would l
  <p class="stp"></p>
  STEP 1:
  YES, my name is <input class="underline-input" name="name" placeholder="input your name"/> and I would like to purchase <input class="underline-input" name="number" type="number" min="1" max="5" placeholder="input number"/> Notes.
- My Elevate Member Number is <b>100098</b> and my email address is <b>458551154@qq.com</b>.
+ My Elevate Member Number is <b>{{$member_id}}</b> and my email address is <b>{{$email}}</b>.
 I have uploaded my Passport/ID Card <span class="layui-btn layui-btn-xs layui-btn-primary" lay-event="detail"><input
                                 type="file" name="picture">Upload</span>
                     </pre>
