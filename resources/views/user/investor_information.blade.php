@@ -74,7 +74,7 @@ function gotoSign(){
     location.href="/user/sign";
 }
 $(function(){
-
+    $("input[type=file]").change(function(e){layer.msg("Upload Success")})
 });
 </script>
 @include('common.footer') 
