@@ -28,8 +28,8 @@ vii. Please review the information in the Subscription Booklet o learn more abou
                     </pre>
                 </div>
                 <div class="step-note">
-                    <a href="/investor_information" class="layui-btn prev">@{{T['15573890488167']}}</a>
-                    <a href="/user/sign" class="layui-btn next">@{{T['15573889694471']}}</a>
+                    <a class="layui-btn prev">@{{T['15575833488374']}}</a>
+                    <a href="/user/list" class="layui-btn next">@{{T['15573922193994']}}</a>
                 </div>
             </div>
 
