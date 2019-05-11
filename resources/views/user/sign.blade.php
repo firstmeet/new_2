@@ -104,14 +104,15 @@ function getsign(){
 		HelloSign.open({
 			url: url,
 			allowCancel: true,
-			// skipDomainVerification:true,
+			skipDomainVerification:true,
             userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
+			    console.log(eventData);
 				var data=eventData
 				$.post('/sign',data,function(res){
 					console.log(res);
-					window.location.href="/user/list";
+					// window.location.href="/user/list";
 				})
 			}
 		});
