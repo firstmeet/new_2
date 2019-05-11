@@ -215,7 +215,7 @@ class SignController extends Controller
 
 // Store it to use with the embedded.js HelloSign.open() call
         $sign_url = $response_2->getSignUrl();
-            $last=Sign::where('user_id',auth()->user()->id)->first();
+            $last=Sign::where('user_id',auth()->user()->id)->oderBy('id')->first();
 
             $last->signature_id=$signature_id;
             $last->signature_request_id=$response->signature_request_id;
