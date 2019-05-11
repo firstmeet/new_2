@@ -70,11 +70,11 @@ class InviteController extends Controller
         foreach ($data as $key=>&$value){
             $i=0;
             foreach ($value['signs'] as $key1=>$value1){
-               if ($value['status']==1){
+               if ($value1['status']==1){
                    $i++;
                }
             }
-            if ($i==2){
+            if ($i==count($value1)){
                 $value['sign_status']=1;
             }else{
                 $value['sign_status']=0;

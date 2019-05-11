@@ -39,10 +39,24 @@ class SignController extends Controller
     use ApiResource;
     public function index(Request $request)
     {
-        $invite=Invite::where('invitee_id',auth()->user()->id)->lastest()->first();
+        $invite=Invite::with('signs')->where('invitee_id',auth()->user()->id)->get();
 
-        $sign=Sign::where('invite_id',$invite->id)->lastest()->first();
-        return $this->message($data);
+        foreach ($invite as $key=>&$value){
+            $i=0;
+            foreach ($value['signs'] as $key1=>$value1){
+                if ($value1['status']==1){
+                    $i++;
+                }
+            }
+            if ($i==count($value1)){
+                $value['sign_status']=1;
+            }else{
+                $value['sign_status']=0;
+            }
+
+        }
+
+        return $this->message($invite);
     }
 
     public function create()
