@@ -21,6 +21,7 @@ Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
 
 Route::get('/test2','SignController@test');
+Route::get('/test','TestController@index');
 
 Route::any('sign/callback','SignController@callback');
 

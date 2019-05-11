@@ -82,7 +82,7 @@ class SignController extends Controller
         $sign_info->signature_request_id=$response->signature_request_id;
         $sign_info->save();
 //            'signature_request_id'=>\session('signature_id')]);
-        return view('test',['url'=>$sign_url]);
+        return view('user.sign',['url'=>$sign_url]);
 
     }
     public function store(Request $request)
@@ -186,7 +186,7 @@ class SignController extends Controller
             $last->save();
         }
 
-        return view('test',['url'=>$sign_url]);
+        return view('user.index',['url'=>$sign_url]);
 
     }
     private function sign_template($template_id)
