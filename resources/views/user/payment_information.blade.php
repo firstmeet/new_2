@@ -40,10 +40,10 @@
     <span style=";font-family:Calibri;font-size:16px">Beneficiary Account: &nbsp;072-008234-6</span>
 </p>
 <p style="margin-left:48px">
-    <span style=";font-family:Calibri;font-size:16px">Amount: [Amount pre-populated by system]</span>
+    <span style=";font-family:Calibri;font-size:16px">Amount: {{$money}} USD</span>
 </p>
 <p style="margin-left:48px">
-    <span style=";font-family:Calibri;font-size:16px">Reference: [Member Number prepopulated by system]</span>
+    <span style=";font-family:Calibri;font-size:16px">Reference: {{$member_id}}</span>
 </p>
 <p>
     <br/>

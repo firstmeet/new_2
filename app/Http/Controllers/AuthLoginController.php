@@ -38,6 +38,7 @@ class AuthLoginController extends Controller
                  auth()->login($user,$request->get('remember'));
                  $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
                  if ($sign&&$sign->status==1){
+                     Session::put('sign_status',1);
                      return redirect('user/list');
                  }
                  return redirect('user/index');

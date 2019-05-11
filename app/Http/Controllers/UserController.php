@@ -56,7 +56,11 @@ class UserController extends Controller
     
     public function payment_information()
     {
-        return view('user/payment_information');
+        $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+
+        $money=number_format(1400*$sign['number']);
+        $member_id=auth()->user()->id+1000000;
+        return view('user/payment_information',compact('money','member_id'));
     }
     public function home()
     {

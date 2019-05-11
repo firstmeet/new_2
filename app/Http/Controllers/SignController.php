@@ -108,10 +108,8 @@ class SignController extends Controller
                 'status'=>1
             ];
             $sign=Sign::where('signature_id',$request->get('signature_id'))->update($data);
-            if (\session('sign_status')){
-                Session::pull('sign_status',1);
-            }else{
-                Session::pull('sign_status',0);
+            if (Sign::where([['user_id',auth()->user()->id],['status','=',1]])->count()==2){
+                Session::put('sign_status',1);
             }
             if ($sign){
                 return $this->message('',0,__('15423548318740'));
@@ -200,7 +198,7 @@ class SignController extends Controller
        $string=$request->all();
        $string=json_decode($string['json'],true);
        if ($string['event']['event_type']=='signature_request_signed') {
-          Sign::where('signature_request_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
+          Sign::where('signature_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
        }
     }
 
@@ -217,18 +215,12 @@ class SignController extends Controller
 
 // Store it to use with the embedded.js HelloSign.open() call
         $sign_url = $response_2->getSignUrl();
-
-        if ($sign_info<2){
-            $data= ['user_id'=>auth()->user()->id,'username'=>auth()->user()->username,'signature_id'=>$signature_id,'signature_request_id'=>$response->signature_request_id];
-
-            Sign::create($data);
-        }else{
             $last=Sign::where('user_id',auth()->user()->id)->first();
 
             $last->signature_id=$signature_id;
             $last->signature_request_id=$response->signature_request_id;
             $last->save();
-        }
+
 
         return view('user.sign_pdf',['url'=>$sign_url]);
 
