@@ -174,6 +174,7 @@ class SignController extends Controller
             return back()->with('error',__t(15575813616026));
         }
         $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
+        $sign="";
         if ($invite){
         $sign=Sign::where('invite_id',$invite->id)->latest()->first();
         }
