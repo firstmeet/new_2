@@ -21,6 +21,8 @@
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
 <script>
 getsign()
+var LANG="{{session('lang','en')}};
+
 function getsign(){
 	//alert('签约成功');window.location.href="/user/list";return;
 
@@ -29,14 +31,14 @@ function getsign(){
 			url: "{{$url}}",
 			allowCancel: true,
 			skipDomainVerification:true,
-            // userCulture: 'en',
+            userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 			    console.log(eventData);
 				var data=eventData
 				$.post('/sign',data,function(res){
 					console.log(res);
-					window.location.href="/investor_information";
+					window.location.href="/company_information";
 				})
 			}
 		});
