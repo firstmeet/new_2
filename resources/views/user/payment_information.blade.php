@@ -6,12 +6,14 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
 
-            <div class="review-box" step="1">
+            <div class="review-box payinfopage" step="1">
                 <div class="short-title title-note">
                     <span><em>Company information:</em><b class="hide"></b></span>
                 </div>
                 <p class="contentBox">
 <p style="text-indent:13px">Thanks for successfully completing the STEP 2 Subscription Agreement Signature Page.  Please proceed to STEP 3 by printing or downloading this Payment Information Page and visiting your bank to wire transfer funds for your subscription.</p>
+<p class="stp" style="height: 1rem;"></p>
+
 <p style="text-indent:13px">Wire Transfer Instructions:</p>
                     <div class="print">
 <p style="text-indent:13px">Bank Name:  DBS Bank Ltd, Singapore</p>
