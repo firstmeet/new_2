@@ -8,6 +8,10 @@
             <div class="short-title">
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
             </div>
+                <div class="step-note">
+                    <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>
+                    <a href="#" class="layui-btn next" onClick="step(1)">@{{T['15573889694471']}}</a>
+                </div>
             <div class="review-box">
                 <iframe id="signpage" class="signpage step-div step-div-0" src="" onload="layer.close(typeof load0 == 'undefined' ? null : load0);"></iframe>
                 <iframe id="signpage" class="signpage step-div step-div-1" src="" onload="layer.close(typeof load1 == 'undefined' ? null : load1);"></iframe>
