@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
     var LANG="{{session('lang','en')}}";
-    $(function() {
+
         getsign()
 
         function getsign() {
@@ -46,13 +46,13 @@
                     var data = eventData
                     $.post('/sign', data, function (res) {
                         console.log(res);
-                        window.location.href = "/payment_information";
+                        // window.location.href = "/payment_information";
                     })
                 }
             });
 
         }
-    })
+
 
 </script>
 @include('common.footer') 
