@@ -287,7 +287,9 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
     border-left-width: 0px
 }
 
-
+.payinfopage p{
+    line-height: 2.3rem;
+}
 
 
 
