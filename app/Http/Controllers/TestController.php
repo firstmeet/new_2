@@ -15,7 +15,9 @@ class TestController extends Controller
 
     public function index()
     {
-		var_dump(\App\Invite::where("invitee_id",1200)->first());exit;
+//		var_dump(\App\Invite::where("invitee_id",1200)->first());exit;
+
+        return view('email.index',['url'=>'http://www.baidu.com']);
     }
 
   

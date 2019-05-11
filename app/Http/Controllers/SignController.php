@@ -48,11 +48,13 @@ class SignController extends Controller
                     $i++;
                 }
             }
-            if ($i==count($value1)){
+            if ($i==count($value1->toArray())){
                 $value['sign_status']=1;
             }else{
                 $value['sign_status']=0;
             }
+            $value['sign']=$value1->shift();
+
 
         }
 
@@ -146,14 +148,15 @@ class SignController extends Controller
     }
     public function update(SignUpdateRequest $request)
     {
-        $invite=Invite::where('invitee_id',auth()->user()->id)->lastest()->first();
+        $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
+        $sign=Sign::where('invite_id',$invite->id)->latest()->first();
+//        dd($invite);
 
-        $sign=Sign::where('invite_id',$invite->id)->lastest()->first();
         if ($file=$request->file('picture')){
             $ext=$file->getClientOriginalExtension();
             $file_name=uniqid().'.'.$ext;
         }
-        $file=$request->file('picture')->move(storage_path('uploads/images/'.$file_name));
+        $file=$file->move(storage_path('/uploads/images',$file_name));
 
         $sign->name=$request->get('name');
         $sign->number=$request->get('number');
