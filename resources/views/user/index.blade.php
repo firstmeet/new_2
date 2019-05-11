@@ -13,9 +13,13 @@
                 <div class="contentBox">
                     <pre>
 “As a prospective investor in our company, Elevate Holding Inc. is pleased to have this opportunity to share confidential information with you.
+<p class="stp"></p>
 To get started, please review the confidentiality agreement below, and acknowledge your acceptance and agreement by clicking the SIGN button below.
+<p class="stp"></p>
 Once you sign the confidentiality agreement, we will provide you with confidential information regarding the company and this offering.”
+<p class="stp"></p>
 [landing page must provide window with confidentiality agreement for invitee to scroll through, and then a SIGN button at the bottom that allows the invitee to confirm his acceptance and agreement with the confidentiality agreement]
+<p class="stp"></p>
 [once the invitee signs the confidentiality agreement, he/she will be moved to the Information webpage]
                     </pre>
                 </div>

@@ -40,11 +40,9 @@ function getsign(){
 				})
 			}
 		});
-
 }
 
-
-    //提交邀请
+//提交邀请
 function postinfo(){	
 	var params = {};
 	params.name = $('form input[name=signname]').val();
