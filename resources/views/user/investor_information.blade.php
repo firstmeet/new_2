@@ -41,6 +41,10 @@ I have uploaded my Passport/ID Card <span class="layui-btn layui-btn-xs layui-bt
     </div>
 </div>
 <script type="text/javascript">
+    var error="{{session('error')}}"
+    if(error){
+        layer.msg(error)
+    }
 function gotoSign(){
     location.href="/user/sign";
 }

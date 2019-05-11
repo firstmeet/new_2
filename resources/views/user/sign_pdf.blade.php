@@ -21,7 +21,7 @@
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
 <script>
 getsign()
-var LANG="{{session('lang','en')}};
+var LANG="{{session('lang','en')}}";
 
 function getsign(){
 	//alert('签约成功');window.location.href="/user/list";return;
@@ -31,7 +31,7 @@ function getsign(){
 			url: "{{$url}}",
 			allowCancel: true,
 			skipDomainVerification:true,
-            userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,,
+            userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 			    console.log(eventData);

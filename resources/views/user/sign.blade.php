@@ -29,7 +29,7 @@ Thanks for successfully completing the STEP 1 Investor Information Page. Please 
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
 
 <script type="text/javascript">
-    var LANG="{{session('lang','en')}};
+    var LANG="{{session('lang','en')}}";
     $(function() {
         getsign()
 
