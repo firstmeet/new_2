@@ -36,7 +36,7 @@ Once you sign the confidentiality agreement, we will provide you with confidenti
 
                 <iframe id="signpage" class="signpage step-div step-div-0" src="http://www.qq.com" ></iframe>
                 <div class="step-note">
-                    <a class="layui-btn prev" onClick="manage.gostep(this)">@{{T['15573890488167']}}</a>
+                    <a class="layu i-btn prev" onClick="manage.gostep(this)">@{{T['15573890488167']}}</a>
                     <a href="/company_information" class="layui-btn next">@{{T['15573889694471']}}</a>
                 </div>
             </div>
