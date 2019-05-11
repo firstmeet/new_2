@@ -35,6 +35,7 @@
             }
         },
         mounted:function(){
+			$('title').html(Translatedata[LANG]['15575437879405']);
             this.setlang($('.dropdown-menu a[val='+LANG+']'));
             layui.use('form', function(){
 
