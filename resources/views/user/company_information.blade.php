@@ -27,7 +27,7 @@ vi. The Notes will be repaid by Company in 36 months unless sooner converted to 
 vii. Please review the information in the Subscription Booklet o learn more about the terms of this offering.                    
                     </pre>
                 </div>
-                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=2" ></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=" ></iframe>
                 <div class="step-note">
                     <a href="/investor_information" class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573889694471']}}</a>
                 </div>

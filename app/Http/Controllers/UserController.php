@@ -50,7 +50,8 @@ class UserController extends Controller
 
     public function investor_information()
     {
-        return view('user/investor_information');
+        $user=auth()->user();
+        return view('user/investor_information',['email'=>$user->username,'member_id'=>$user->id+1000000]);
     }
     
     public function payment_information()

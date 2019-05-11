@@ -174,9 +174,9 @@ class SignController extends Controller
             return back()->with('error',__t(15575813616026));
         }
         $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
-        if ($invite){
+
         $sign=Sign::where('invite_id',$invite->id)->latest()->first();
-        }
+
 //        dd($invite);
          $arr=['jpg','jpeg','png'];
         if ($file=$request->file('picture')){
@@ -188,11 +188,10 @@ class SignController extends Controller
         }
 //        dd($file_name);
         $file=$file->move(storage_path('uploads/images'),$file_name);
-        if ($sign){
         $sign->name=$request->get('name');
         $sign->number=$request->get('number');
         $sign->picture=$file_name;
-        }
+
         if ($sign->save()){
             return redirect('/sign/create');
         }else{
