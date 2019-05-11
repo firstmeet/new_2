@@ -16,6 +16,7 @@ class UserController extends Controller
 
     public function index()
     {
+        // phpinfo();
         // return $this->message(User::find(session('user_id')));
         // return redirect('/user/list');
         return view('user/index');
