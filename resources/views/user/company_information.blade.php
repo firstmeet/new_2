@@ -54,7 +54,7 @@
                         <br/>
                     </p>
                 </div>
-                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=" ></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=3" ></iframe>
                 <div class="step-note">
                     <a href="/investor_information" class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573889694471']}}</a>
                 </div>

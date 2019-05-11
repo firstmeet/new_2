@@ -68,16 +68,13 @@ class SignController extends Controller
     {
         $email=auth()->user()->username;
         $sign_info=Sign::where('user_id',auth()->user()->id)->latest()->first();
-        if (!$sign_info['number']){
-            return $this->message([],1,__t("failed"));
-        }
-        $client = new Client('rj@shanghaisupport.com','elev0607');
+//        $client = new Client('rj@shanghaisupport.com','elev0607');
         $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
         $request = new TemplateSignatureRequest();
         $request->enableTestMode();
         $request->setTemplateId($template_id);
-        $request->setSubject('Purchase Order');
-        $request->setMessage('Glad we could come to an agreement.');
+//        $request->setSubject('Purchase Order');
+//        $request->setMessage('Glad we could come to an agreement.');
         $request->setSigner('member', $email, $sign_info['name']);
         $money=new money();
 //$request->setCC('Accounting', '871609160@qq.com');
@@ -174,10 +171,9 @@ class SignController extends Controller
             return back()->with('error',__t(15575813616026));
         }
         $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
-        $sign="";
-        if ($invite){
+
         $sign=Sign::where('invite_id',$invite->id)->latest()->first();
-        }
+
 //        dd($invite);
          $arr=['jpg','jpeg','png'];
         if ($file=$request->file('picture')){
@@ -189,11 +185,10 @@ class SignController extends Controller
         }
 //        dd($file_name);
         $file=$file->move(storage_path('uploads/images'),$file_name);
-        if ($sign){
         $sign->name=$request->get('name');
         $sign->number=$request->get('number');
         $sign->picture=$file_name;
-        }
+
         if ($sign->save()){
             return redirect('/sign/create');
         }else{
