@@ -108,7 +108,7 @@ class SignController extends Controller
                 'status'=>1
             ];
             $sign=Sign::where('signature_id',$request->get('signature_id'))->update($data);
-            if (Sign::where([['user_id',auth()->user()->id],['status','=',1]])->count()==2){
+            if (Sign::where([['user_id',auth()->user()->id],['status','=',1]])->latest()->first()->status==1){
                 Session::put('sign_status',1);
             }
             if ($sign){
