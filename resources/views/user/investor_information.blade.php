@@ -31,7 +31,7 @@ I have uploaded my Passport/ID Card <span class="layui-btn layui-btn-xs layui-bt
                     </pre>
                 </div>
                     <input type="hidden" name="_method" value="put">
-                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=3" ></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=2" ></iframe>
                 <div class="step-note">
                     <a href="/company_information" class="layui-btn prev">@{{T['15573890488167']}}</a>
                     <a href="#" onclick="document.getElementById('myform').submit();return false;" class="layui-btn next" >@{{T['15573889694471']}}</a>

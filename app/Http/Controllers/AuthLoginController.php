@@ -28,11 +28,19 @@ class AuthLoginController extends Controller
          }else{
 			 
 		 	 $has_invite=\App\Invite::where("invitee_id",$user->id)->first();
+             $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
 			 
 //			 if(!$has_invite) return back()->with('msg',__t('incorrect_password'));
              if ($user->is_signmaster==1){
+
+
+
                  auth()->login($user,$request->get('remember'));
-                 return redirect('user/list');
+                 if ($sign&&$sign->status==1){
+                     return redirect('user/list');
+                 }
+                 return redirect('user/index');
+
              }
              if ($user->current_status==0){
 //
@@ -46,8 +54,11 @@ class AuthLoginController extends Controller
                      return back()->with('msg',__t('no_login_pri'));
                  }else{
                      auth()->login($user,$request->get('remember'));
-                     $sign_status=Sign::where('user_id',$user->id)->first();
+                     $sign_status=Sign::where('user_id',$user->id)->latest()->first();
                      Session::put('sign_status',$sign_status['is_signed']);
+                     if ($sign&&$sign->status==1){
+                         return redirect('user/list');
+                     }
                      return redirect('/user/index');
                  }
                ;
