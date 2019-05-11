@@ -37,14 +37,10 @@ manage.get_invite_list =  function (url){
         var data = data.data;
         if (data) {
             for (var x in data) {
-                var status_text = '';
-                if (data[x].signs) {
-                    status_text = data[x].signs.status_text;
-                }
                 html+='<tr>'+
                         '<td>'+ data[x].Invitees+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
-                        '<td>'+ status_text +'</td>'+
+                        '<td>'+ data[x].status_text +'</td>'+
                       '</tr>';
             }
             $('table.content-box tbody').append(html);

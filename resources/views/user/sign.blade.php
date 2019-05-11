@@ -8,7 +8,7 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>Company information:</em><b class="hide"></b></span>
+                    <span><em>Subscription Agreement Signature:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
                     <p>Thanks for successfully completing the STEP 1 Investor Information Page.  Please proceed to STEP 2 <br>
@@ -38,7 +38,7 @@
             HelloSign.open({
                 url: "{{$url}}",
                 allowCancel: true,
-                // skipDomainVerification: true,
+                skipDomainVerification: true,
                 userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {

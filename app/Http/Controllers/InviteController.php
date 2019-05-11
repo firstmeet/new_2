@@ -68,16 +68,10 @@ class InviteController extends Controller
         }])->where('inviter_id',auth()->user()->id)->get();
 
         foreach ($data as $key=>&$value){
-            $i=0;
-            foreach ($value['signs'] as $key1=>$value1){
-               if ($value1['status']==1){
-                   $i++;
-               }
-            }
-            if ($i==count($value1)){
-                $value['sign_status']=1;
+            if ($value['signs'][count($value['signs'])-1]['status']==1){
+                $value['status_text']=$value['signs'][count($value['signs'])-1]['status_text'];
             }else{
-                $value['sign_status']=0;
+                $value['status_text']=$value['signs'][count($value['signs'])-1]['status_text'];
             }
 
         }

@@ -37,7 +37,7 @@
     <span style=";font-family:Calibri;font-size:16px">STEP 1: &nbsp;</span>
 </p>
 <p style="margin-left:48px">
-    <span style="font-family:Symbol;font-size:16px">·&nbsp;</span><span style=";font-family:Calibri;font-size:16px">YES, my name is <input class="underline-input" name="name" placeholder="input your name"/> and I would like to purchase <input class="underline-input" name="number" type="number" min="1" max="5" placeholder="input number"/> Notes.</span>
+    <span style="font-family:Symbol;font-size:16px">·&nbsp;</span><span style=";font-family:Calibri;font-size:16px">YES, my name is <input class="underline-input" name="name" placeholder="input your name"/> and I would like to purchase <input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/> Notes.</span>
 </p>
 <p style="margin-left:48px">
     <span style="font-family:Symbol;font-size:16px">·&nbsp;</span><span style=";font-family:Calibri;font-size:16px">My Elevate Member Number is <b>{{$member_id}}</b> and my email address is <b>{{$email}}</b>.</span>
