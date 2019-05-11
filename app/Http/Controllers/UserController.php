@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
 
-        if ($sign->status==1){
+        if ($sign&&$sign->status==1){
             \Illuminate\Support\Facades\Session::flash("error",__t('signed'));
             return redirect('user/list');
         }
