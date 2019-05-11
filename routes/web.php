@@ -29,7 +29,7 @@ Route::any('sign/callback','SignController@callback');
 
 
 Route::group(['middleware'=>['web','user_auth']],function (){
-
+     Route::get('/user/home','UserController@home');
      Route::get('/sign_pdf','SignController@sign_pdf');
     Route::get('/','UserController@index')->name('index');
     Route::post('logout','AuthLoginController@logout')->name('logout');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
-use App\User;
+use App\Sign;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,6 +16,12 @@ class UserController extends Controller
 
     public function index()
     {
+        $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+
+        if ($sign->status==1){
+            \Illuminate\Support\Facades\Session::flash("error",__t('signed'));
+            return redirect('user/list');
+        }
         // phpinfo();
         // return $this->message(User::find(session('user_id')));
         // return redirect('/user/list');
@@ -50,6 +56,10 @@ class UserController extends Controller
     public function payment_information()
     {
         return view('user/payment_information');
+    }
+    public function home()
+    {
+        return view('user/index');
     }
 
 }
