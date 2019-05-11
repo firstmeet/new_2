@@ -21,8 +21,6 @@ Thanks for successfully completing the STEP 1 Investor Information Page. Please 
                 </div>
             </div>
 
-
-
         </div>
     </div>
 </div>
@@ -40,7 +38,7 @@ Thanks for successfully completing the STEP 1 Investor Information Page. Please 
             HelloSign.open({
                 url: "{{$url}}",
                 allowCancel: true,
-                skipDomainVerification: true,
+                // skipDomainVerification: true,
                 userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {
