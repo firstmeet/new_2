@@ -53,9 +53,10 @@ class SignController extends Controller
             }else{
                 $value['sign_status']=0;
             }
-            $value['sign']=$value1->shift();
+            $value1=$value1->toArray();
+            $value['sign']=$value['signs'][count($value['signs'])-1];
 
-
+            unset($invite[$key]['signs']);
         }
 
         return $this->message($invite);
@@ -151,12 +152,16 @@ class SignController extends Controller
         $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
         $sign=Sign::where('invite_id',$invite->id)->latest()->first();
 //        dd($invite);
-
+         $arr=['jpg','jpeg','png'];
         if ($file=$request->file('picture')){
             $ext=$file->getClientOriginalExtension();
+            if (!in_array($ext,$arr)){
+                return back()->with('error','not a image');
+            }
             $file_name=uniqid().'.'.$ext;
         }
-        $file=$file->move(storage_path('/uploads/images',$file_name));
+//        dd($file_name);
+        $file=$file->move(storage_path('uploads/images'),$file_name);
 
         $sign->name=$request->get('name');
         $sign->number=$request->get('number');
