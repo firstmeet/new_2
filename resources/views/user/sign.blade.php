@@ -127,6 +127,29 @@ function getsign(){
    
 }
 
+    var LANG="{{session('lang','en')}}";
+    $(function() {
+        getsign()
+
+        function getsign() {
+            //alert('签约成功');window.location.href="/user/list";return;
+
+            HelloSign.init("4912850865d71257e073d540c5764a2f");
+            HelloSign.open({
+                url: "{{$url}}",
+                allowCancel: true,
+                skipDomainVerification: true,
+                userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
+                container: document.getElementById('myHSContainer'),
+                messageListener: function (eventData) {
+                    console.log(eventData);
+                    var data = eventData
+                    $.post('/sign', data, function (res) {
+                        console.log(res);
+                        window.location.href = "/payment_information";
+                    })
+                }
+            });
 
     //提交邀请
 function postinfo(){	
