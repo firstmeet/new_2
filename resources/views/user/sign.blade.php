@@ -96,9 +96,16 @@ function step(s){
 }
 step(1);
 function getsign(){
+    var url=''
+    var steps="{{request('step')}}"
+    if ($steps==1){
+        url="/sign_pdf"
+    } else{
+        url="/sign/create"
+    }
     var index1 = layer.load(1, {shade: false,shadeClose: true});
 	//alert('签约成功');window.location.href="/user/list";return;
-	$.get('/sign/create',function(url){
+	$.get(url,function(url){
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
         layer.close(index1);
 		HelloSign.open({

@@ -12,16 +12,16 @@
                 </div>
                 <div class="contentBox">
                     <pre>
-i. “As a prospective investor in our company, Elevate Holding Inc. is pleased to have this opportunity to share confidential information with you.
-ii. To get started, please review the confidentiality agreement below, and acknowledge your acceptance and agreement by clicking the SIGN button below.
-iii. Once you sign the confidentiality agreement, we will provide you with confidential information regarding the company and this offering.”
-b. [landing page must provide window with confidentiality agreement for invitee to scroll through, and then a SIGN button at the bottom that allows the invitee to confirm his acceptance and agreement with the confidentiality agreement]
-c. [once the invitee signs the confidentiality agreement, he/she will be moved to the Information webpage]
+“As a prospective investor in our company, Elevate Holding Inc. is pleased to have this opportunity to share confidential information with you.
+To get started, please review the confidentiality agreement below, and acknowledge your acceptance and agreement by clicking the SIGN button below.
+Once you sign the confidentiality agreement, we will provide you with confidential information regarding the company and this offering.”
+[landing page must provide window with confidentiality agreement for invitee to scroll through, and then a SIGN button at the bottom that allows the invitee to confirm his acceptance and agreement with the confidentiality agreement]
+[once the invitee signs the confidentiality agreement, he/she will be moved to the Information webpage]
                     </pre>
                 </div>
-                <iframe id="signpage" class="signpage step-div step-div-0" src="http://www.baidu.com" ></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=1" ></iframe>
                 <div class="step-note">
-                    <a class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573886642645']}}</a>
+                    <a class="layui-btn next" href="/sign_pdf">@{{T['15573886642645']}}</a>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@ c. [once the invitee signs the confidentiality agreement, he/she will be moved t
 </div>
 <script type="text/javascript">
 function gotoSign(){
-    location.href="/user/sign";
+    location.href="/user/sign?step=1";
 }
 $(function(){
 
