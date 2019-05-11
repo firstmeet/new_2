@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+            <state relative-caret-position="945">
+              <caret line="224" column="56" lean-forward="true" selection-start-line="224" selection-start-column="56" selection-end-line="224" selection-end-column="56" />
               <folding>
                 <element signature="e#40#65#0#PHP" expanded="true" />
               </folding>
@@ -106,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="180">
+              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -206,9 +206,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/InviteController.php" />
         <option value="$PROJECT_DIR$/public/js/global.js" />
         <option value="$PROJECT_DIR$/resources/views/user/investor_information.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/sign.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
       </list>
     </option>
   </component>
@@ -398,7 +398,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -456,16 +456,15 @@
       <workItem from="1557504252729" duration="2139000" />
       <workItem from="1557546094832" duration="10992000" />
       <workItem from="1557560371528" duration="11697000" />
-      <workItem from="1557586490244" duration="8021000" />
+      <workItem from="1557586490244" duration="8345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125732000" />
+    <option name="totallyTimeSpent" value="126056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2160" height="1337" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989518" visible="true" weight="0.27714825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -849,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -863,10 +855,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/sign.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+        <state relative-caret-position="945">
+          <caret line="224" column="56" lean-forward="true" selection-start-line="224" selection-start-column="56" selection-end-line="224" selection-end-column="56" />
           <folding>
             <element signature="e#40#65#0#PHP" expanded="true" />
           </folding>
