@@ -11,17 +11,15 @@
                     <span><em>Company information:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
-                    <pre>
-Thanks for successfully completing the STEP 1 Investor Information Page. Please proceed to STEP 2 by reviewing and signing the Subscription Agreement below.
-                    </pre>
+                    <p>Thanks for successfully completing the STEP 1 Investor Information Page.  Please proceed to STEP 2 <br>
+                        by reviewing and signing the Subscription Agreement below.
+                    </p>
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
                     <a href="/investor_information" class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573889694471']}}</a>
                 </div>
             </div>
-
-
 
         </div>
     </div>
@@ -40,7 +38,7 @@ Thanks for successfully completing the STEP 1 Investor Information Page. Please 
             HelloSign.open({
                 url: "{{$url}}",
                 allowCancel: true,
-                skipDomainVerification: true,
+                // skipDomainVerification: true,
                 userCulture: LANG=='en'?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {
