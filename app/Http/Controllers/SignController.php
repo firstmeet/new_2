@@ -39,8 +39,9 @@ class SignController extends Controller
     use ApiResource;
     public function index(Request $request)
     {
+        $status=$request->get('status');
         $invite=Invite::with('signs')->where('invitee_id',auth()->user()->id)->get();
-
+        $arr=[];
         foreach ($invite as $key=>&$value){
             $i=0;
             foreach ($value['signs'] as $key1=>$value1){
@@ -48,15 +49,16 @@ class SignController extends Controller
                     $i++;
                 }
             }
-            if ($i==count($value1->toArray())){
-                $value['sign_status']=1;
-            }else{
-                $value['sign_status']=0;
-            }
-            $value1=$value1->toArray();
             $value['sign']=$value['signs'][count($value['signs'])-1];
 
+            if ($value['sign']['status']!=1){
+                array_push($arr,$value);
+            }
+
             unset($invite[$key]['signs']);
+        }
+        if (!is_null($status)){
+            $invite=$arr;
         }
 
         return $this->message($invite);
@@ -122,24 +124,36 @@ class SignController extends Controller
     }
     public function download(Request $request)
     {
+//        dd($request->get('invite_id'));
           $signs=Sign::where('invite_id',$request->get('invite_id'))->get();
           $un_water_files=[storage_path('2.pdf'),storage_path('3.pdf')];
 
           foreach ($signs as $key=>$value){
+              if ($value['signature_request_id']){
               $uploads_dir=storage_path('uploads/'.$value['signature_request_id'].'.pdf');
-              $uploads_dir_water=storage_path('uploads/'.$value['signature_request_id'].'.wa.pdf');
-              $down=$this->client->getFiles($value['signature_request_id'],$uploads_dir,'pdf');
+              if ($uploads_dir){
+                  array_push($un_water_files,$uploads_dir);
+              }else{
+                  $down=$this->client->getFiles($value['signature_request_id'],$uploads_dir,'pdf');
 
-              if ($down){
-                  array_push($un_water_files,$uploads_dir_water);
+                  if ($down){
+                      array_push($un_water_files,$uploads_dir);
+                  }
+              }
+
               }
           }
           $pdf=new pdf();
           $water_files=[];
+//          dd($un_water_files);
+          if (!empty($un_water_files)){
           foreach ($un_water_files as $value){
-              $path=storage_path(uniqid().'.pdf');
-              $pdf->watermark($value,$path);
+              $path=storage_path('uploads/'.uniqid().'.pdf');
+              if (!file_exists($path)){
+                  $pdf->watermark($value,$path);
+              }
               array_push($water_files,$path);
+          }
           }
           $zip=new zip();
           $zip_dest=storage_path(($request->get('invite_id').'.zip'));
@@ -147,8 +161,18 @@ class SignController extends Controller
 
           return response()->download($zip_dest,'Offering.zip');
     }
-    public function update(SignUpdateRequest $request)
+    public function update(Request $request)
     {
+        if (!$request->get('name')){
+            return back()->with('error',__t(15574791686683));
+        }
+        if (!$request->get('number')){
+            return back()->with('error',__t(15574792197118));
+
+        }
+        if (!$request->file('picture')){
+            return back()->with('error',__t(15575813616026));
+        }
         $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
         $sign=Sign::where('invite_id',$invite->id)->latest()->first();
 //        dd($invite);
@@ -168,9 +192,9 @@ class SignController extends Controller
         $sign->picture=$file_name;
 
         if ($sign->save()){
-            return $this->message([],0,__t("15423548318740"));
+            return redirect('/sign/create');
         }else{
-            return $this->message([],1,__t("failed"));
+            return back()->with('error',__t("failed"));
         }
     }
     public function callback(Request $request)
@@ -208,7 +232,7 @@ class SignController extends Controller
             $last->save();
         }
 
-        return view('user.index',['url'=>$sign_url]);
+        return view('user.sign_pdf',['url'=>$sign_url]);
 
     }
     private function sign_template($template_id)
