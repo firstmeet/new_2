@@ -28,7 +28,7 @@ class AuthLoginController extends Controller
          }else{
 			 
 		 	 $has_invite=\App\Invite::where("invitee_id",$user->id)->first();
-             $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+
 			 
 //			 if(!$has_invite) return back()->with('msg',__t('incorrect_password'));
              if ($user->is_signmaster==1){
@@ -36,6 +36,7 @@ class AuthLoginController extends Controller
 
 
                  auth()->login($user,$request->get('remember'));
+                 $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
                  if ($sign&&$sign->status==1){
                      return redirect('user/list');
                  }

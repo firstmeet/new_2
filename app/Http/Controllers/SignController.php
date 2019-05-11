@@ -73,8 +73,8 @@ class SignController extends Controller
         $request = new TemplateSignatureRequest();
         $request->enableTestMode();
         $request->setTemplateId($template_id);
-        $request->setSubject('Purchase Order');
-        $request->setMessage('Glad we could come to an agreement.');
+//        $request->setSubject('Purchase Order');
+//        $request->setMessage('Glad we could come to an agreement.');
         $request->setSigner('member', $email, $sign_info['name']);
         $money=new money();
 //$request->setCC('Accounting', '871609160@qq.com');
