@@ -46,7 +46,7 @@
                     var data = eventData
                     $.post('/sign', data, function (res) {
                         console.log(res);
-                        // window.location.href = "/payment_information";
+                        window.location.href = "/payment_information";
                     })
                 }
             });
