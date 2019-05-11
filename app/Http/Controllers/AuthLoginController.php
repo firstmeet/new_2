@@ -35,11 +35,18 @@ class AuthLoginController extends Controller
                  return back()->with('msg',__t('no_login_pri'));
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
-                 if (Invite::where('invitee_id'))
-                 auth()->login($user,$request->get('remember'));
-                 $sign_status=Sign::where('user_id',$user->id)->first();
-                 Session::put('sign_status',$sign_status['is_signed']);
-                 return redirect('/user/index');
+                 //是否被邀请
+                 $find=Invite::where('invitees',$email)->first();
+
+                 if(!$find){
+                     return back()->with('msg',__t('no_login_pri'));
+                 }else{
+                     auth()->login($user,$request->get('remember'));
+                     $sign_status=Sign::where('user_id',$user->id)->first();
+                     Session::put('sign_status',$sign_status['is_signed']);
+                     return redirect('/user/index')d
+                 }
+               ;
              }
          }
     }
