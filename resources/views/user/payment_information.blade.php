@@ -12,10 +12,11 @@
                 </div>
                 <div class="contentBox">
                     <pre>
+<div class="gtinfos">
 i. Thanks for successfully completing the STEP 2 Subscription Agreement Signature Page.  Please proceed to STEP 3 by printing or downloading this Payment Information Page and visiting your bank to wire transfer funds for your subscription.
 <p class="stp"></p>
-ii. Wire Transfer Instructions:  
-Bank Name:  DBS Bank Ltd, Singapore
+</div>
+<div class="gtinfos" style="text-indent: 0;">ii. Wire Transfer Instructions: </div>Bank Name:  DBS Bank Ltd, Singapore
 Bank Address:  12 Marina Boulevard, DBS Asia Central, Marina Bay Financial Centre Tower 3, Singapore 018982
 SWIFT:  DBSSSGSG
 Beneficiary Name:  Elevate United Pte. Ltd
@@ -25,7 +26,7 @@ Reference: [Member Number prepopulated by system]
                     </pre>
                 </div>
                 <div class="step-note">
-                    <a class="layui-btn prev">@{{T['15575833488374']}}</a>
+                    <a class="layui-btn prev" onclick="">@{{T['15575833488374']}}</a>
                     <a href="/user/list" class="layui-btn next">@{{T['15573922193994']}}</a>
                 </div>
             </div>
@@ -34,6 +35,10 @@ Reference: [Member Number prepopulated by system]
     </div>
 </div>
 <script type="text/javascript">
+function printPage(){
+    $('.header,.nav,.short-title,.step-note,.shipping-area,.gtinfos').addClass('noprint');
+    window.print(); 
+}
 $(function(){
 
 });

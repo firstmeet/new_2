@@ -426,7 +426,9 @@ white-space:nowrap;
 }
 }
 
-
+@media print { 
+    .noprint { display: none!important;color:green } 
+} 
 
 
 
