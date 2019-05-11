@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
+use App\Invite;
 use App\Sign;
 use App\User;
 use Illuminate\Http\Request;
@@ -34,6 +35,7 @@ class AuthLoginController extends Controller
                  return back()->with('msg',__t('no_login_pri'));
 //                 return $this->message('',1,trans('auth.failed_policy'));
              }else{
+                 if (Invite::where('invitee_id'))
                  auth()->login($user,$request->get('remember'));
                  $sign_status=Sign::where('user_id',$user->id)->first();
                  Session::put('sign_status',$sign_status['is_signed']);
