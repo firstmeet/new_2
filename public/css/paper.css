@@ -249,6 +249,55 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 
 .lg-hide{ display:none}
 
+.contentBox{
+    padding: 1rem 0;
+}
+
+.contentBox pre{
+    padding: 1rem;
+    text-indent: 2rem;
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+}
+
+.contentBox pre .layui-btn{
+    text-indent: 0;
+    border: 1px solid #009688;
+}
+.contentBox pre .underline-input{
+    text-align: center;
+}
+
+.short-title.title-note{
+    border-bottom: 1px solid #B9B9B9;
+}
+.short-title.title-note span{
+    border-bottom: none;
+}
+.noshow{
+    display: none;
+}
+
+.underline-input{
+    border-color: #878787; 
+    border-style: solid; 
+    border-top-width: 0px;
+     border-right-width: 0px; 
+    border-bottom-width: 1px;
+    border-left-width: 0px
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 860px) {
 .lg-hide{ display:block}
 .account1 .username {

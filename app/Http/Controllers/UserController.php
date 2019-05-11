@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         // return $this->message(User::find(session('user_id')));
-        return redirect('/user/list');
+        // return redirect('/user/list');
         return view('user/index');
     }
 
@@ -34,6 +34,21 @@ class UserController extends Controller
     public function signinfo()
     {
         return view('user/signinfo');
+    }
+
+    public function company_information()
+    {
+        return view('user/company_information');
+    }
+
+    public function investor_information()
+    {
+        return view('user/investor_information');
+    }
+    
+    public function payment_information()
+    {
+        return view('user/payment_information');
     }
 
 }
