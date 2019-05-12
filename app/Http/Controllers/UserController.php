@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+        $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
 
         if ($sign&&$sign->status==1){
             \Illuminate\Support\Facades\Session::flash("error",__t('signed'));

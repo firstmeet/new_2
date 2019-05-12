@@ -63,7 +63,7 @@ class SignController extends Controller
     public function create()
     {
         $email=auth()->user()->username;
-        $sign_info=Sign::where('user_id',auth()->user()->id)->latest()->first();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
 //        $client = new Client('rj@shanghaisupport.com','elev0607');
         $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
         $request = new TemplateSignatureRequest();
@@ -104,7 +104,7 @@ class SignController extends Controller
                 'status'=>1
             ];
             $sign=Sign::where('signature_id',$request->get('signature_id'))->update($data);
-            if (Sign::where([['user_id',auth()->user()->id],['status','=',1]])->latest()->first()->status==1){
+            if (Sign::where([['user_id',auth()->user()->id],['status','=',1]])->orderBy('id','desc')->first()->status==1){
                 Session::put('sign_status',1);
             }
             if ($sign){
@@ -164,9 +164,9 @@ class SignController extends Controller
         if (!$request->file('picture')){
             return back()->with('error',__t(15575813616026));
         }
-        $invite=Invite::where('invitee_id',auth()->user()->id)->latest()->first();
+        $invite=Invite::where('invitee_id',auth()->user()->id)->orderBy('id','desc')->first();
 
-        $sign=Sign::where('invite_id',$invite->id)->latest()->first();
+        $sign=Sign::where('invite_id',$invite->id)->orderBy('id','desc')->first();
 
 //        dd($invite);
          $arr=['jpg','jpeg','png'];
