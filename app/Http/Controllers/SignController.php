@@ -116,7 +116,9 @@ class SignController extends Controller
     public function download(Request $request)
     {
 //        dd($request->get('invite_id'));
-          $signs=Sign::where('invite_id',$request->get('invite_id'))->get();
+        $invite=Invite::where('invitee_id',auth()->user()->id)->orderBy('id','desc')->first();
+        $invite_id=$invite->id;
+          $signs=Sign::where('invite_id',$invite_id)->get();
           $un_water_files=[storage_path('2.pdf'),storage_path('3.pdf')];
 
           foreach ($signs as $key=>$value){
