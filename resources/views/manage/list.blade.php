@@ -5,7 +5,7 @@
         @include('common.left')  
         <div class="right">
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
+                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15434808149179']}}</b></span>
             </div>
             <div class="review-box">
                 <form class="layui-form invite-form" onsubmit="return false">
