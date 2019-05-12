@@ -10,7 +10,6 @@
                 <div class="short-title title-note">
                     <span><em>Investor information:</em><b class="hide"></b></span>
                 </div>
-                <form action="/sign/update" method="post" id="myform" enctype="multipart/form-data">
                 <div class="contentBox">
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">Before you decide to invest, you may, if you desire, make inquiries about the Company and its business or any other matters relating to the Company and your possible investment in the Company, by meeting with the Company’s management and/or obtaining documents and any other information which you believe necessary to make an investment decision. &nbsp;In connection with such inquiry, any documents that you wish to review, will be made available for inspection and copying or provided, upon request, subject to your agreement to maintain such information in confidence. &nbsp;You should address any inquiries or requests for additional information or documents in writing to Offering@Elev8united.com.</span>
@@ -50,9 +49,8 @@
 {{--                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=2" ></iframe>--}}
                 <div class="step-note">
                     <a href="/company_information" class="layui-btn prev">@{{T['15573890488167']}}</a>
-                    <a href="#" onclick="document.getElementById('myform').submit();return false;" class="layui-btn next" >@{{T['15573889694471']}}</a>
+                    <a href="/personal_information" class="layui-btn next" >@{{T['15573889694471']}}</a>
                 </div>
-                </form>
             </div>
 
 

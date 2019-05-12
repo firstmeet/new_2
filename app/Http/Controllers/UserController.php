@@ -62,6 +62,14 @@ class UserController extends Controller
         $member_id=auth()->user()->id+1000000;
         return view('user/payment_information',compact('money','member_id'));
     }
+
+    public function personal_information()
+    {
+        $user=auth()->user();
+        return view('user/personal_information',['email'=>$user->username,'member_id'=>$user->id+1000000]);
+
+    }
+
     public function home()
     {
         return view('user/index');

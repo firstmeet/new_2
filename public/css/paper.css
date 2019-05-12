@@ -266,6 +266,7 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 }
 .contentBox .underline-input{
     text-align: center;
+    height: 2.5rem;
 }
 
 .short-title.title-note{
@@ -289,6 +290,18 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 
 .payinfopage p{
     line-height: 2.3rem;
+}
+
+.pinfo-ul ul{
+    padding-left: 4rem;
+}
+.pinfo-ul ul li{
+    line-height: 3rem;
+    font-size: 1.5rem;
+    list-style: disc;
+}
+.pinfo-ul .qtnote{
+    text-indent:0;
 }
 
 
