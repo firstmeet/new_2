@@ -147,8 +147,11 @@ class SignController extends Controller
           }
           }
           $zip=new zip();
-          $zip_dest=storage_path(('uploads/'.uniqid().'.zip'));
-          $zip->zipFiles($zip_dest,$water_files);
+          $zip_dest=storage_path(('uploads/'.$request->get('invite_id').'.zip'));
+          if (!file_exists($zip_dest)){
+              $zip->zipFiles($zip_dest,$water_files);
+          }
+
 
           return response()->download($zip_dest,'Offering.zip');
     }
