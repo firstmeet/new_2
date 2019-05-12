@@ -11,8 +11,26 @@
                     <span><em>Subscription Agreement Signature:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
-                    <p>Thanks for successfully completing the STEP 1 Investor Information Page.  Please proceed to STEP 2 <br>
-                        by reviewing and signing the Subscription Agreement below.
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">STEP 2: &nbsp;Subscription Agreement Signature:</span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">Thank you for successfully completing STEP 1. &nbsp;Please proceed to STEP 2 </span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">by clicking the GET STARTED button, and following the instructions to sign electronically. </span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">After signing, click the CONTINUE button and then the I AGREE button to confirm your signature.</span>
+                    </p>
+                    <p>
+                        <br/>
                     </p>
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>

@@ -12,19 +12,25 @@
                 </div>
                 <div class="contentBox">
                     <p>
-                        <span style=";font-family:Calibri;font-size:16px">“As a prospective investor in our company, Elevate Holding Inc. is pleased to have this opportunity to share confidential information with you.</span>
+                        <span style=";font-family:Calibri;font-size:16px">Thank you for considering an investment in Elevate Holdings, Inc.</span>
                     </p>
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                     </p>
                     <p>
-                        <span style=";font-family:Calibri;font-size:16px">To get started, please review the confidentiality agreement below, and acknowledge your acceptance and agreement by clicking the SIGN button below.</span>
+                        <span style=";font-family:Calibri;font-size:16px">As a prospective investor in Elevate Holdings, Inc., we are pleased to have this opportunity to share with you confidential information that will help you better understand our company and our business. &nbsp;To protect our company and business, we require that you sign a confidentiality agreement before we are able to provide you with confidential information.</span>
                     </p>
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                     </p>
                     <p>
-                        <span style=";font-family:Calibri;font-size:16px">Once you sign the confidentiality agreement, we will provide you with confidential information regarding the company and this offering.”</span>
+                        <span style=";font-family:Calibri;font-size:16px">To get started, please review the confidentiality agreement below, and acknowledge your acceptance and agreement by clicking the GO TO SIGN button below and follow the signing instructions on the next page.</span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
+                    </p>
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px">Once you have signed the confidentiality agreement, we will provide you with confidential information regarding the company and this offering.</span>
                     </p>
                     <p>
                         <br/>
