@@ -41,6 +41,7 @@ class SignController extends Controller
     {
         $status=$request->get('status');
         $invite=Invite::with('signs')->where('invitee_id',auth()->user()->id)->get();
+//        dd($invite);
         $arr=[];
         foreach ($invite as $key=>&$value){
             $i=0;
@@ -51,15 +52,10 @@ class SignController extends Controller
             }
             $value['sign']=$value['signs'][count($value['signs'])-1];
 
-            if ($value['sign']['status']!=1){
-                array_push($arr,$value);
-            }
-
-            unset($invite[$key]['signs']);
         }
-        if (!is_null($status)){
-            $invite=$arr;
-        }
+//        if (!is_null($status)){
+//            $invite=$arr;
+//        }
 
         return $this->message($invite);
     }
@@ -126,7 +122,7 @@ class SignController extends Controller
           foreach ($signs as $key=>$value){
               if ($value['signature_request_id']){
               $uploads_dir=storage_path('uploads/'.$value['signature_request_id'].'.pdf');
-              if ($uploads_dir){
+              if (file_exists($uploads_dir)){
                   array_push($un_water_files,$uploads_dir);
               }else{
                   $down=$this->client->getFiles($value['signature_request_id'],$uploads_dir,'pdf');
@@ -144,15 +140,15 @@ class SignController extends Controller
           if (!empty($un_water_files)){
           foreach ($un_water_files as $value){
               $path=storage_path('uploads/'.uniqid().'.pdf');
-              if (!file_exists($path)){
+
                   $pdf->watermark($value,$path);
-              }
+
               array_push($water_files,$path);
           }
           }
           $zip=new zip();
-          $zip_dest=storage_path(($request->get('invite_id').'.zip'));
-          $zip->zipFiles($zip_dest,$un_water_files);
+          $zip_dest=storage_path(('uploads/'.$request->get('invite_id').'.zip'));
+          $zip->zipFiles($zip_dest,$water_files);
 
           return response()->download($zip_dest,'Offering.zip');
     }
