@@ -6,7 +6,7 @@
         @include('common.left')  
         <div class="right">
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573884466817']}}</b></span>
+                <span><b>@{{T['15573884466817']}}</b></span>
             	<div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
                     <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>

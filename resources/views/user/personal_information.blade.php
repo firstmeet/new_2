@@ -13,8 +13,8 @@
                 <form action="/sign/update" method="post" id="myform" enctype="multipart/form-data">
                 <div class="contentBox pinfo-ul">
                 <ul>
-                    <li>My Elevate Member Number is <b>{{$member_id}}</b></li>
-                    <li>My email address is <b>{{$email}}</b></li>
+                    <li>My Elevate Member Number is {{$member_id}}</li>
+                    <li>My email address is {{$email}}</li>
                     <li>My full legal name is <input class="underline-input" name="name" placeholder="input your name"/></li>
                     <li>I would like to purchase 
                     <select name="number" >
