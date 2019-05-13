@@ -11,7 +11,7 @@
 </div>
 </div>
 <script type="text/javascript">
-    var LANG="{!! session('lang','en') !!}";
+    var LANG="{{ session('lang','en')}}";
     var L = Translatedata[LANG];
     var vm = new Vue({
         el: '#vue_det',
