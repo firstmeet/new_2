@@ -16,7 +16,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
     <script src="js/layui/layui.js"></script>
     <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{$VS}}"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+    <script type="text/javascript" src="/js/vue.min.js"></script>
     <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
 
     <!-- Styles -->
