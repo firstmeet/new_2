@@ -31,7 +31,7 @@ function getsign(){
 			url: "{{$url}}",
 			allowCancel: true,
 			skipDomainVerification:true,
-            userCulture: HelloSign.CULTURES.EN_US,
+            userCulture: LANG=="en"?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 			    console.log(eventData);
