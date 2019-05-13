@@ -23,7 +23,10 @@ class AuthLoginController extends Controller
          $email=$request->get('email');
          $password=$request->get('password');
          $user=User::where([['username','=',$email],['pwd','=',md5($password)]])->first();
-         Session::put('lang','en');
+         if(!Session::get('lang')){
+		 	Session::put('lang','en');
+		}
+		 
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
          }else{

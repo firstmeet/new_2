@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+		$sql="SELECT
+			UPDATE_TIME
+		FROM
+			information_schema.TABLES
+		WHERE
+			information_schema.TABLES.TABLE_SCHEMA = 'chshop' and information_schema.TABLES.TABLE_NAME = 'sen_translate';";
+		$rs=\DB::select($sql);
 
+		View::share('VS', strtotime($rs[0]->UPDATE_TIME));
     }
 
     /**

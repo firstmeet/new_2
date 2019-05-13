@@ -17,6 +17,9 @@ class TestController extends Controller
 
     public function index()
     {
+		
+		
+		//$rs->UPDATE_TIME;
         $word=new word();
         $word->htmlToWord();
 //		var_dump(\App\Invite::where("invitee_id",1200)->first());exit;

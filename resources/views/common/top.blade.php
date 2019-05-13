@@ -14,7 +14,7 @@
 
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="https://www.elevateunited.cn/translate.js"></script>
+<script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{$VS}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
 
 <script type="text/javascript" src="/js/nav.js"></script>
