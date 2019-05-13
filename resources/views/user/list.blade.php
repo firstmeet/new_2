@@ -7,6 +7,7 @@
             <!-- <div class="back hide">← back to documents</div> -->
             <div class="short-title">
                 <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
+                <div class="f-right"><a href="/download_word" lay-event="detail" class="layui-btn layui-btn-sm">@{{T['15573922193994']}}</a></div>
             </div>
             <div class="new-sign-parent hide">
                 <div class="new-sign-box">
@@ -18,6 +19,7 @@
             </div>
 
             <div class="review-box">
+
                 <div class="layui-form">
                   <table class="layui-table content-box">
                     <tbody>
