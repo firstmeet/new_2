@@ -3,20 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiResource;
-use App\Http\Requests\SignUpdateRequest;
 use App\Invite;
 use App\Service\money;
 use App\Service\pdf;
-use App\Service\word;
 use App\Service\zip;
 use App\Sign;
-use Faker\Provider\Image;
 use HelloSign\Client;
 use HelloSign\EmbeddedSignatureRequest;
 use HelloSign\SignatureRequest;
 use HelloSign\TemplateSignatureRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
 class SignController extends Controller
@@ -233,8 +230,29 @@ class SignController extends Controller
     }
     public function download_word()
     {
-        $word=new word();
-        $word->htmlToWord();
+        $path=storage_path("File/to_word.html");
+
+        $isHave=file_exists($path);
+
+//        if(empty($isHave)){
+//            $this->error("文件不存在!");
+//        }
+
+        $zhi=file_get_contents($path);
+        //把左边距替换掉
+        $str1 = str_replace('margin-left:100px;', '', $zhi);// es
+
+        $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        $money=$sign['number']*1400;
+        $member_id=auth()->user()->id+1000000;
+
+        $str1=str_replace('{{$money}}',$money,$str1);
+        $str1=str_replace('{{$member_id}}',$member_id,$str1);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadHTML($str1);
+        return $pdf->download('1.pdf');
+//        $pdf=\Barryvdh\DomPDF\PDF::loadView('download.pdf',['money'=>$money,'member_id'=>$member_id]);
+//        $pdf->download("payment information.pdf");
     }
 
 }

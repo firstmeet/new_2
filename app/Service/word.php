@@ -19,9 +19,9 @@ class word
 
         $isHave=file_exists($path);
 
-        if(empty($isHave)){
-            $this->error("文件不存在!");
-        }
+//        if(empty($isHave)){
+//            $this->error("文件不存在!");
+//        }
 
         $zhi=file_get_contents($path);
         //把左边距替换掉

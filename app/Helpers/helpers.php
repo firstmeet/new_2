@@ -3,6 +3,7 @@
 if (!function_exists('__t')){
     function __t($code,$lang='en')
     {
+//        echo $lang;
         if (session('lang')){
             $lang=session('lang');
         }
