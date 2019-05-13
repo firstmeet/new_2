@@ -34,9 +34,9 @@
                     </p>
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
-                <div class="step-note">
+                <!--<div class="step-note">
                     <a href="/investor_information" class="layui-btn next" onClick="if(!is_sign){lalert(Translatedata[LANG]['15577159551392']);return false;}">@{{T['15573889694471']}}</a>
-                </div>
+                </div>-->
             </div>
 
         </div>
