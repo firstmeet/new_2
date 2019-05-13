@@ -20,7 +20,7 @@ Route::get('/login','AuthLoginController@getLogin');
 Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
 
-Route::get('/test2','SignController@test');
+Route::get('/test2','HomeController@index');
 
 Route::any('sign/callback','SignController@callback');
 
