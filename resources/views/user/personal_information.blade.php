@@ -9,6 +9,7 @@
                 <span><em>Personal Information:</em></span>
             </div>
             <div class="review-box">
+            <iframe style="display:none" name="_hide_frame" ></iframe>
                 <form action="/sign/update" method="post" id="myform" enctype="multipart/form-data">
                 <div class="contentBox pinfo-ul">
                 <ul>
@@ -48,10 +49,12 @@ layui.use('form', function(){
   var form = layui.form;
   form.render();
   //监听提交
+  /*
   form.on('submit(formDemo)', function(data){
     layer.msg(JSON.stringify(data.field));
     return false;
   });
+  */
 });
 
 </script>

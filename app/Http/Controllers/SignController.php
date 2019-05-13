@@ -158,6 +158,8 @@ class SignController extends Controller
     }
     public function update(Request $request)
     {
+		
+	     
         if (!$request->get('name')){
             return back()->with('error',__t(15574791686683));
         }
@@ -186,7 +188,6 @@ class SignController extends Controller
         $sign->name=$request->get('name');
         $sign->number=$request->get('number');
         $sign->picture=$file_name;
-
         if ($sign->save()){
             return redirect('/sign/create');
         }else{
