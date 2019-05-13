@@ -17,11 +17,11 @@
     <script src="js/layui/layui.js"></script>
     <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{$VS}}"></script>
     <script type="text/javascript" src="/js/vue.min.js"></script>
-    <script type="text/javascript" src="/js/global.js?v={{time() }}"></script>
+    <script type="text/javascript" src="/js/global.js?v={{time()}}"></script>
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/paper.css?v={{time() }}">
+    <link rel="stylesheet" type="text/css" href="/css/paper.css?v={{time()}}">
     <style type="text/css">
         [v-cloak]{ display: none; }
         .dropdown ul li {
@@ -61,7 +61,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    @{{ T['15575437879405'] }}
+                    @{{T['15575437879405']}}
                 </a>
                 <div class="operation ">
                     <div class="dropdown">
