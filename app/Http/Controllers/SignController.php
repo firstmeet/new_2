@@ -207,7 +207,7 @@ class SignController extends Controller
     {
         $sign_info=Sign::where('user_id',auth()->user()->id)->count();
         $this->request->addSigner(auth()->user()->username,auth()->user()->username);
-        $this->request->addFile(storage_path('Confidentiality Provision.pdf'));
+        $this->request->addFile(storage_path('Prospective Investor Confidentiality Agreement-Elevate Holdings.pdf'));
         $embed_request=new EmbeddedSignatureRequest($this->request,$this->client_id);
         $response = $this->client->createEmbeddedSignatureRequest($embed_request,$this->client_id);
         $signatures   = $response->getSignatures();
