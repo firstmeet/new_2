@@ -5,18 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>
-    <span style=";font-family:Calibri;font-size:16px">STEP 3: Payment by Bank Wire Transfer:</span>
-</p>
-<p>
-    <span style=";font-family:Calibri;font-size:16px">Thank you for successfully completing the STEP 2. &nbsp;Please proceed to STEP 3 by printing or downloading this Payment Information Page and visiting your bank to wire transfer funds for your subscription.</span>
-</p>
-<p>
-    <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
-</p>
-<p>
-    <span style=";font-family:Calibri;font-size:16px">Wire Transfer Instructions: &nbsp;</span>
-</p>
 <div class="print">
     <p>
         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
