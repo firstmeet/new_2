@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="js/layui/css/layui.css">
     <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
     <script src="js/layui/layui.js"></script>
-    <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{$VS}}"></script>
+    <script>document.write('<script src="https://www.elevateunited.cn/translate.js?t=' + new Date().getTime() + '"><\/script>')</script>
+{{--    <script type="text/javascript" src="https://www.elevateunited.cn/translate.js?v={{$VS}}"></script>--}}
     <script type="text/javascript" src="/js/vue.min.js"></script>
     <script type="text/javascript" src="/js/global.js?v={{time()}}"></script>
 
