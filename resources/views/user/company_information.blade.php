@@ -13,7 +13,7 @@
                 <div class="contentBox" v-html="T['15577318649661']">
 
                 </div>
-                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=3" style="width: 100%" ></iframe>
+                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=3" width="100%" ></iframe>
                 <div class="step-note">
                     <a href="/investor_information" class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573889694471']}}</a>
                 </div>
