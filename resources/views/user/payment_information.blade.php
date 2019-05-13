@@ -23,6 +23,7 @@
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">Wire Transfer Instructions: &nbsp;</span>
                     </p>
+                    <div class="print">
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                     </p>
@@ -68,7 +69,8 @@
                     </p>
                     <p>
                         <br/>
-                    </p>             
+                    </p>
+                    </div>
                 </div>
                 <div class="step-note">
                     <a class="layui-btn prev" onclick="print_a()">@{{T['15575833488374']}}</a>
