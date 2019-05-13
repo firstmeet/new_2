@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Emailtitles;
+use App\Service\word;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -16,11 +17,13 @@ class TestController extends Controller
 
     public function index()
     {
+        $word=new word();
+        $word->htmlToWord();
 //		var_dump(\App\Invite::where("invitee_id",1200)->first());exit;
-        $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
-
-        $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
-        dd($file);
+//        $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
+//
+//        $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
+//        dd($file);
 //        return view('email.index',['url'=>'http://www.baidu.com']);
     }
 

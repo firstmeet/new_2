@@ -19,6 +19,7 @@ Route::get('/login','AuthLoginController@getLogin');
 
 Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
+Route::get('test','TestController@index');
 
 Route::any('sign/callback','SignController@callback');
 
@@ -28,6 +29,7 @@ Route::any('sign/callback','SignController@callback');
 Route::group(['middleware'=>['web','user_auth']],function (){
      Route::get('/user/home','UserController@home');
      Route::get('/sign_pdf','SignController@sign_pdf');
+     Route::get('download_word','SignController@download_word');
     Route::get('/','UserController@index')->name('index');
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');

@@ -7,6 +7,7 @@ use App\Http\Requests\SignUpdateRequest;
 use App\Invite;
 use App\Service\money;
 use App\Service\pdf;
+use App\Service\word;
 use App\Service\zip;
 use App\Sign;
 use Faker\Provider\Image;
@@ -229,6 +230,11 @@ class SignController extends Controller
     private function sign_template($template_id)
     {
 
+    }
+    public function download_word()
+    {
+        $word=new word();
+        $word->htmlToWord();
     }
 
 }
