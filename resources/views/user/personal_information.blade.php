@@ -26,7 +26,7 @@
                     </select>
                     <!--<input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/>--> Notes.</li>
                     <li>I have uploaded my Passport/ID Card  <input class="hide inputFile" type="file" name="picture" />
-    <span class="layui-btn layui-btn-sm layui-btn-normal" lay-event="detail" onclick="$('.inputFile').click()">Upload</span></li>
+    <span class="layui-btn layui-btn-sm" lay-event="detail" onclick="$('.inputFile').click()">Upload</span></li>
                 </ul>
                 <div class="qtnote">Please click the Next step button below to proceed.</div>
 
