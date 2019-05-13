@@ -20,26 +20,31 @@
 </div>
 <script type="text/javascript" src="https://s3.amazonaws.com/cdn.hellosign.com/public/js/hellosign-embedded.LATEST.min.js"></script>
 <script>
-getsign()
-var LANG="{{session('lang','en')}}";
+$(function(){
+	getsign();
+})
+
 var is_sign=false;
 function getsign(){
 	//alert('签约成功');window.location.href="/user/list";return;
-
 		HelloSign.init("4912850865d71257e073d540c5764a2f");
 		HelloSign.open({
 			url: "{{$url}}",
 			allowCancel: true,
-			skipDomainVerification:true,
+			// skipDomainVerification:true,
             userCulture: LANG=="en"?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
 			container:document.getElementById('myHSContainer'),
 			messageListener: function(eventData) {
 			    console.log(eventData);
-				var data=eventData
-				is_sign=1;
-				$.post('/sign',data,function(res){
-					window.location.href="/company_information";
-				})
+				if(eventData.event=="signature_request_signed"){
+					var data=eventData
+					is_sign=1;
+					$.post('/sign',data,function(res){
+						window.location.href="/company_information";
+					})
+				}else{
+					lalert('error');
+				}
 			}
 		});
 }

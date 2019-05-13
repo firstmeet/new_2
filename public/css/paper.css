@@ -113,7 +113,7 @@ text-align: right;
 float: right;
 margin: 0 0 0 20px;
 }
-.username span{font-size: 1.7rem;}
+.username span{}
 .operation{
 	height: 75px;
 	line-height: 75px;
@@ -166,7 +166,7 @@ margin: 0 0 0 20px;
 /* 以下实际使用若已初始化可删除 .nav height父级需逐级设置为100%*/
 body,html{height: 100%;background: #E2E2E2}
 body,ul{margin:0;padding:0}
-body{font:14px "微软雅黑","宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;} 
+body{font:14px;} 
 li{list-style:none} 
 a{text-decoration:none;}
 /* 以上实际使用若已初始化可删除 */
@@ -251,6 +251,12 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 
 .contentBox{
     padding: 1rem 0;
+    font-size: 14px!important;
+}
+
+.contentBox *{
+    font-size: 14px!important;
+    line-height: 2rem;
 }
 
 .contentBox pre{
@@ -302,6 +308,7 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 }
 .pinfo-ul .qtnote{
     text-indent:0;
+    line-height: 6rem;
 }
 
 

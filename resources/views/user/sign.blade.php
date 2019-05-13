@@ -56,7 +56,7 @@ var is_sign=false;
             HelloSign.open({
                 url: "{{$url}}",
                 allowCancel: true,
-                skipDomainVerification: true,
+                //skipDomainVerification: true,
                 userCulture: LANG=="en"?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {
@@ -67,7 +67,7 @@ var is_sign=false;
 						
 						$.post('/sign', data, function (res) {
 							console.log(res);
-						  //  window.location.href = "/payment_information";
+						  	window.location.href = "/payment_information";
 						})
 					}else{
 						lalert('error');
