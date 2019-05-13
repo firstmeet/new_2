@@ -74,7 +74,7 @@
                 </div>
                 <div class="step-note">
                     <a class="layui-btn prev" onclick="print_a()">@{{T['15575833488374']}}</a>
-                    <a href="/sign_download" class="layui-btn next">@{{T['15573922193994']}}</a>
+                    <a href="/download_word" class="layui-btn next">@{{T['15573922193994']}}</a>
                 </div>
             </div>
 
