@@ -43,7 +43,7 @@ class AuthLoginController extends Controller
 
 
                  auth()->login($user,$request->get('remember'));
-                 $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+                 $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
                  if ($sign&&$sign->status==1){
                      Session::put('sign_status',1);
                      return redirect('user/list');
@@ -63,8 +63,8 @@ class AuthLoginController extends Controller
                      return back()->with('msg',__t('no_login_pri'));
                  }else{
                      auth()->login($user,$request->get('remember'));
-                     $sign_status=Sign::where('user_id',$user->id)->latest()->first();
-                     Session::put('sign_status',$sign_status['is_signed']);
+                     $sign=Sign::where('user_id',$user->id)->orderBy('id','desc')->first();
+                     Session::put('sign_status',$sign['is_signed']);
                      if ($sign&&$sign->status==1){
                          return redirect('user/list');
                      }
