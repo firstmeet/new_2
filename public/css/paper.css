@@ -317,7 +317,12 @@ iframe.signpage{width: 100%;min-height: 800px;border: none;}
 .f-right{
     float: right;
 }
-
+.text-right{
+    text-align: right;
+}
+.review-box a:hover{
+    text-decoration: none;
+}
 
 
 
