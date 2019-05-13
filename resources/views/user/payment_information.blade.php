@@ -8,7 +8,7 @@
 
             <div class="review-box payinfopage" step="1">
                 <div class="short-title title-note">
-                    <span><em>Company information:</em><b class="hide"></b></span>
+                    <span><em>Payment information:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
                     <p>
