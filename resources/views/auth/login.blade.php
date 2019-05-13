@@ -78,6 +78,7 @@
             layer.msg(error);
         }
     });
+    /*
     var LANG="{!! session('lang','en') !!}";
     var L = Translatedata[LANG];
     var vm = new Vue({
@@ -116,6 +117,7 @@
             });
         },
     })
+    */
 </script>
-<script>
+
 @endsection
