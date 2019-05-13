@@ -8,7 +8,7 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>Prospective Investor Confidentiality Agreement-Elevate Holdings:</em><b class="hide"></b></span>
+                    <span><em>@{{T['15577352126471']}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577316849167']">
                     

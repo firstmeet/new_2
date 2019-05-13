@@ -6,7 +6,7 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title title-note">
-                <span><em>Personal Information:</em></span>
+                <span><em>@{{T['15435651739321']}}:</em></span>
             </div>
             <div class="review-box">
             <iframe style="display:none" name="_hide_frame" ></iframe>

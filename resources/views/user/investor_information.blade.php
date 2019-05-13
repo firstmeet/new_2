@@ -8,7 +8,7 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>Investor information:</em><b class="hide"></b></span>
+                    <span><em>@{{T['15577350024988']}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577319805110']">
 
