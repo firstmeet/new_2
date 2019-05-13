@@ -15,7 +15,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">@{{ T['15573882257364'] }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" oninvalid="setCustomValidity('{{__t("15575059913573")}}');"  autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -71,6 +71,13 @@
     </div>
 </div>
 <script type="text/javascript">
+    var error="{!! session('msg') !!}"
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        if (error){
+            layer.msg(error);
+        }
+    });
     var LANG="{!! session('lang','en') !!}";
     var L = Translatedata[LANG];
     var vm = new Vue({
@@ -111,15 +118,4 @@
     })
 </script>
 <script>
-
-
-    var error="{!! session('msg') !!}"
-    layui.use('layer', function(){
-        var layer = layui.layer;
-        if (error){
-            layer.msg(error);
-        }
-    });
-
-</script>
 @endsection

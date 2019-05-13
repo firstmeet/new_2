@@ -147,3 +147,29 @@ manage.getClientInfo = function (){
    }     
 }
 
+//步骤跳转
+manage.gostep = function(dom,stepDom,callback){
+    // location.href="/user/sign";
+    var callback = callback ? callback : function(){};
+    var stepDom = stepDom ? stepDom : '.review-box';
+    var isNext = $(dom).hasClass('next');
+    var isPrev = $(dom).hasClass('prev');
+    var curStep = $(dom).parents(stepDom).attr('step');
+
+    //如果是下一步
+    if (isNext) {
+        var showStepNum = Number(curStep)  + 1;
+        $(stepDom + '[step='+curStep+']').hide();
+        $(stepDom + '[step='+showStepNum+']').show();
+        callback();
+    }
+
+    //如果是上一步
+    if (isPrev) {
+        var showStepNum = Number(curStep)  - 1;
+        $(stepDom + '[step='+curStep+']').hide();
+        $(stepDom + '[step='+showStepNum+']').show();
+        callback();
+    }
+}
+

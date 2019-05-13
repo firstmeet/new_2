@@ -67,58 +67,42 @@
     </head>
     <body>
 
-    <a class="media" href="1.pdf">1.pdf</a>
-        <div class="flex-center position-ref full-height" id="app">
 
-            <iframe :src="urls" width="500px" height="700px"></iframe>
-            <button v-on:click="next_page(2)">下一页</button>
-{{--            @if (Route::has('login'))--}}
-{{--                <div class="top-right links">--}}
-{{--                    @auth--}}
-{{--                        <a href="{{ url('/home') }}">Home</a>--}}
-{{--                    @else--}}
-{{--                        <a href="{{ route('login') }}">Login</a>--}}
+    <div id="myPDF" style="height: 95%; width: 95%; margin: auto;"></div>
 
-{{--                        @if (Route::has('register'))--}}
-{{--                            <a href="{{ route('register') }}">Register</a>--}}
-{{--                        @endif--}}
-{{--                    @endauth--}}
-{{--                </div>--}}
-{{--            @endif--}}
-
-{{--            <div class="content">--}}
-{{--                <div class="title m-b-md">--}}
-{{--                    Laravel--}}
-{{--                </div>--}}
-
-{{--                <div class="links">--}}
-{{--                    <a href="https://laravel.com/docs">Docs</a>--}}
-{{--                    <a href="https://laracasts.com">Laracasts</a>--}}
-{{--                    <a href="https://laravel-news.com">News</a>--}}
-{{--                    <a href="https://blog.laravel.com">Blog</a>--}}
-{{--                    <a href="https://nova.laravel.com">Nova</a>--}}
-{{--                    <a href="https://forge.laravel.com">Forge</a>--}}
-{{--                    <a href="https://github.com/laravel/laravel">GitHub</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-        </div>
     </body>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/jquery.media.js"></script>
+    <script type="text/javascript" src="js/touchpdf/pdf.js"></script>
+{{--    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--}}
+    <script type="text/javascript" src="js/touchpdf/jquery.touchSwipe.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.touchPDF.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.panzoom.js"></script>
+    <script type="text/javascript" src="js/touchpdf/jquery.mousewheel.js"></script>
 
     <script>
-     // $("a.media").media({width:800, height:600})
-     var vue=new Vue({
-         el:"#app",
-         data:{
-             urls:"/hello"
-         },
-         methods:{
-             next_page:function(page_num) {
-                 this.urls="/hello"+"?page="+page_num
-             }
-         }
-     })
+        $(function() {
+            $("#myPDF").pdf( {
+                title:'title',
+                source: "1.pdf",
+                // disableKeys:true,
+                showToolbar:false,
+                // loaded:1
+                // disableZoom:true,
+                // disableLinks:true
+            } );
+        });
+     // var vue=new Vue({
+     //     el:"#app",
+     //     data:{
+     //         urls:"/hello"
+     //     },
+     //     methods:{
+     //         next_page:function(page_num) {
+     //             this.urls="/hello"+"?page="+page_num
+     //         }
+     //     }
+     // })
         {{--function next_page(page_num) {--}}
         {{--    document.getElementsByTagName("iframe").src="{!! url('hello',['page'=>2]) !!}"--}}
         {{--}--}}
