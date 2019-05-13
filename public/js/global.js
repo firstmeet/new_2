@@ -79,9 +79,14 @@ manage.get_sign_list =  function (url){
 
                 html+='<tr>'+
                         '<td>'+ 'Offering'+'</td>'+
-                        '<td>'+ data[x].sign['name']+'</td>'+
+                        // '<td>'+ data[x].sign['name']+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
                         '<td>'+ data[x].sign.status_text+'</td>'+
+                        '<td></td>'+
+                      '</tr>';
+                html+='<tr>'+
+                        '<td colspan="3">'+ L['15577299351337']+'</td>'+
+                        '<td><a href="/download_word" lay-event="detail" class="layui-btn layui-btn-sm">'+ L['15573922193994'] +'</a></td>'+
                       '</tr>';
             }
             $('table.content-box tbody').append(html);

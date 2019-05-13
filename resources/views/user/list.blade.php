@@ -5,8 +5,8 @@
         @include('common.left')  
         <div class="right">
             <!-- <div class="back hide">← back to documents</div> -->
-            <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573810025760']}}</b></span>
+            <div class="short-title title-note">
+                <span><em>@{{T['15577303752084']}}</em></span>
             </div>
             <div class="new-sign-parent hide">
                 <div class="new-sign-box">
@@ -24,15 +24,15 @@
                     <tbody>
                         <tr>
                           <th>@{{T['15573881491550']}}</th>
-                          <th>@{{T['15573882257364']}}</th>
+                          <!-- <th>@{{T['15573882257364']}}</th> -->
                           <th>@{{T['15573882906992']}}</th>
                           <th>@{{T['15434866105325']}}</th>
-                          <!-- <th width="100" class="text-center">@{{T['15434866101019']}}</th> -->
+                          <th width="100" class="text-center">@{{T['15434866101019']}}</th>
                         </tr>
                     </tbody>
                   </table>
                 </div>
-                <div class="text-right"><a href="/download_word" lay-event="detail" class="layui-btn layui-btn-sm">@{{T['15573922193994']}}</a></div>
+                <div class="text-right hide"><a href="/download_word" lay-event="detail" class="layui-btn layui-btn-sm">@{{T['15573922193994']}}</a></div>
             </div>
 
         </div>
