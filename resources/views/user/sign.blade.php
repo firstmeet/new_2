@@ -10,28 +10,8 @@
                 <div class="short-title title-note">
                     <span><em>Subscription Agreement Signature:</em><b class="hide"></b></span>
                 </div>
-                <div class="contentBox">
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">STEP 2: &nbsp;Subscription Agreement Signature:</span>
-                    </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
-                    </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">Thank you for successfully completing STEP 1. &nbsp;Please proceed to STEP 2 </span>
-                    </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">by clicking the GET STARTED button, and following the instructions to sign electronically. </span>
-                    </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
-                    </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">After signing, click the CONTINUE button and then the I AGREE button to confirm your signature.</span>
-                    </p>
-                    <p>
-                        <br/>
-                    </p>
+                <div class="contentBox" v-html="T['15577341392218']">
+
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
                 <!--<div class="step-note">
