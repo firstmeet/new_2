@@ -8,7 +8,7 @@
             <div class="short-title">
                 <span><b>@{{T['15573884466817']}}</b></span>
             	<div id="myHSContainer" class="step-div step-div-4"></div>
-                <div class="step-note">
+                <div class="step-note" style="display:none">
                     <a href="#" class="layui-btn prev" onClick="step(-1)">@{{T['15573890488167']}}</a>
                     <a href="#" class="layui-btn next" onClick="step(1)">@{{T['15573889694471']}}</a>
                 </div>
@@ -22,7 +22,7 @@
 <script>
 getsign()
 var LANG="{{session('lang','en')}}";
-
+var is_sign=false;
 function getsign(){
 	//alert('签约成功');window.location.href="/user/list";return;
 
@@ -36,6 +36,7 @@ function getsign(){
 			messageListener: function(eventData) {
 			    console.log(eventData);
 				var data=eventData
+				is_sign=1;
 				$.post('/sign',data,function(res){
 					window.location.href="/company_information";
 				})

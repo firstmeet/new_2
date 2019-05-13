@@ -168,3 +168,7 @@ manage.gostep = function(dom,stepDom,callback){
     }
 }
 
+
+function lalert(msg){
+	layer.alert(msg,{title:false,closeBtn:false});
+}

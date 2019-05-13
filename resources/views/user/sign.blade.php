@@ -35,7 +35,7 @@
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
                 <div class="step-note">
-                    <a href="/investor_information" class="layui-btn next" onClick="manage.gostep(this)">@{{T['15573889694471']}}</a>
+                    <a href="/investor_information" class="layui-btn next" onClick="if(!is_sign){lalert(Translatedata[LANG]['15577159551392']);return false;}">@{{T['15573889694471']}}</a>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
     var LANG="{{session('lang','en')}}";
 
         getsign()
-
+var is_sign=false;
         function getsign() {
             //alert('签约成功');window.location.href="/user/list";return;
 
@@ -56,16 +56,22 @@
             HelloSign.open({
                 url: "{{$url}}",
                 allowCancel: true,
-                // skipDomainVerification: true,
+                skipDomainVerification: true,
                 userCulture: LANG=="en"?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {
                     console.log(eventData);
-                    var data = eventData
-                    $.post('/sign', data, function (res) {
-                        console.log(res);
-                        window.location.href = "/payment_information";
-                    })
+					if(eventData.event=="signature_request_signed"){
+						is_sign=true;
+						var data = eventData
+						
+						$.post('/sign', data, function (res) {
+							console.log(res);
+						  //  window.location.href = "/payment_information";
+						})
+					}else{
+						lalert('error');
+					}
                 }
             });
 
