@@ -16,7 +16,15 @@
                     <li>My Elevate Member Number is <b>{{$member_id}}</b></li>
                     <li>My email address is <b>{{$email}}</b></li>
                     <li>My full legal name is <input class="underline-input" name="name" placeholder="input your name"/></li>
-                    <li>I would like to purchase <input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/> Notes.</li>
+                    <li>I would like to purchase 
+                    <select name="number" >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    </select>
+                    <!--<input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/>--> Notes.</li>
                     <li>I have uploaded my Passport/ID Card  <input class="hide inputFile" type="file" name="picture" />
     <span class="layui-btn layui-btn-sm layui-btn-normal" lay-event="detail" onclick="$('.inputFile').click()">Upload</span></li>
                 </ul>
