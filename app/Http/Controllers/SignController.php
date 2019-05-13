@@ -230,7 +230,7 @@ class SignController extends Controller
     }
     public function download_word()
     {
-        $path=storage_path("File/to_word.html");
+        $path=storage_path("File/to_word_".\session('lang').".html");
 
         $isHave=file_exists($path);
 
