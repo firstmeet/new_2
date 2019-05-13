@@ -81,11 +81,13 @@ manage.get_sign_list =  function (url){
                         '<td>'+ data[x].sign.username+'</td>'+
                         '<td>'+ data[x].sign.created_at+'</td>'+
                         '<td>'+ data[x].sign.status_text+'</td>'+
-                        '<td>'+
+                        /*
+						'<td>'+
                             '<div class="layui-table-cell laytable-cell-1-0-11">'+
                                 '<a href="'+ signResObj.href +'" class="layui-btn layui-btn-xs '+signResObj.buttonClass+'" lay-event="'+signResObj.event+'">'+signResObj.act+'</a>'+
                             '</div>'+
                         '</td>'+
+						*/
                       '</tr>';
             }
             $('table.content-box tbody').append(html);
