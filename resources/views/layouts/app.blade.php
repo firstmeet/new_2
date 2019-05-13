@@ -45,19 +45,28 @@
             top: 52px;
         }
         .shipping-area{
-            position: fixed;
+            padding-top: 0;
             bottom: 0;
             width: 100%;
             text-align: center;
+            line-height: 90px;
         }
+        
         .footer-address address {
             text-align: center;
+            margin-bottom: 0;
         }
         .footer-address {
             width: 100%;
         }
-
-
+        .vue_det{height: 100%;}
+        #app{
+            height: 100%;
+        }
+        .py-4 {
+        min-height: 1000px;
+        height: 100%;
+        }
 
 
         @media (max-width: 860px) {
