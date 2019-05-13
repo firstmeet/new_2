@@ -40,13 +40,13 @@ var is_sign=false;
                 userCulture: LANG=="en"?HelloSign.CULTURES.EN_US:HelloSign.CULTURES.ZH_CN,
                 container: document.getElementById('myHSContainer'),
                 messageListener: function (eventData) {
-                    console.log(eventData);
+                    // console.log(eventData);
 					if(eventData.event=="signature_request_signed"){
 						is_sign=true;
 						var data = eventData
 						
 						$.post('/sign', data, function (res) {
-							console.log(res);
+							// console.log(res);
 						  	window.location.href = "/payment_information";
 						})
 					}else{
