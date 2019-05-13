@@ -37,14 +37,10 @@ manage.get_invite_list =  function (url){
         var data = data.data;
         if (data) {
             for (var x in data) {
-                var status_text = '';
-                if (data[x].signs) {
-                    status_text = data[x].signs.status_text;
-                }
                 html+='<tr>'+
                         '<td>'+ data[x].Invitees+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
-                        '<td>'+ status_text +'</td>'+
+                        '<td>'+ data[x].status_text +'</td>'+
                       '</tr>';
             }
             $('table.content-box tbody').append(html);
@@ -68,28 +64,30 @@ manage.get_sign_list =  function (url){
             for (var x in data) {
                 var signResObj = {};
                 //签名状态判断
-                if (data[x].status == '1') {
+                if (data[x].sign.status == 1) {
                     signResObj.event = 'detail';
                     signResObj.act = L['15573922193994'];//下载
                     signResObj.buttonClass = 'layui-btn-primary';
-                    signResObj.href = '/sign_download?signature_request_id=' + data[x].signature_id;
+                    signResObj.href = '/sign_download?invite_id=' + data[x].id;
                 }else{
                     signResObj.event = 'edit';
                     signResObj.act = L['15573884466817'];//签约
                     signResObj.buttonClass = '';
-                    signResObj.href = '/user/sign';
+                    signResObj.href = '/user/index';
                 }
 
                 html+='<tr>'+
                         '<td>'+ 'Offering'+'</td>'+
-                        '<td>'+ data[x].username+'</td>'+
-                        '<td>'+ data[x].created_at+'</td>'+
-                        '<td>'+ data[x].status_text+'</td>'+
-                        '<td>'+
+                        '<td>'+ data[x].sign.username+'</td>'+
+                        '<td>'+ data[x].sign.created_at+'</td>'+
+                        '<td>'+ data[x].sign.status_text+'</td>'+
+                        /*
+						'<td>'+
                             '<div class="layui-table-cell laytable-cell-1-0-11">'+
                                 '<a href="'+ signResObj.href +'" class="layui-btn layui-btn-xs '+signResObj.buttonClass+'" lay-event="'+signResObj.event+'">'+signResObj.act+'</a>'+
                             '</div>'+
                         '</td>'+
+						*/
                       '</tr>';
             }
             $('table.content-box tbody').append(html);
@@ -128,5 +126,31 @@ manage.homeshow = function(url){
 //去签名
 manage.gotoSign = function(){
     location.href="/user/sign";
+}
+
+//步骤跳转
+manage.gostep = function(dom,stepDom,callback){
+    // location.href="/user/sign";
+    var callback = callback ? callback : function(){};
+    var stepDom = stepDom ? stepDom : '.review-box';
+    var isNext = $(dom).hasClass('next');
+    var isPrev = $(dom).hasClass('prev');
+    var curStep = $(dom).parents(stepDom).attr('step');
+
+    //如果是下一步
+    if (isNext) {
+        var showStepNum = Number(curStep)  + 1;
+        $(stepDom + '[step='+curStep+']').hide();
+        $(stepDom + '[step='+showStepNum+']').show();
+        callback();
+    }
+
+    //如果是上一步
+    if (isPrev) {
+        var showStepNum = Number(curStep)  - 1;
+        $(stepDom + '[step='+curStep+']').hide();
+        $(stepDom + '[step='+showStepNum+']').show();
+        callback();
+    }
 }
 

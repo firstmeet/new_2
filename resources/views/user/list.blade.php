@@ -26,7 +26,7 @@
                           <th>@{{T['15573882257364']}}</th>
                           <th>@{{T['15573882906992']}}</th>
                           <th>@{{T['15434866105325']}}</th>
-                          <th width="100" class="text-center">@{{T['15434866101019']}}</th>
+                          <!--<th width="100" class="text-center">@{{T['15434866101019']}}</th>-->
                         </tr>
                     </tbody>
                   </table>
@@ -45,9 +45,12 @@
     if("{!! session('no_files') !!}"){
         layer.msg("{!! session('no_files') !!}")
     }
+    if ("{{session('error')}}"){
+        layer.msg("{{session('error')}}")
+    }
 $(function(){
     manage.get_sign_list("/sign");
-    manage.homeshow('/sign');//home note
+    // manage.homeshow('/sign');//home note
 });
 </script>
 
