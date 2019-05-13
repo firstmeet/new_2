@@ -55,6 +55,17 @@
             top: 42px;
         }
     </style>
+    <script type="text/javascript">
+	$(function(){
+    var error="{!! session('msg') !!}"
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        if (error){
+            layer.msg(error);
+        }
+    });
+	})
+</script>
 </head>
 <body>
 <div id="vue_det" v-cloak >
