@@ -6,12 +6,12 @@
         <div class="right">
             <div class="back hide">← back to documents</div>
             <div class="short-title">
-                <span><em>@{{T['15435650606516']}}：</em><b>@{{T['15573872107246']}}</b></span>
+                <span><em>@{{T[15435650606516]}}：</em><b>@{{T[15573872107246]}}</b></span>
             </div>
             <div class="review-box pre-sign-box">
                 <form class="layui-form invite-form" onsubmit="return false">
                   <div class="layui-form-item">
-                    <label class="layui-form-label">@{{T['15324194276032']}}</label>
+                    <label class="layui-form-label">@{{T[15324194276032]}}</label>
                     <div class="layui-input-block">
                       <input type="text" name="signname" lay-verify="title" autocomplete="off" class="layui-input">
                     </div>
@@ -19,7 +19,7 @@
 
 
                   <div class="layui-form-item">
-                    <label class="layui-form-label">@{{T['15573864972429']}}</label>
+                    <label class="layui-form-label">@{{T[15573864972429]}}</label>
                     <div class="layui-input-block">
                       <select name="city" lay-verify="required">
                         <option value="1">1</option>
@@ -33,7 +33,7 @@
                   
 
                   <div class="layui-input-block">
-                    <button class="layui-btn" type="button" lay-filter="demo1">@{{T['15434866101162']}}</button>
+                    <button class="layui-btn" type="button" lay-filter="demo1">@{{T[15434866101162]}}</button>
                   </div>
                 </form>
             </div>

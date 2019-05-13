@@ -97,7 +97,7 @@
 <div id="vue_det" v-cloak >
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-      <div class="container"> <a class="navbar-brand" href="http://www.elev8united.com"> {{T['15575437879405']}} </a>
+      <div class="container"> <a class="navbar-brand" href="http://www.elev8united.com"> {{T[15575437879405]}} </a>
         <div class="operation ">
           <div class="dropdown">
             <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"> {{langname}}<span class="caret"></span> </button>
@@ -125,7 +125,7 @@
         <div class="row justify-content-center">
           <div class="col-md-8">
             <div class="card">
-              <div class="card-header">{{T['15438200244017']}}</div>
+              <div class="card-header">{{T[15438200244017]}}</div>
               <div class="card-body">
                 <form method="POST" action="/login">
                   <input type="hidden" name="_token" value="9wK4gNugxSpuYeUlDm3Tvz7roDlGvf43l54UuOC4">
@@ -159,7 +159,7 @@
       <div class="row">
         <div class="footer-address">
           <address>
-          {{T['15575439967181']}}
+          {{T[15575439967181]}}
           </address>
         </div>
       </div>

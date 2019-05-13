@@ -1,7 +1,7 @@
 
  <div class="header">
      <div class="title1">
-         <span>@{{T['15575437879405']}}</span>
+         <span>@{{T[15575437879405]}}</span>
      </div>
      <div class="title2 hide">
          <span>Partner Portal</span>
@@ -37,7 +37,7 @@
           </div>
          <div class="picture">
              <div class="logout" logoutRrl="/logout" loginUrl="{!! url('/login') !!}" onclick="manage.logout(this)">
-                 <a>@{{T['15435651632647']}}</a>
+                 <a>@{{T[15435651632647]}}</a>
              </div>
          </div>
      </div>

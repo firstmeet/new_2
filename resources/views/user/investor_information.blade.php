@@ -8,7 +8,7 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>@{{T['15577350024988']}}:</em><b class="hide"></b></span>
+                    <span><em>@{{T[15577350024988]}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577319805110']">
 
@@ -16,8 +16,8 @@
                     <input type="hidden" name="_method" value="put">
 {{--                <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=2" ></iframe>--}}
                 <div class="step-note">
-                   <!-- <a href="/company_information" class="layui-btn prev">@{{T['15573890488167']}}</a>-->
-                    <a href="/personal_information" class="layui-btn next" >@{{T['15573889694471']}}</a>
+                   <!-- <a href="/company_information" class="layui-btn prev">@{{T[15573890488167]}}</a>-->
+                    <a href="/personal_information" class="layui-btn next" >@{{T[15573889694471]}}</a>
                 </div>
             </div>
 

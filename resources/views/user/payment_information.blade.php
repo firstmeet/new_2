@@ -8,14 +8,14 @@
 
             <div class="review-box payinfopage" step="1">
                 <div class="short-title title-note">
-                    <span><em>@{{T['15577299351337']}}:</em><b class="hide"></b></span>
+                    <span><em>@{{T[15577299351337]}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577322888841']">
 
                 </div>
                 <div class="step-note">
-                    <a class="layui-btn prev" onclick="print_a()">@{{T['15575833488374']}}</a>
-                    <a href="/download_word" class="layui-btn next">@{{T['15573922193994']}}</a>
+                    <a class="layui-btn prev" onclick="print_a()">@{{T[15575833488374]}}</a>
+                    <a href="/download_word" class="layui-btn next">@{{T[15573922193994]}}</a>
                 </div>
             </div>
 

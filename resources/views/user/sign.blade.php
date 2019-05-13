@@ -8,14 +8,14 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>@{{T['15577363544344']}}:</em><b class="hide"></b></span>
+                    <span><em>@{{T[15577363544344]}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577341392218']">
 
                 </div>
                 <div id="myHSContainer" class="step-div step-div-4"></div>
                 <!--<div class="step-note">
-                    <a href="/investor_information" class="layui-btn next" onClick="if(!is_sign){lalert(Translatedata[LANG]['15577159551392']);return false;}">@{{T['15573889694471']}}</a>
+                    <a href="/investor_information" class="layui-btn next" onClick="if(!is_sign){lalert(Translatedata[LANG]['15577159551392']);return false;}">@{{T[15573889694471]}}</a>
                 </div>-->
             </div>
 

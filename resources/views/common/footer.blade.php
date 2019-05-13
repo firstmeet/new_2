@@ -3,7 +3,7 @@
         <div class="row">
             <div class="footer-address"> 
                <address>
-               @{{T['15575439967181']}}
+               @{{T[15575439967181]}}
                </address>
             </div>
         </div>

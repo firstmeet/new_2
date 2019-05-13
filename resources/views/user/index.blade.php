@@ -8,14 +8,14 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>@{{T['15577352126471']}}:</em><b class="hide"></b></span>
+                    <span><em>@{{T[15577352126471]}}:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox" v-html="T['15577316849167']">
                     
                 </div>
                 <iframe id="signpage" class="signpage step-div step-div-0" src="/hello?page=1" width="100%" ></iframe>
                 <div class="step-note">
-                    <a class="layui-btn next" href="/sign_pdf">@{{T['15573886642645']}}</a>
+                    <a class="layui-btn next" href="/sign_pdf">@{{T[15573886642645]}}</a>
                 </div>
             </div>
 
@@ -26,8 +26,8 @@
 
                 <iframe id="signpage" class="signpage step-div step-div-0" src="http://www.qq.com"  width="100%"></iframe>
                 <div class="step-note">
-                    <a class="layui-btn prev" onClick="manage.gostep(this)">@{{T['15573890488167']}}</a>
-                    <a href="/company_information" class="layui-btn next">@{{T['15573889694471']}}</a>
+                    <a class="layui-btn prev" onClick="manage.gostep(this)">@{{T[15573890488167]}}</a>
+                    <a href="/company_information" class="layui-btn next">@{{T[15573889694471]}}</a>
                 </div>
             </div>
 

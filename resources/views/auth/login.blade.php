@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@{{T['15438200244017']}}</div>
+                <div class="card-header">@{{T[15438200244017]}}</div>
 
                 <div class="card-body">
                     <form method="POST" action="/login">
