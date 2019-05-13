@@ -50,7 +50,7 @@ $(function(){
     if(error){
         layer.msg(error)
     }
-    $("input[type=file]").change(function(e){layer.msg("Upload Success")})
+    $("input[type=file]").change(function(e){layer.msg("{{__t("15577366808785")}}")})
 });
 
 layui.use('form', function(){
