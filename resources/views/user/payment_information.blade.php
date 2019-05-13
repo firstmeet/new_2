@@ -8,7 +8,7 @@
 
             <div class="review-box payinfopage" step="1">
                 <div class="short-title title-note">
-                    <span><em>Company information:</em><b class="hide"></b></span>
+                    <span><em>Payment information:</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
                     <p>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="step-note">
                     <a class="layui-btn prev" onclick="print_a()">@{{T['15575833488374']}}</a>
-                    <a href="/sign_download" class="layui-btn next">@{{T['15573922193994']}}</a>
+                    <a href="/download_word" class="layui-btn next">@{{T['15573922193994']}}</a>
                 </div>
             </div>
 
