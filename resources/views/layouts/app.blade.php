@@ -44,6 +44,22 @@
         .dropdown-menu.pull-right {
             top: 52px;
         }
+        .shipping-area{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .footer-address address {
+            text-align: center;
+        }
+        .footer-address {
+            width: 100%;
+        }
+
+
+
+
         @media (max-width: 860px) {
         .account1 .username {
             float:none;
@@ -53,6 +69,7 @@
         }
         .dropdown-menu.pull-right {
             top: 42px;
+        }
         }
     </style>
     <script type="text/javascript">
