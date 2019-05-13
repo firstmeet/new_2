@@ -20,10 +20,10 @@
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                     </p>
-                    <p>
-                        <span style=";font-family:Calibri;font-size:16px">Wire Transfer Instructions: &nbsp;</span>
-                    </p>
                     <div class="print">
+                    <p>
+                        <span style=";font-family:Calibri;font-size:16px"><strong>Wire Transfer Instructions: &nbsp;</strong></span>
+                    </p>
                     <p>
                         <span style=";font-family:Calibri;font-size:16px">&nbsp;</span>
                     </p>

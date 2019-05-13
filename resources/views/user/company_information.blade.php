@@ -8,7 +8,7 @@
 
             <div class="review-box" step="1">
                 <div class="short-title title-note">
-                    <span><em>Subscription Booklet:</em><b class="hide"></b></span>
+                    <span><em>@{{T['15577217008565']}}</em><b class="hide"></b></span>
                 </div>
                 <div class="contentBox">
                     <p>
