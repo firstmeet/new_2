@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Session;
 class AuthLoginController extends Controller
 {
     use ApiResource;
-    public function getLogin()
+    public function getLogin(Request $request)
     {
+        if ($request->get('lang')){
+            Session::put('lang',$request->get('lang'));
+        }
         return view('auth.login');
     }
 

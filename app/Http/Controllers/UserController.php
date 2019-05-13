@@ -56,7 +56,7 @@ class UserController extends Controller
     
     public function payment_information()
     {
-        $sign=Sign::where('user_id',auth()->user()->id)->latest()->first();
+        $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
 
         $money=number_format(1400*$sign['number']);
         $member_id=auth()->user()->id+1000000;
