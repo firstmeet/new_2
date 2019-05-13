@@ -160,7 +160,7 @@ class SignController extends Controller
     public function update(Request $request)
     {
 		
-	     
+	     $request->flash();
         if (!$request->get('name')){
             return back()->with('error',__t(15574791686683));
         }
