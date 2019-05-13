@@ -17,11 +17,11 @@ class TestController extends Controller
 
     public function index()
     {
-		
+		return view('test');
 		
 		//$rs->UPDATE_TIME;
-        $word=new word();
-        $word->htmlToWord();
+       // $word=new word();
+        //$word->htmlToWord();
 //		var_dump(\App\Invite::where("invitee_id",1200)->first());exit;
 //        $email_cont=Emailtitles::getone('invite_sign',session('lang','en'));
 //
