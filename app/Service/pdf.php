@@ -57,6 +57,7 @@ class pdf extends \setasign\Fpdi\Fpdi
     }
      function watermark($file,$newfile=null)
     {
+        $page=request('page');
         $pdf=new pdf();
         $image=$this->text_image("Member #".((auth()->user()->id)+1000000));
         $count=$pdf->setSourceFile($file);
@@ -81,6 +82,11 @@ class pdf extends \setasign\Fpdi\Fpdi
 //            $pdf->RotatedText(100,150,(auth()->user()->id)+1000000,50);
 //            $pdf->SetFillColor(30);
 //            $pdf->Write(20, date('Y-m-d'));
+        }
+        if ($page==3||$page==4){
+            $pdf->SetTitle("Subscription Booklet",true);
+        }elseif($page==1){
+            $pdf->SetTitle("PERSONAL & CONFIDENTIAL");
         }
         if ($newfile){
             unlink($image);
