@@ -24,7 +24,9 @@
                     <option value="4"  @if(old("number")==4) selected @endif>4</option>
                     <option value="5"  @if(old("number")==5) selected @endif>5</option>
                     </select>
-                    <!--<input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/>--> @{{T[15577333604848]}}</li>
+                    <!--<input class="underline-input" name="number" type="number" min="1" max="5" style="width: 100px" placeholder="number"/>--> @{{T[15577333604848]}}
+                    <pre>@{{T[15578170737323]}}</pre>
+                    </li>
                     <li>@{{T[15577331834423]}}  <input class="hide inputFile" type="file" name="picture" />
     <span class="layui-btn layui-btn-sm" lay-event="detail" onclick="$('.inputFile').click()">@{{T[15577333286350]}}</span></li>
                 </ul>
