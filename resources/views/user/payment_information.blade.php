@@ -34,6 +34,7 @@ $(function(){
     var member_id = "{{$member_id}}";
     $("#money").text(money);
     $("#member_id").text(member_id);
+    setTimeout("window.location.href = '/user/list'",20000);
 
 });
 </script>
