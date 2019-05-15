@@ -69,13 +69,10 @@ class SignController extends Controller
         $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
         $money=new money();
 //        $client = new Client('rj@shanghaisupport.com','elev0607');
-        if (\session('lang')=='en'){
-            $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
+
+            $template_id="8aafe0516512fca539379b1adcfe412873da5de6";
             $moneys=$money->umoney(1400*$sign_info['number']);
-        }else{
-            $template_id="c8cf8cdef8309fc8e1b041742dda9bc3c11aa500";
-            $moneys=$money->num_to_rmb(1400*$sign_info['number']);
-        }
+       
 
         $request = new TemplateSignatureRequest();
         $request->enableTestMode();
