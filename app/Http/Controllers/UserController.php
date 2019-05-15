@@ -66,11 +66,11 @@ class UserController extends Controller
     
     public function payment_information()
     {
-        $url=\request()->url();
-        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
-        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
-            return redirect('/user/list');
-        }
+//        $url=\request()->url();
+//        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+//        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+//            return redirect('/user/list');
+//        }
         $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
 
         $money=number_format(1400*$sign['number']);
