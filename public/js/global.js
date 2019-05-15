@@ -78,7 +78,7 @@ manage.get_sign_list =  function (url){
                 }
 
                 html+='<tr>'+
-                        '<td>'+ 'Offering'+'</td>'+
+                        '<td>'+ L['offer']+'</td>'+
                         // '<td>'+ data[x].sign['name']+'</td>'+
                         '<td>'+ data[x].created_at+'</td>'+
                         '<td>'+ data[x].sign.status_text+'</td>'+
