@@ -9,11 +9,6 @@
                 <span><em>@{{T[15577303752084]}}</em></span>
             </div>
             <div class="contentBox" v-html="T['15578995571522']">
-<<<<<<< HEAD
-                
-=======
-
->>>>>>> 27218c6fce25ef3176e17c694d38ca5a5a3d618f
             </div>
             <div class="new-sign-parent hide">
                 <div class="new-sign-box">
