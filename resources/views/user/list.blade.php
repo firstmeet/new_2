@@ -8,6 +8,9 @@
             <div class="short-title title-note">
                 <span><em>@{{T[15577303752084]}}</em></span>
             </div>
+            <div class="contentBox" v-html="T['15578995571522']">
+
+            </div>
             <div class="new-sign-parent hide">
                 <div class="new-sign-box">
                     <div class="review-note">@{{T[15573832517934]}}</div>
