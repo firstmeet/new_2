@@ -30,7 +30,7 @@ class SignController extends Controller
         $client = new Client($api_key);
         $this->client=$client;
         $request = new SignatureRequest();
-        $request->enableTestMode();
+//        $request->enableTestMode();
         $this->request=$request;
     }
 
@@ -72,10 +72,10 @@ class SignController extends Controller
 
             $template_id="8aafe0516512fca539379b1adcfe412873da5de6";
             $moneys=$money->umoney(1400*$sign_info['number']);
-       
+
 
         $request = new TemplateSignatureRequest();
-        $request->enableTestMode();
+//        $request->enableTestMode();
         $request->setTemplateId($template_id);
 //        $request->setSubject('Purchase Order');
 //        $request->setMessage('Glad we could come to an agreement.');
