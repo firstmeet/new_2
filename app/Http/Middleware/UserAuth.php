@@ -25,9 +25,9 @@ class UserAuth
 
         if (auth()->user()){
             $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
-            if ($sign_info['status']==1&&(request()->url()!="https://www.elev8united.com/user/list"||request()->url()!="http://www.elev8united.com/user/list")){
-                return redirect('/user/list');
-            }
+//            if ($sign_info['status']==1&&(request()->url()!="https://www.elev8united.com/user/list"||request()->url()!="http://www.elev8united.com/user/list")){
+//                return redirect('/user/list');
+//            }
             return $next($request);
         }else{
             return redirect(url('login'));
