@@ -45,17 +45,32 @@ class UserController extends Controller
 
     public function company_information()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         return view('user/company_information');
     }
 
     public function investor_information()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         $user=auth()->user();
         return view('user/investor_information',['email'=>$user->username,'member_id'=>$user->id+1000000]);
     }
     
     public function payment_information()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
 
         $money=number_format(1400*$sign['number']);
@@ -65,6 +80,11 @@ class UserController extends Controller
 
     public function personal_information()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         $user=auth()->user();
         return view('user/personal_information',['email'=>$user->username,'member_id'=>$user->id+1000000]);
 
@@ -72,6 +92,11 @@ class UserController extends Controller
 
     public function home()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         return view('user/index');
     }
 

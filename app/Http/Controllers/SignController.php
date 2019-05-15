@@ -60,6 +60,11 @@ class SignController extends Controller
 
     public function create()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         $email=auth()->user()->username;
         $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
         $money=new money();
@@ -212,6 +217,11 @@ class SignController extends Controller
 
     public function sign_pdf()
     {
+        $url=\request()->url();
+        $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        if ($sign_info['status']==1&&!strpos($url,"/user/list")){
+            return redirect('/user/list');
+        }
         $sign_info=Sign::where('user_id',auth()->user()->id)->count();
         $this->request->addSigner(auth()->user()->username,auth()->user()->username);
         $this->request->addFile(storage_path('Prospective Investor Confidentiality Agreement-Elevate Holdings.pdf'));
