@@ -62,17 +62,26 @@ class SignController extends Controller
     {
         $email=auth()->user()->username;
         $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+        $money=new money();
 //        $client = new Client('rj@shanghaisupport.com','elev0607');
-        $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
+        if (\session('lang')=='en'){
+            $template_id="24772c4fe45d85d1c5a58faf758dad58042d4a6e";
+            $moneys=$money->umoney(1400*$sign_info['number']);
+        }else{
+            $template_id="c8cf8cdef8309fc8e1b041742dda9bc3c11aa500";
+            $moneys=$money->num_to_rmb(1400*$sign_info['number']);
+        }
+
         $request = new TemplateSignatureRequest();
         $request->enableTestMode();
         $request->setTemplateId($template_id);
 //        $request->setSubject('Purchase Order');
 //        $request->setMessage('Glad we could come to an agreement.');
         $request->setSigner('member', $email, $sign_info['name']);
-        $money=new money();
+
 //$request->setCC('Accounting', '871609160@qq.com');
-        $request->setCustomFieldValue('money', $money->umoney(1400*$sign_info['number']));
+
+        $request->setCustomFieldValue('money', $moneys);
         $request->setCustomFieldValue("number",number_format($sign_info['number']*1400));
         $request->setCustomFieldValue("day",date('d',time()));
         $request->setCustomFieldValue("name",$sign_info['name']);
