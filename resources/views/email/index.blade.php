@@ -10,14 +10,7 @@
         *{margin:0px;padding:0px}
     </style>
 </head>
-<body>
-<div style="text-align: center">
-  <div>
-      <img src="images/2.jpg" alt="">
-  </div>
-<div>
-    <a href="{{$url}}"><img src="images/1.jpg" alt=""></a>
-</div>
-</div>
+<body style="text-align: center">
+{!! $cont !!}
 </body>
 </html>
