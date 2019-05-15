@@ -28,7 +28,7 @@ class UserAuth
 //            dd(strpos($url,"/user/list"));
             $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
             if ($sign_info['status']==1&&!strpos($url,"/user/list")){
-                return redirect('/user/list');
+                return redirect('https://www.elev8united.com/user/list');
             }
             return $next($request);
         }else{
