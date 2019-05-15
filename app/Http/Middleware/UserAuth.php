@@ -24,10 +24,10 @@ class UserAuth
         }
 
         if (auth()->user()){
-            $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
-            if ($sign_info['status']==1){
-                return redirect('/user/list');
-            }
+//            $sign_info=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
+//            if ($sign_info['status']==1&&request('us')){
+//                return redirect('/user/list');
+//            }
             return $next($request);
         }else{
             return redirect(url('login'));
