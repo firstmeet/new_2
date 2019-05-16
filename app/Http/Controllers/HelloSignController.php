@@ -15,6 +15,9 @@ class HelloSignController extends Controller
        $pdf=new pdf();
 
        $page=$request->get('page',1);
+       if (($page==4||$page==5)&&session('lang')=='hk'){
+           $page=$page.'_hk';
+       }
         $pdf->watermark(storage_path($page.'.pdf'));
 //       $arr=['Elevate Affiliate Note','Subscription Booklet-Elevate United'];
 //       $pdf->show(storage_path($page.'.wa.pdf'),$arr[$page-1]);

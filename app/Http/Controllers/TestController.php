@@ -24,7 +24,7 @@ class TestController extends Controller
         $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
         $file=str_replace('{url}',"https://www.elev8united.com/user/index",$file);
 //        MailLog::create(['email'=>$request->get('email')]);
-        Mail::to('evat0514@gmail.com')->queue(new \App\Mail\SendEmail($file,$email_cont->title));
+        Mail::to('exiao@chinabridgegroup.com')->queue(new \App\Mail\SendEmail($file,$email_cont->title));
 //		return view('test');
 		
 		//$rs->UPDATE_TIME;
