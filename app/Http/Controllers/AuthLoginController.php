@@ -8,6 +8,7 @@ use App\Sign;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class AuthLoginController extends Controller
@@ -26,9 +27,7 @@ class AuthLoginController extends Controller
          $email=$request->get('email');
          $password=$request->get('password');
          $user=User::where([['username','=',$email],['pwd','=',md5($password)]])->first();
-         if(!Session::get('lang')){
-		 	Session::put('lang','en');
-		}
+
 		 
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
@@ -43,6 +42,10 @@ class AuthLoginController extends Controller
 
 
                  auth()->login($user,$request->get('remember'));
+                 if(!Session::get('lang')){
+                     $user_data=DB::table('userdata')->where('id',auth()->user()->id)->first(['languagepreference']);
+                     Session::put('lang',$user_data->languagepreference);
+                 }
                  $sign=Sign::where('user_id',auth()->user()->id)->orderBy('id','desc')->first();
                  if ($sign&&$sign->status==1){
                      Session::put('sign_status',1);

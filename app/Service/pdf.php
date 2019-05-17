@@ -8,60 +8,59 @@ use setasign\Fpdi\Tcpdf\Fpdi;
 
 class pdf extends \setasign\Fpdi\Fpdi
 {
-    var $angle=0;
+    var $angle = 0;
 
-    function Rotate($angle,$x=-1,$y=-1)
+    function Rotate($angle, $x = -1, $y = -1)
     {
-        if($x==-1)
-            $x=$this->x;
-        if($y==-1)
-            $y=$this->y;
-        if($this->angle!=0)
+        if ($x == -1)
+            $x = $this->x;
+        if ($y == -1)
+            $y = $this->y;
+        if ($this->angle != 0)
             $this->_out('Q');
-        $this->angle=$angle;
-        if($angle!=0)
-        {
-            $angle*=M_PI/180;
-            $c=cos($angle);
-            $s=sin($angle);
-            $cx=$x*$this->k;
-            $cy=($this->h-$y)*$this->k;
-            $this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm 1 0 0 1 %.2F %.2F cm',$c,$s,-$s,$c,$cx,$cy,-$cx,-$cy));
+        $this->angle = $angle;
+        if ($angle != 0) {
+            $angle *= M_PI / 180;
+            $c = cos($angle);
+            $s = sin($angle);
+            $cx = $x * $this->k;
+            $cy = ($this->h - $y) * $this->k;
+            $this->_out(sprintf('q %.5F %.5F %.5F %.5F %.2F %.2F cm 1 0 0 1 %.2F %.2F cm', $c, $s, -$s, $c, $cx, $cy, -$cx, -$cy));
         }
     }
 
     function _endpage()
     {
-        if($this->angle!=0)
-        {
-            $this->angle=0;
+        if ($this->angle != 0) {
+            $this->angle = 0;
             $this->_out('Q');
         }
         parent::_endpage();
     }
 
-    function RotatedText($x,$y,$txt,$angle)
+    function RotatedText($x, $y, $txt, $angle)
     {
         //Text rotated around its origin
-        $this->Rotate($angle,$x,$y);
-        $this->Text($x,$y,$txt);
+        $this->Rotate($angle, $x, $y);
+        $this->Text($x, $y, $txt);
         $this->Rotate(0);
     }
 
-    function RotatedImage($file,$x,$y,$w,$h,$angle)
+    function RotatedImage($file, $x, $y, $w, $h, $angle)
     {
         //Image rotated around its upper-left corner
-        $this->Rotate($angle,$x,$y);
-        $this->Image($file,$x,$y,$w,$h);
+        $this->Rotate($angle, $x, $y);
+        $this->Image($file, $x, $y, $w, $h);
         $this->Rotate(0);
     }
-     function watermark($file,$newfile=null)
+
+    function watermark($file, $newfile = null, $user_id = null)
     {
-        $page=request('page');
-        $pdf=new pdf();
-        $image=$this->text_image("Member #".((auth()->user()->id)+1000000));
-        $count=$pdf->setSourceFile($file);
-        for($i=1;$i<=$count;$i++){
+        $page = request('page');
+        $pdf = new pdf();
+        $image = $this->text_image("Member #" . (($user_id ?? (auth()->user()->id)) + 1000000));
+        $count = $pdf->setSourceFile($file);
+        for ($i = 1; $i <= $count; $i++) {
             $templateId = $pdf->importPage($i);
 
             // get the size of the imported page
@@ -73,7 +72,7 @@ class pdf extends \setasign\Fpdi\Fpdi
 
             // use the imported page
             $pdf->useTemplate($templateId);
-            $pdf->Image($image,30,40);
+            $pdf->Image($image, 30, 40);
 
 //
 //            $pdf->SetFont('Arial','B','50');
@@ -83,25 +82,25 @@ class pdf extends \setasign\Fpdi\Fpdi
 //            $pdf->SetFillColor(30);
 //            $pdf->Write(20, date('Y-m-d'));
         }
-        if ($page==3||$page==4){
-            $pdf->SetTitle("Subscription Booklet",true);
-        }elseif($page==1){
+        if ($page == 3 || $page == 4) {
+            $pdf->SetTitle("Subscription Booklet", true);
+        } elseif ($page == 1) {
             $pdf->SetTitle("PERSONAL & CONFIDENTIAL");
         }
-        if ($newfile){
+        if ($newfile) {
             unlink($image);
-            $pdf->Output('F',$newfile);
-        }else{
+            $pdf->Output('F', $newfile);
+        } else {
             unlink($image);
-             $pdf->Output();
+            $pdf->Output();
         }
 
     }
 
-     function text_image($text)
+    function text_image($text)
     {
-        $img=\Intervention\Image\Facades\Image::canvas(800,400);
-        $img->text($text,0,140,function ($font){
+        $img = \Intervention\Image\Facades\Image::canvas(800, 400);
+        $img->text($text, 0, 140, function ($font) {
 
             $font->file(storage_path('MSYHBD.TTF'));
             $font->size(70);
@@ -111,7 +110,7 @@ class pdf extends \setasign\Fpdi\Fpdi
 //            $font->valign('top');
 //            $font->angle(-45);
         });
-        $img->text("Confidential Document",0,50,function ($font){
+        $img->text("Confidential Document", 0, 50, function ($font) {
 
             $font->file(storage_path('MSYHBD.TTF'));
             $font->size(60);
@@ -122,15 +121,16 @@ class pdf extends \setasign\Fpdi\Fpdi
 //            $font->angle(-45);
         });
         $img->rotate(45);
-        $path=public_path('images/water/'.uniqid().'.png');
+        $path = public_path('images/water/' . uniqid() . '.png');
         $img->save($path);
         return $path;
     }
-    function show($file,$title)
+
+    function show($file, $title)
     {
-        $pdf=new pdf();
-        $count=$pdf->setSourceFile($file);
-        for($i=1;$i<=$count;$i++){
+        $pdf = new pdf();
+        $count = $pdf->setSourceFile($file);
+        for ($i = 1; $i <= $count; $i++) {
 
             $templateId = $pdf->importPage($i);
 

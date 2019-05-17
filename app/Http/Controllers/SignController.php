@@ -271,4 +271,5 @@ class SignController extends Controller
 //        $pdf->download("payment information.pdf");
     }
 
+
 }

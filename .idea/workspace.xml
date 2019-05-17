@@ -2,9 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a313656-b1bc-4a15-bf05-396fa9de8f91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/new.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/new.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LangController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LangController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service/pdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/pdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Service/word.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/word.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/mysyhbd.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/mysyhbd.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/cn/reg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/cn/reg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/cn/reg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/cn/reg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/en/reg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/en/reg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/en/reg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/en/reg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/hk/reg_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/hk/reg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/email/hk/reg_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/email/hk/reg_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6e9c754993.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6e9c754993.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6e9c7d5449.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6e9c7d5449.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6e9efa24f5.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6e9efa24f5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6e9efad4bf.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6e9efad4bf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6eb61a44a9.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6eb61a44a9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6eb61b5223.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6eb61b5223.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6ec94f0b2c.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6ec94f0b2c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd6ec950497c.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd6ec950497c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd701ffb4fd8.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd701ffb4fd8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd7084dede69.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd7084dede69.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd7085235347.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd7085235347.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd7086438f08.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd7086438f08.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd708b1b7ac6.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd708b1b7ac6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd70955c5a14.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd70955c5a14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd7095994748.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd7095994748.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd70a1fdb495.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd70a1fdb495.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd70b580283b.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd70b580283b.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd760bc7a72c.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd760bc7a72c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd7638856aed.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd7638856aed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/water/5cd789710b55a.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/water/5cd789710b55a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/PDFJS-LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/PDFJS-LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/demo/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/demo/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.mousewheel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.mousewheel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.panzoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.panzoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchPDF.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchPDF.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchPDF.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchSwipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/jquery.touchSwipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/pdf.compatibility.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/pdf.compatibility.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/pdf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/touchpdf/pdf.worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/touchpdf/pdf.worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vue.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vue.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/download/pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/download/pdf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/company_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/company_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/investor_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/investor_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/personal_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/personal_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/sign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/sign.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/3.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/3.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/4.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/4_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/4_1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/4_hk.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/4_hk.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/5.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/5.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/5_hk.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/5_hk.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/fonts/mysyhbd.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/storage/fonts/mysyhbd.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/5cd8e8643e378.png" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/5cd8e8643e378.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/uploads/images/5cda625f3a688.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/storage/uploads/images/5cda625f3a688.jpg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,79 +88,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1692">
-              <caret line="96" column="65" selection-start-line="95" selection-start-column="92" selection-end-line="96" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+            <state relative-caret-position="360">
+              <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
+        <entry file="file://$PROJECT_DIR$/app/Mail/SendPdfMail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="143" column="15" lean-forward="true" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
+            <state relative-caret-position="324">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmails.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/mail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="59" column="55" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/email/pdf.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Service/pdf.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/email/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/File/to_word_en.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#p#15;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/File/to_word_hk.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1152">
-              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#p#14;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/user/list.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -122,7 +186,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/resources/views/user/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/payment_information.blade.php" />
         <option value="$PROJECT_DIR$/public/js/global.js" />
         <option value="$PROJECT_DIR$/resources/views/email/index.blade.php" />
@@ -131,8 +194,18 @@
         <option value="$PROJECT_DIR$/storage/File/to_word_en.html" />
         <option value="$PROJECT_DIR$/storage/File/to_word_hk.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/LangController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
+        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/resources/views/email/pdf.blade.php" />
+        <option value="$PROJECT_DIR$/app/Mail/SendPdfMail.php" />
+        <option value="$PROJECT_DIR$/app/Service/pdf.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/SendEmails.php" />
+        <option value="$PROJECT_DIR$/config/services.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -267,14 +340,7 @@
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="new" type="b2602c69:ProjectViewProjectNode" />
-              <item name="new" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
@@ -285,12 +351,22 @@
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,17 +425,21 @@
       <workItem from="1557891443872" duration="5559000" />
       <workItem from="1557902693803" duration="2256000" />
       <workItem from="1557915095444" duration="246000" />
-      <workItem from="1557970610963" duration="1477000" />
+      <workItem from="1557970610963" duration="8987000" />
+      <workItem from="1557988152332" duration="4000" />
+      <workItem from="1557989197221" duration="6767000" />
+      <workItem from="1558056893923" duration="658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9538000" />
+    <option name="totallyTimeSpent" value="24477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25878593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26709402" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -385,23 +465,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/user/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="e#373#393#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/global.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -427,13 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1692">
           <caret line="96" column="65" selection-start-line="95" selection-start-column="92" selection-end-line="96" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/email/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -474,27 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/SendEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-15.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="870">
@@ -502,17 +537,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/user/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="143" column="15" lean-forward="true" selection-start-line="143" selection-start-column="15" selection-end-line="143" selection-end-column="15" />
+        <state relative-caret-position="324">
+          <caret line="18" column="89" selection-start-line="18" selection-start-column="89" selection-end-line="18" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/sign_pdf.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding>
+            <element signature="e#373#393#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LangController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="45" column="113" selection-start-line="45" selection-start-column="95" selection-end-line="45" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Jobs/SendEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#31#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="5" selection-start-line="20" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/email/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-16.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="1530">
+          <caret line="7700" column="51" selection-start-line="7700" selection-start-column="51" selection-end-line="7700" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/email/pdf.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/pdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/SendEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/PendingMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="120" column="20" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/SendPdfMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
         </state>
       </provider>
     </entry>
