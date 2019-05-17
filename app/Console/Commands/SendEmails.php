@@ -21,7 +21,7 @@ class SendEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'send_mail';
+    protected $signature = 'send_mail {user}';
 
     /**
      * The console command description.
@@ -60,12 +60,13 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        $mail_arr = ['wm110957@yahoo.com.tw'];
+        $mail_arr=explode(',',$this->argument('user'));
+//        $mail_arr = ['wm110957@yahoo.com.tw'];
         $invite = Invite::whereIn('invitees', $mail_arr)->get(['id', 'invitees', 'invitee_id']);
 //        print_r($invite);
         foreach ($invite as $key => $value) {
             $dest = $this->download($value->id, $value->invitee_id);
-            Mail::to('871609160@qq.com')->queue(new SendPdfMail('111', '1111', $dest));
+            Mail::to('exiao@chinabridgegroup.com')->queue(new SendPdfMail('111', '1111', $dest));
         }
     }
 

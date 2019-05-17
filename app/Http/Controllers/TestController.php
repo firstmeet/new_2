@@ -40,7 +40,7 @@ class TestController extends Controller
 //           $dest=$this->download($invite->id,$invite->invitee_id);
 //           dd($dest);
 //        }
-        Mail::to('871609160@qq.com')->sendNow(new SendPdfMail('11','111',public_path('1.pdf')));
+//        Mail::to('871609160@qq.com')->sendNow(new SendPdfMail('11','111',public_path('1.pdf')));
 //        $send=Mail::to('871609160@qq.com')->send(new SendPdfMail('11','111',public_path('1.pdf')));
 		//$rs->UPDATE_TIME;
        // $word=new word();
@@ -51,6 +51,10 @@ class TestController extends Controller
 //        $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
 //        dd($file);
 //        return view('email.index',['url'=>'http://www.baidu.com']);
+        $pdf=new pdf();
+        $pdf->watermark(storage_path("4_hk.pdf"),public_path("4_hk.pdf"),1196);
+        $pdf->watermark(storage_path("5_hk.pdf"),public_path("5_hk.pdf"),1196);
+
     }
     public function send_mail_pdf()
     {

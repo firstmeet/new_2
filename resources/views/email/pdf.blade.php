@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-测试
+<img class="upimg" src="https://www.elev8united.com/images/email/cn/reg_1.jpg" style="display:block;" /><a href="https://www.elev8united.com/login"><img class="upimg" src="https://www.elev8united.com/images/email/cn/reg_2.jpg" style="display:block;" /></a>
 </body>
 </html>
