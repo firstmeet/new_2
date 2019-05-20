@@ -14,6 +14,7 @@ use HelloSign\SignatureRequest;
 use HelloSign\TemplateSignatureRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class SignController extends Controller
@@ -206,6 +207,7 @@ class SignController extends Controller
     public function callback(Request $request)
     {
        $string=$request->all();
+       Log::info(json_encode($request->all()));
        $string=json_decode($string['json'],true);
        if ($string['event']['event_type']=='signature_request_signed') {
           Sign::where('signature_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
