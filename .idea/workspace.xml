@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a313656-b1bc-4a15-bf05-396fa9de8f91" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SendEmails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SendEmails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/email/pdf.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/email/pdf.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/4_hk.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/4_hk.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/5_hk.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/5_hk.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,31 +22,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+        <entry file="file://$PROJECT_DIR$/app/Mail/SendEmail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmails.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="72" column="53" lean-forward="true" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
+            <state relative-caret-position="378">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
-                <element signature="e#40#55#0#PHP" expanded="true" />
+                <element signature="e#28#44#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Service/pdf.php">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -76,7 +77,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LangController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Mail/SendPdfMail.php" />
         <option value="$PROJECT_DIR$/app/Service/pdf.php" />
@@ -85,6 +85,7 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/SendEmails.php" />
         <option value="$PROJECT_DIR$/resources/views/email/pdf.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SignController.php" />
       </list>
     </option>
   </component>
@@ -218,12 +219,31 @@
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,17 +305,19 @@
       <workItem from="1557970610963" duration="8987000" />
       <workItem from="1557988152332" duration="4000" />
       <workItem from="1557989197221" duration="6767000" />
-      <workItem from="1558056893923" duration="8790000" />
+      <workItem from="1558056893923" duration="11195000" />
+      <workItem from="1558316637237" duration="1879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32609000" />
+    <option name="totallyTimeSpent" value="36893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26709402" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27029914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -325,13 +347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InviteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="58" column="104" selection-start-line="54" selection-start-column="11" selection-end-line="58" selection-end-column="104" />
         </state>
       </provider>
     </entry>
@@ -410,13 +425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthLoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -453,13 +461,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mail/SendEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/PendingMail.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -531,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LangController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -562,10 +556,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/pdf.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        <state relative-caret-position="488">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,13 +573,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmails.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InviteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="72" column="53" lean-forward="true" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
+        <state relative-caret-position="630">
+          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Service/pdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-916">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/SendEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#28#44#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HelloSignController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SignController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
         </state>
       </provider>
     </entry>

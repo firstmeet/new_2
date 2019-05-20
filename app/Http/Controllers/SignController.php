@@ -210,6 +210,7 @@ class SignController extends Controller
        if ($string['event']['event_type']=='signature_request_signed') {
           Sign::where('signature_id',$string['signature_request']['response_data'][0]['signature_id'])->update(['is_signed'=>1]);
        }
+       return "Hello API Event Received";
     }
 
     public function sign_pdf()
