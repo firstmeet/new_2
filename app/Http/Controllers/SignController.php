@@ -273,9 +273,7 @@ class SignController extends Controller
         $pdf->loadHTML($str1);
 
         $fileName = __t('15584187554982');
-        $fileName=str_replace(' ','',$fileName);
-        file_put_contents('aa.txt', "{$fileName}.pdf");
-        return $pdf->download("{$fileName}.pdf");
+        return $pdf->download('1.pdf');
 //        $pdf=\Barryvdh\DomPDF\PDF::loadView('download.pdf',['money'=>$money,'member_id'=>$member_id]);
 //        $pdf->download("payment information.pdf");
     }
