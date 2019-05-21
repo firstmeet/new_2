@@ -271,7 +271,9 @@ class SignController extends Controller
         $str1=str_replace('{{$member_id}}',$member_id,$str1);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML($str1);
-        return $pdf->download('1.pdf');
+
+        $fileName = __t('15584187554982');
+        return $pdf->download("{$fileName}.pdf");
 //        $pdf=\Barryvdh\DomPDF\PDF::loadView('download.pdf',['money'=>$money,'member_id'=>$member_id]);
 //        $pdf->download("payment information.pdf");
     }
