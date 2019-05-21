@@ -1,4 +1,5 @@
 <?php return array (
+  
   'sans-serif' => array(
     'normal' => $rootDir . '\lib\fonts\Helvetica',
     'bold' => $rootDir . '\lib\fonts\Helvetica-Bold',
