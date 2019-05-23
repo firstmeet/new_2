@@ -204,6 +204,7 @@ class SignController extends Controller
             return back()->with('error',__t("failed"));
         }
     }
+   
     public function callback(Request $request)
     {
        $string=$request->all();
