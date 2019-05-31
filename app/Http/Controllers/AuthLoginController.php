@@ -16,8 +16,12 @@ class AuthLoginController extends Controller
     use ApiResource;
     public function getLogin(Request $request)
     {
-        if ($request->get('lang')){
-            Session::put('lang',$request->get('lang'));
+        $GET_lang=$request->get('lang');
+        if($GET_lang=='tCN') $lang='cn';
+        if($GET_lang=='sCN') $lang='hk';
+        if($GET_lang=='en') $lang='en';
+        if ($GET_lang){
+            Session::put('lang',$GET_lang);
         }
         return view('auth.login');
     }
@@ -28,14 +32,14 @@ class AuthLoginController extends Controller
          $password=$request->get('password');
          $user=User::where([['username','=',$email],['pwd','=',md5($password)]])->first();
 
-		 
+
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
          }else{
-			 
+
 		 	 $has_invite=\App\Invite::where("invitee_id",$user->id)->first();
 
-			 
+
 //			 if(!$has_invite) return back()->with('msg',__t('incorrect_password'));
              if ($user->is_signmaster==1){
 
