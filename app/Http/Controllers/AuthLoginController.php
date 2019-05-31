@@ -16,12 +16,13 @@ class AuthLoginController extends Controller
     use ApiResource;
     public function getLogin(Request $request)
     {
+        $lang=0;
         $GET_lang=$request->get('lang');
         if($GET_lang=='tCN') $lang='cn';
         if($GET_lang=='sCN') $lang='hk';
         if($GET_lang=='en') $lang='en';
-        if ($GET_lang){
-            Session::put('lang',$GET_lang);
+        if ($lang){
+            Session::put('lang',$lang);
         }
         return view('auth.login');
     }
