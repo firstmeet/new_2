@@ -21,6 +21,16 @@ Route::post('login','AuthLoginController@login')->name("login");
 Route::get('lang','LangController@lang');
 Route::get('test','TestController@index');
 
+//Route::get('pay','PayController@index');
+
+Route::any('/pay/{act}', function($act){
+	$classname='App\Http\Controllers\PayController';
+	return (new $classname())->$act(new Request());
+
+});
+
+
+
 Route::any('sign/callback','SignController@callback');
 
 //Auth::routes();
