@@ -28,11 +28,12 @@ class AuthLoginController extends Controller
          $password=$request->get('password');
          $user=User::where([['username','=',$email],['pwd','=',md5($password)]])->first();
 
-		 
          if (!$user){
              return back()->with('msg',__t('incorrect_password'));
          }else{
-			 
+			 if ($user->isdisable==1){
+			     return back()->with('msg',__t('no_login_pri'));
+             }
 		 	 $has_invite=\App\Invite::where("invitee_id",$user->id)->first();
 
 			 
