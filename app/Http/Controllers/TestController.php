@@ -112,6 +112,11 @@ class TestController extends Controller
 
 //        return response()->download($zip_dest,'Offering.zip');
     }
+    public function welcome()
+    {
+
+        return view('welcome');
+    }
 
   
 }

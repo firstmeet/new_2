@@ -12,7 +12,8 @@
 */
 
 
-
+Route::get('/home_index','TestController@welcome');
+Route::group(['middleware'=>'can_login'],function (){
 Route::resource('hello','HelloSignController');
 
 Route::get('/login','AuthLoginController@getLogin');
@@ -59,4 +60,5 @@ Route::group(['middleware'=>['web','user_auth']],function (){
     Route::get('/invite_list','InviteController@list');
     Route::get('/toinvite', 'InviteController@toinvite')->name('toinvite');
 
+});
 });
