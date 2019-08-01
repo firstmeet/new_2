@@ -52,8 +52,8 @@ class TestController extends Controller
 //        dd($file);
 //        return view('email.index',['url'=>'http://www.baidu.com']);
         $pdf=new pdf();
-        $pdf->watermark(storage_path("4_hk.pdf"),public_path("4_hk.pdf"),1196);
-        $pdf->watermark(storage_path("5_hk.pdf"),public_path("5_hk.pdf"),1196);
+        $pdf->watermark(storage_path("1.pdf"),public_path("1_1.pdf"),1196);
+        $pdf->watermark(storage_path("2.pdf"),public_path("2_2.pdf"),1196);
 
     }
     public function send_mail_pdf()
