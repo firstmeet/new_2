@@ -54,6 +54,8 @@ class TestController extends Controller
         $pdf=new pdf();
         $pdf->watermark(storage_path("4.pdf"),public_path("4_1.pdf"),1196);
         //$pdf->watermark(storage_path("3.pdf"),public_path("3_2.pdf"),1196);
+        $pdf->watermark(storage_path("1.pdf"),public_path("1_1.pdf"),1196);
+        $pdf->watermark(storage_path("2.pdf"),public_path("2_2.pdf"),1196);
 
     }
     public function send_mail_pdf()
@@ -111,6 +113,11 @@ class TestController extends Controller
 
 
 //        return response()->download($zip_dest,'Offering.zip');
+    }
+    public function welcome()
+    {
+
+        return view('welcome');
     }
 
   
