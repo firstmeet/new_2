@@ -51,11 +51,13 @@ class TestController extends Controller
 //        $file=file_get_contents("https://www.elevateunited.cn/".$email_cont->body);
 //        dd($file);
 //        return view('email.index',['url'=>'http://www.baidu.com']);
-        $pdf=new pdf();
-        $pdf->watermark(storage_path("4.pdf"),public_path("4_1.pdf"),1196);
-        //$pdf->watermark(storage_path("3.pdf"),public_path("3_2.pdf"),1196);
-        $pdf->watermark(storage_path("1.pdf"),public_path("1_1.pdf"),1196);
-        $pdf->watermark(storage_path("2.pdf"),public_path("2_2.pdf"),1196);
+//        $pdf=new pdf();
+//        $pdf->watermark(storage_path("1.pdf"),public_path("1_1.pdf"),1196);
+//        $pdf->watermark(storage_path("2.pdf"),public_path("2_2.pdf"),1196);
+        //$sql="SELECT user_id,name,picture,created_at FROM `sen_signs` where is_signed=1 and `name` is not NULL and picture is not NULL and name !=\"\" ORDER BY user_id";
+        $list=Sign::where([['is_signed','=',1]])->whereNotNull('name')->whereNotNull('picture')->orderBy('user_id','asc')->select('user_id','name','picture')->get();
+        dd($list);
+
 
     }
     public function send_mail_pdf()
