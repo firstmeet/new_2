@@ -15,7 +15,7 @@ class CanLogin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
-//        return redirect()->to('/home_index');
+//        return $next($request);
+        return redirect()->to('/home_index');
     }
 }
