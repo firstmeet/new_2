@@ -57,7 +57,7 @@ class TestController extends Controller
         //$sql="SELECT user_id,name,picture,created_at FROM `sen_signs` where is_signed=1 and `name` is not NULL and picture is not NULL and name !=\"\" ORDER BY user_id";
         $list=Sign::where([['is_signed','=',1]])->whereNotNull('name')->whereNotNull('picture')->orderBy('user_id','asc')->select('user_id','name','picture')->get();
         foreach ($list as $key=>$value){
-            if (!file_exists(storage_path('uploads/images'.$value['picture']))){
+            if (!file_exists(storage_path('uploads/images/'.$value['picture']))){
                 echo $value['name'];
                 echo "</br>";
             }
