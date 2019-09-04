@@ -55,14 +55,9 @@ class TestController extends Controller
 //        $pdf->watermark(storage_path("1.pdf"),public_path("1_1.pdf"),1196);
 //        $pdf->watermark(storage_path("2.pdf"),public_path("2_2.pdf"),1196);
         //$sql="SELECT user_id,name,picture,created_at FROM `sen_signs` where is_signed=1 and `name` is not NULL and picture is not NULL and name !=\"\" ORDER BY user_id";
-        $list=Sign::where([['is_signed','=',1]])->whereNotNull('name')->whereNotNull('picture')->orderBy('user_id','asc')->select('user_id','name','picture')->get();
-        foreach ($list as $key=>$value){
-            if (!file_exists(storage_path('uploads/images/'.$value['picture']))){
-                echo $value['name'];
-                echo "</br>";
-            }
-        }
-
+        $list=Sign::where([['is_signed','=',1],['user_id','>','1212']])->whereNotNull('name')->whereNotNull('picture')->orderBy('user_id','asc')->select('user_id','name','picture')->get()->toArray();
+        $list=array_column($list,'picture');
+        dd($list);
 
     }
     public function send_mail_pdf()
