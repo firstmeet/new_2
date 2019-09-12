@@ -18,7 +18,6 @@ class CanLogin
 //        return $next($request);
         $ip=$_SERVER['HTTP_X_REAL_IP'];
         $data=geoip($ip);
-        dd($data);
         if ($data['iso_code']=='CN'){
             return $next($request);
         }else{
