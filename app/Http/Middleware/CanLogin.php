@@ -16,7 +16,7 @@ class CanLogin
     public function handle($request, Closure $next)
     {
 //        return $next($request);
-        $ip=$request->ip();
+        $ip=$_SERVER['HTTP_X_REAL_IP'];
         $data=geoip($ip);
         dd($data);
         if ($data['iso_code']=='CN'){
