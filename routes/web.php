@@ -45,6 +45,7 @@ Route::group(['middleware'=>['web','user_auth']],function (){
     Route::post('logout','AuthLoginController@logout')->name('logout');
     // Route::resource('user','UserController');
     Route::get('sign_download','SignController@download');
+    Route::get('sign_downloadtest','SignController@downloadtest');
     Route::resource('invite','InviteController');
     Route::resource('sign','SignController');
     Route::get('/home', 'HomeController@index')->name('home');

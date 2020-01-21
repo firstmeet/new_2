@@ -166,9 +166,52 @@ class SignController extends Controller
 
           return response()->download($zip_dest,'Offering.zip');
     }
+    public function downloadtest(Request $request)
+    {
+//        dd($request->get('invite_id'));
+        $invite=Invite::where('invitee_id',$request->get('id'))->orderBy('id','desc')->first();
+        $invite_id=$invite->id;
+        $signs=Sign::where('invite_id',$invite_id)->get();
+        $un_water_files=[storage_path('2.pdf'),storage_path('3.pdf')];
+
+        foreach ($signs as $key=>$value){
+            if ($value['signature_request_id']){
+                $uploads_dir=storage_path('uploads/'.$value['signature_request_id'].'.pdf');
+                if (file_exists($uploads_dir)){
+                    array_push($un_water_files,$uploads_dir);
+                }else{
+                    $down=$this->client->getFiles($value['signature_request_id'],$uploads_dir,'pdf');
+
+                    if ($down){
+                        array_push($un_water_files,$uploads_dir);
+                    }
+                }
+
+            }
+        }
+        $pdf=new pdf();
+        $water_files=[];
+//          dd($un_water_files);
+        if (!empty($un_water_files)){
+            foreach ($un_water_files as $value){
+                $path=storage_path('uploads/'.uniqid().'.pdf');
+
+                $pdf->watermark($value,$path);
+
+                array_push($water_files,$path);
+            }
+        }
+        $zip=new zip();
+        $zip_dest=storage_path(('uploads/'.uniqid().'.zip'));
+        $zip->zipFiles($zip_dest,$water_files);
+
+
+
+        return response()->download($zip_dest,'Offering.zip');
+    }
     public function update(Request $request)
     {
-		
+
 	     $request->flash();
         if (!$request->get('name')){
             return back()->with('error',__t(15574791686683));
@@ -204,7 +247,7 @@ class SignController extends Controller
             return back()->with('error',__t("failed"));
         }
     }
-   
+
     public function callback(Request $request)
     {
        $string=$request->all();
