@@ -16,12 +16,13 @@ class CanLogin
     public function handle($request, Closure $next)
     {
 //        return $next($request);
-        $ip=$_SERVER['HTTP_X_REAL_IP'];
-        $data=geoip($ip);
-        if ($data['iso_code']=='CN'){
-            return $next($request);
-        }else{
-            return redirect()->to('/home_index');
-        }
+//        $ip=$_SERVER['HTTP_X_REAL_IP'];
+//        $data=geoip($ip);
+//        if ($data['iso_code']=='CN'){
+//            return $next($request);
+//        }else{
+//            return redirect()->to('/home_index');
+//        }
+        return $next($request);
     }
 }
